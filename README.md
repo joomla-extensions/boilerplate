@@ -8,6 +8,7 @@ To create installable zip packages, you only need to zip the folder with the fil
 
 # Customizing
 To customize the boilerplates using your own name you need to take the following steps:
+
 1. Do a **case-sensitive** replace on the following strings and replace them with your own name:
    * foo
    * Foo
