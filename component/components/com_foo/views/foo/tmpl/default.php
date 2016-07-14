@@ -12,3 +12,4 @@ defined('_JEXEC') or die;
 
 ?>
 
+Hello Joomla!
