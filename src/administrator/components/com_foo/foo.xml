@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="component" version="3.5" method="upgrade">
 	<name>COM_FOO</name>
-	<creationDate>[DATE]</creationDate>
+	<creationDate>##DATE##</creationDate>
 	<author>[AUTHOR]</author>
 	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
 	<authorUrl>[AUTHOR_URL]</authorUrl>
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0</version>
+	<version>##VERSION##</version>
 	<description>COM_FOO_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -29,21 +29,17 @@
 
 	<!-- Media files -->
 	<media folder="media/com_foo" destination="com_foo">
-		<folder>css</folder>
-		<folder>images</folder>
-		<folder>js</folder>
+		##MEDIA_FILES##
 	</media>
 
 	<!-- Front-end files -->
 	<files folder="components/com_foo">
-		<filename>foo.php</filename>
-		<filename>controller.php</filename>
-		<folder>controllers</folder>
-		<folder>language</folder>
-		<folder>layouts</folder>
-		<folder>models</folder>
-		<folder>views</folder>
+		##FRONTEND_COMPONENT_FILES##
 	</files>
+
+	<languages folder="language">
+		##FRONTEND_LANGUAGE_FILES##
+	</languages>
 
 	<!-- Back-end files -->
 	<administration>
@@ -59,20 +55,12 @@
 
 		<!-- Core files -->
 		<files folder="administrator/components/com_foo">
-			<filename>foo.php</filename>
-			<filename>access.xml</filename>
-			<filename>config.xml</filename>
-			<filename>controller.php</filename>
-			<filename>LICENSE.txt</filename>
-			<folder>controllers</folder>
-			<folder>helpers</folder>
-			<folder>language</folder>
-			<folder>layouts</folder>
-			<folder>models</folder>
-			<folder>sql</folder>
-			<folder>tables</folder>
-			<folder>views</folder>
+			##BACKEND_COMPONENT_FILES##
 		</files>
+
+		<languages folder="administrator/language">
+			##BACKEND_LANGUAGE_FILES##
+		</languages>
 	</administration>
 
 	<!-- Update servers -->

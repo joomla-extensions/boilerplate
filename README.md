@@ -2,9 +2,23 @@
 Boilerplate files for Joomla! extensions.
 
 # Installation
-The boilerplates can be installed as-is using the Extension Manager. However, the component, module and plugin will be called Foo :)
 
-To create installable zip packages, you only need to zip the folder with the files and it is ready to be installed.
+You have to build the package before installing, see Building.
+
+Install the built package from dist folder normally over Joomla! installer.
+
+# Building
+
+Copy jorobo.dist.ini to jorobo.ini and adjust it to your needs.
+
+You need composer installed in order to get the dependencies.
+
+Navigate to the project directory with your shell / cmd and run the following commands:
+
+```bash
+$ composer install
+$ vendor/bin/robo build
+```
 
 # Customizing
 To customize the boilerplates using your own name you need to take the following steps:

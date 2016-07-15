@@ -1,0 +1,21 @@
+{
+  "name": "joomla-extensions/foo",
+  "description": "Boilerplate files for Joomla! extensions with JoRobo build system",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Roland Dalmulder",
+      "email": "roland.dalmulder@community.joomla.org"
+    }
+  ],
+  "require"    : {
+    "php": ">=5.3.10",
+    "compojoom/lib_compojoom": "dev-master"
+  },
+  "require-dev": {
+    "php": ">=5.4.0",
+    "codegyre/robo": "~0.6",
+    "joomla-projects/robo": "dev-master",
+    "joomla-projects/jorobo": "~0.4"
+  }
+}

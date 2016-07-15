@@ -1,1 +1,57 @@
-.idea
+# OSX
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# PHPStorm
+.idea/
+
+# Sublime Text
+*.sublime*
+
+# Eclipse
+.buildpath
+.project
+.settings
+
+# Temp files
+*.tmp
+*.bak
+*.swp
+*~.nib
+*~
+
+# composer
+composer.phar
+vendor/*
+
+# Robo
+robo.phar
+
+# Phing
+packages/
+builds/build.properties
+
+# Test related files
+tests/acceptance.suite.yml
+tests/*/*Tester.php
+tests/joomla-cms3*
+tests/_output*
+tests/cache
+selenium-server-standalone.jar
+codecept.phar
+selenium.log
+
+# JoRobo related files
+dist/
+RoboFile.ini
+jorobo.ini
+
+#php doc releated files
+output/
+docs/phpqa/checkstyle.xml

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.5" client="site" method="upgrade">
 	<name>MOD_FOO</name>
-	<creationDate>[DATE]</creationDate>
+	<creationDate>##DATE##</creationDate>
 	<author>[AUTHOR]</author>
 	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
 	<authorUrl>[AUTHOR_URL]</authorUrl>
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0</version>
+	<version>##VERSION##</version>
 	<description>MOD_FOO_XML_DESCRIPTION</description>
 
 	<files>
-		<filename module="mod_foo">mod_foo.php</filename>
-		<folder>tmpl</folder>
-		<folder>language</folder>
-		<filename>mod_foo.xml</filename>
+		##MEDIA_FILES##
 	</files>
+
+	<!-- Language -->
+	<languages folder="language">
+		##LANGUAGE_FILES##
+	</languages>
 
 	<!-- Update servers -->
 	<updateservers>
