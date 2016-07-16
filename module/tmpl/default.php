@@ -10,4 +10,9 @@
 
 defined('_JEXEC') or die;
 
-echo '[PROJECT_NAME]';
+$url = $params->get('url', 'https://www.joomla.org')
+?>
+
+<a href="<?php echo $url ?>">
+	<?php echo '[PROJECT_NAME]'; ?>
+</a>

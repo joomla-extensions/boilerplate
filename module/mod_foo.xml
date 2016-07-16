@@ -24,6 +24,17 @@
 
 	<config>
 		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="domain"
+					type="url"
+					label="MOD_FOO_URL_LABEL"
+					description="MOD_FOO_URL_DESCRIPTION"
+					hint="https://www.example.com"
+					filter="url"
+					validate="url"
+				/>
+			</fieldset>
 			<fieldset
 					name="advanced">
 				<field

@@ -87,7 +87,8 @@ class plgSystemFoo extends JPlugin
 	 */
 	public function onAfterRender()
 	{
-	
+		// Access to plugin parameters
+		$sample = $this->params->get('sample', '42');
 	}
 
 	/**
