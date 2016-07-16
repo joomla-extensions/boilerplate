@@ -10,9 +10,10 @@
 
 defined('_JEXEC') or die;
 
-$url = $params->get('url', 'https://www.joomla.org')
+// Access to module parameters
+$url = $params->get('url', 'https://www.joomla.org');
 ?>
 
-<a href="<?php echo $url ?>">
+<a href="<?php echo $url; ?>">
 	<?php echo '[PROJECT_NAME]'; ?>
 </a>
