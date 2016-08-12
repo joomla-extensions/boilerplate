@@ -10,10 +10,6 @@
 
 defined('_JEXEC') or die;
 
-JHtml::_('script', 'com_foo/script.js', false, true);
-JHtml::_('stylesheet', 'com_foo/style.css', array(), true);
+extract($displayData);
 
-$layout = new JLayoutFile('foo.page');
-$data = new stdClass;
-$data->text = 'Hello Joomla!';
-echo $layout->render($data);
+echo $text;
