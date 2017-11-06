@@ -8,8 +8,11 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\MVC\Controller\BaseController;
+
 defined('_JEXEC') or die;
 
-$controller = JControllerLegacy::getInstance('foo');
-$controller->execute(JFactory::getApplication()->input->get('task'));
+$controller = BaseController::getInstance('foo');
+$controller->execute(Factory::getApplication()->input->get('task'));
 $controller->redirect();

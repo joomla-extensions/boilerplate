@@ -8,12 +8,15 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Layout\FileLayout;
+
 defined('_JEXEC') or die;
 
-JHtml::_('script', 'com_foo/script.js', false, true);
-JHtml::_('stylesheet', 'com_foo/style.css', array(), true);
+HTMLHelper::_('script', 'com_foo/script.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('stylesheet', 'com_foo/style.css', array('version' => 'auto', 'relative' => true));
 
-$layout = new JLayoutFile('foo.page');
+$layout = new FileLayout('foo.page');
 $data = new stdClass;
 $data->text = 'Hello Joomla!';
 echo $layout->render($data);

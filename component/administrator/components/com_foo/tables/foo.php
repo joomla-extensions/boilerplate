@@ -8,6 +8,8 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Table\Table;
+
 defined('_JEXEC') or die;
 
 /**
@@ -15,7 +17,7 @@ defined('_JEXEC') or die;
  *
  * @since       1.0
  */
-class TableAgent extends JTable
+class TableAgent extends Table
 {
 	/**
 	 * Constructor

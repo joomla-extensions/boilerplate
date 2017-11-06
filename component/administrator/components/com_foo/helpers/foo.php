@@ -8,6 +8,8 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Language\Text;
+
 defined('_JEXEC') or die;
 
 /**
@@ -29,6 +31,6 @@ class FooHelper
 	 */
 	public function addSubmenu($vName)
 	{
-		JHtmlSidebar::addEntry(JText::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName == 'foo');
+		JHtmlSidebar::addEntry(Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName == 'foo');
 	}
 }

@@ -8,6 +8,8 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\MVC\Controller\BaseController;
+
 defined('_JEXEC') or die;
 
 /**
@@ -16,4 +18,4 @@ defined('_JEXEC') or die;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class FooController extends JControllerLegacy { }
+class FooController extends BaseController { }

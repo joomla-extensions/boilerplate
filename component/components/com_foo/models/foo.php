@@ -8,6 +8,8 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\MVC\Model\BaseDatabaseModel;
+
 defined('_JEXEC') or die;
 
 /**
@@ -16,6 +18,6 @@ defined('_JEXEC') or die;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class FooModelFoo extends JModelLegacy
+class FooModelFoo extends BaseDatabaseModel
 {
 }

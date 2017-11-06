@@ -8,6 +8,10 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\MVC\View\HtmlView;
+
 defined('_JEXEC') or die;
 
 /**
@@ -16,7 +20,7 @@ defined('_JEXEC') or die;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class FooViewFoo extends JViewLegacy
+class FooViewFoo extends HtmlView
 {
 	/**
 	 * Foo helper
@@ -55,7 +59,7 @@ class FooViewFoo extends JViewLegacy
 		$this->sidebar = JHtmlSidebar::render();
 
 		// Display it all
-		parent::display($tpl);
+		return parent::display($tpl);
 	}
 
 	/**
@@ -67,10 +71,10 @@ class FooViewFoo extends JViewLegacy
 	 */
 	private function toolbar()
 	{
-		JToolBarHelper::title(JText::_('COM_FOO'), '');
+		JToolBarHelper::title(Text::_('COM_FOO'), '');
 
 		// Options button.
-		if (JFactory::getUser()->authorise('core.admin', 'com_foo'))
+		if (Factory::getUser()->authorise('core.admin', 'com_foo'))
 		{
 			JToolBarHelper::preferences('com_foo');
 		}
