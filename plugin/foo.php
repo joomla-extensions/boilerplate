@@ -8,6 +8,10 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Application\CMSApplication;
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\Database\DatabaseDriver;
+
 defined('_JEXEC') or die;
 
 /**
@@ -16,12 +20,12 @@ defined('_JEXEC') or die;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class plgSystemFoo extends JPlugin
+class plgSystemFoo extends CMSPlugin
 {
 	/**
 	 * Application object
 	 *
-	 * @var    JApplicationCms
+	 * @var    CMSApplication
 	 * @since  1.0
 	 */
 	protected $app;
@@ -29,7 +33,7 @@ class plgSystemFoo extends JPlugin
 	/**
 	 * Database object
 	 *
-	 * @var    JDatabaseDriver
+	 * @var    DatabaseDriver
 	 * @since  1.0
 	 */
 	protected $db;

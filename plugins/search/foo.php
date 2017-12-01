@@ -10,18 +10,22 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Application\CMSApplication;
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\Database\DatabaseDriver;
+
 /**
  * Foo plugin.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class plgSearchFoo extends JPlugin
+class plgSearchFoo extends CMSPlugin
 {
 	/**
 	 * Application object
 	 *
-	 * @var    JApplicationCms
+	 * @var    CMSApplication
 	 * @since  1.0
 	 */
 	protected $app;
@@ -29,7 +33,7 @@ class plgSearchFoo extends JPlugin
 	/**
 	 * Database object
 	 *
-	 * @var    JDatabaseDriver
+	 * @var    DatabaseDriver
 	 * @since  1.0
 	 */
 	protected $db;

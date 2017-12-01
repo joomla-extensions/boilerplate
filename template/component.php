@@ -10,8 +10,10 @@
 
 defined('_JEXEC') or die;
 
-$app             = JFactory::getApplication();
-$doc             = JFactory::getDocument();
+use \Joomla\CMS\Factory;
+
+$app             = Factory::getApplication();
+$doc             = Factory::getDocument();
 $this->language  = $doc->language;
 $this->direction = $doc->direction;
 
@@ -19,7 +21,7 @@ $this->direction = $doc->direction;
 $doc->setHtml5(true);
 
 // Add Stylesheets
-$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css');
+$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css', array('version' => 'auto'));
 
 ?>
 <!DOCTYPE html>
