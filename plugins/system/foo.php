@@ -12,7 +12,6 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\Database\DatabaseDriver;
 
 /**
  * Foo plugin.
@@ -33,7 +32,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * Database object
 	 *
-	 * @var    DatabaseDriver
+	 * @var    JDatabaseDriver
 	 * @since  1.0
 	 */
 	protected $db;

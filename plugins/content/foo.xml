@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.5" type="plugin" group="content" method="upgrade">
+<extension type="plugin" version="3.8" group="content" method="upgrade">
 	<name>PLG_CONTENT_FOO</name>
 	<creationDate>[DATE]</creationDate>
 	<author>[AUTHOR]</author>

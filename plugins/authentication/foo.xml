@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" version="3.8" group="system" method="upgrade">
-	<name>PLG_FOO</name>
+<extension type="plugin" version="3.8" group="authentication" method="upgrade">
+	<name>PLG_AUTHENTICATION_FOO</name>
 	<creationDate>[DATE]</creationDate>
 	<author>[AUTHOR]</author>
 	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
@@ -8,15 +8,15 @@
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.0</version>
-	<description>PLG_FOO_XML_DESCRIPTION</description>
+	<description>PLG_AUTHENTICATION_FOO_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
-	<scriptfile></scriptfile>
+	<scriptfile>script.php</scriptfile>
 
 	<!-- Language files -->
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.plg_system_foo.ini</language>
-		<language tag="en-GB">en-GB/en-GB.plg_system_foo.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_authentication_foo.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_authentication_foo.sys.ini</language>
 	</languages>
 
 	<!-- Plugin files -->
@@ -24,21 +24,6 @@
 		<filename plugin="foo">foo.php</filename>
 		<folder>language</folder>
 	</files>
-
-	<!-- Config parameter -->
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-				<field
-					name="sample"
-					type="text"
-					default="42"
-					label="PLG_FOO_SAMPLE_LABEL"
-					description="PLG_FOO_SAMPLE_DESCRIPTION"
-				/>
-			</fieldset>
-		</fields>
-	</config>
 
 	<!-- Update servers -->
 	<updateservers>

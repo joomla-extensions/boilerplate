@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.5" type="plugin" group="system" method="upgrade">
-	<name>PLG_FOO</name>
+<extension type="plugin" version="3.8" group="system" method="upgrade">
+	<name>PLG_SYSTEM_FOO</name>
 	<creationDate>[DATE]</creationDate>
 	<author>[AUTHOR]</author>
 	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
@@ -8,7 +8,7 @@
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.0</version>
-	<description>PLG_FOO_XML_DESCRIPTION</description>
+	<description>PLG_SYSTEM_FOO_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
 	<scriptfile></scriptfile>
@@ -33,8 +33,8 @@
 					name="sample"
 					type="text"
 					default="42"
-					label="PLG_FOO_SAMPLE_LABEL"
-					description="PLG_FOO_SAMPLE_DESCRIPTION"
+					label="PLG_SYSTEM_FOO_SAMPLE_LABEL"
+					description="PLG_SYSTEM_FOO_SAMPLE_DESCRIPTION"
 				/>
 			</fieldset>
 		</fields>
