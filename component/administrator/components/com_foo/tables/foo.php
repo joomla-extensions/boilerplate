@@ -13,11 +13,11 @@ use Joomla\CMS\Table\Table;
 defined('_JEXEC') or die;
 
 /**
- * Agent table.
+ * Foo table.
  *
  * @since       1.0
  */
-class TableAgent extends Table
+class TableFoo extends Table
 {
 	/**
 	 * Constructor
