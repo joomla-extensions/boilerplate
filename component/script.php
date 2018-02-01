@@ -8,6 +8,8 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Installer\InstallerAdapter as JAdapterInstance;
+
 defined('_JEXEC') or die;
 
 /**
