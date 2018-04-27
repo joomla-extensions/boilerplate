@@ -26,5 +26,5 @@ class FooController extends BaseController
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $default_view = 'com_foo';
+	protected $default_view = 'foos';
 }

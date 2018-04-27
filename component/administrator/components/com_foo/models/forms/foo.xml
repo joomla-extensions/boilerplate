@@ -7,6 +7,7 @@
         />
 
         <field
+            name="title"
             label="JGLOBAL_TITLE"
             description="JFIELD_TITLE_DESC"
             class="input-xxlarge input-large-text"

@@ -42,10 +42,10 @@ $loggedInUser  = Factory::getUser();
 						<?php echo HTMLHelper::_('grid.checkall'); ?>
 					</th>
 					<th width="1%" class="nowrap center">
-						<?php echo JHtml::_('searchtools.sort', 'JSTATUS', 'foos.published', $listDirection, $listOrder); ?>
+						<?php echo JHtml::_('searchtools.sort', 'JSTATUS', 'foo.published', $listDirection, $listOrder); ?>
 					</th>
 					<th class="left">
-						<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOO_FOO_TITLE', 'foos.title', $listDirection, $listOrder); ?>
+						<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOO_FOO_TITLE', 'foo.title', $listDirection, $listOrder); ?>
 					</th>
 				</tr>
 				</thead>
@@ -59,7 +59,7 @@ $loggedInUser  = Factory::getUser();
 				<tbody>
 				<?php
 				$canEdit   = $this->canDo->get('core.edit');
-				$canChange = $loggeduser->authorise('core.edit.state',	'com_foo');
+				$canChange = $loggedInUser->authorise('core.edit.state',	'com_foo');
 
 				foreach ($this->items as $i => $item) :
 					?>
@@ -77,7 +77,7 @@ $loggedInUser  = Factory::getUser();
 						<td>
 							<div class="name break-word">
 								<?php if ($canEdit) : ?>
-									<a href="<?php echo Route::_('index.php?option=com_foo&task=foo.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::sprintf('COM_FOOS_EDIT_FOO', $this->escape($item->name)); ?>">
+									<a href="<?php echo Route::_('index.php?option=com_foo&task=foo.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::sprintf('COM_FOOS_EDIT_FOO', $this->escape($item->title)); ?>">
 										<?php echo $this->escape($item->title); ?></a>
 								<?php else : ?>
 									<?php echo $this->escape($item->title); ?>
