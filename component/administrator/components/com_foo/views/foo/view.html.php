@@ -12,6 +12,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Form;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 use Joomla\CMS\MVC\View\HtmlView;
 use Joomla\Registry\Registry;
 
@@ -64,7 +65,7 @@ class FooViewFoo extends HtmlView
 	 */
 	public function display($tpl = null)
 	{
-		/** @var FooModelFoo $model */
+		/** @var FoosModelFoo $model */
 		$model       = $this->getModel();
 		$this->form  = $model->getForm();
 		$this->item  = $model->getItem();

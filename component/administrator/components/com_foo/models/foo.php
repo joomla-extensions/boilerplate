@@ -24,7 +24,7 @@ defined('_JEXEC') or die;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class FooModelFoo extends AdminModel
+class FoosModelFoo extends AdminModel
 {
 	/**
 	 * @var   string  The prefix to use with controller messages.

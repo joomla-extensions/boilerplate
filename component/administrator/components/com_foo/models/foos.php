@@ -62,7 +62,7 @@ class FooModelFoos extends ListModel
 	 *
 	 * @since   1.0.0
 	 */
-	protected function populateState($ordering = 'foos.title', $direction = 'ASC')
+	protected function populateState($ordering = 'items.title', $direction = 'ASC')
 	{
 		parent::populateState($ordering, $direction);
 	}

@@ -42,10 +42,10 @@ $loggedInUser  = Factory::getUser();
 						<?php echo HTMLHelper::_('grid.checkall'); ?>
 					</th>
 					<th width="1%" class="nowrap center">
-						<?php echo JHtml::_('searchtools.sort', 'JSTATUS', 'foo.published', $listDirection, $listOrder); ?>
+						<?php echo JHtml::_('searchtools.sort', 'JSTATUS', 'items.published', $listDirection, $listOrder); ?>
 					</th>
 					<th class="left">
-						<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOO_FOO_TITLE', 'foo.title', $listDirection, $listOrder); ?>
+						<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOO_FOO_TITLE', 'items.title', $listDirection, $listOrder); ?>
 					</th>
 				</tr>
 				</thead>
