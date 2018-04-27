@@ -20,4 +20,11 @@ defined('_JEXEC') or die;
  */
 class FooController extends BaseController
 {
+	/**
+	 * The default view for the display method.
+	 *
+	 * @var    string
+	 * @since  1.0.0
+	 */
+	protected $default_view = 'com_foo';
 }

@@ -131,7 +131,7 @@ class FooViewFoos extends HtmlView
 	 */
 	private function toolbar()
 	{
-		JToolBarHelper::title(Text::_('COM_COMPANIES_FOO'), '');
+		JToolBarHelper::title(Text::_('COM_FOO_FOO'), '');
 
 		if ($this->canDo->get('core.create'))
 		{
