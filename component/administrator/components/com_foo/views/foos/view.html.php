@@ -21,7 +21,7 @@ defined('_JEXEC') or die;
  * Foo view.
  *
  * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @since    1.0.0
  */
 class FooViewFoos extends HtmlView
 {
@@ -29,7 +29,7 @@ class FooViewFoos extends HtmlView
 	 * Array with profiles
 	 *
 	 * @var    array
-	 * @since  1.1.0
+	 * @since  1.1.0.0
 	 */
 	protected $items;
 
@@ -97,7 +97,7 @@ class FooViewFoos extends HtmlView
 	 * @return  mixed  A string if successful, otherwise a JError object.
 	 *
 	 * @see     fetch()
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function display($tpl = null)
 	{
@@ -127,7 +127,7 @@ class FooViewFoos extends HtmlView
 	 *
 	 * @return  void.
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	private function toolbar()
 	{

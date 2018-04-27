@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * Foos
  *
  * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @since    1.0.0
  */
 class FooModelFoos extends ListModel
 {

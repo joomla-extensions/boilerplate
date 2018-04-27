@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * Foo helper.
  *
  * @package     A package name
- * @since       1.0
+ * @since       1.0.0
  */
 class FooHelper
 {
@@ -27,7 +27,7 @@ class FooHelper
 	 *
 	 * @return  void.
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function addSubmenu($vName)
 	{

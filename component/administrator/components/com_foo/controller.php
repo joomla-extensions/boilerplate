@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * Foo Controller.
  *
  * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @since    1.0.0
  */
 class FooController extends BaseController
 {

@@ -22,7 +22,7 @@ defined('_JEXEC') or die;
  * Foo
  *
  * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @since    1.0.0
  */
 class FoosModelFoo extends AdminModel
 {
@@ -61,7 +61,7 @@ class FoosModelFoo extends AdminModel
 	 *
 	 * @throws  Exception
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	protected function loadFormData()
 	{
