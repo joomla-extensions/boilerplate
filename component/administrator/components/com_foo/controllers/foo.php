@@ -8,7 +8,7 @@
  * @link       [AUTHOR_URL]
  */
 
-use Joomla\CMS\MVC\Controller\AdminController;
+use Joomla\CMS\MVC\Controller\FormController;
 
 defined('_JEXEC') or die;
 
@@ -18,6 +18,6 @@ defined('_JEXEC') or die;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class FooControllerFoo extends AdminController
+class FooControllerFoo extends FormController
 {
 }

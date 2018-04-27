@@ -22,6 +22,8 @@ class Com_FooInstallerScript
 	 * Constructor
 	 *
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 *
+	 * @since   1.0.0
 	 */
 	public function __construct(JAdapterInstance $adapter) {}
 
@@ -32,6 +34,8 @@ class Com_FooInstallerScript
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
+	 *
+	 * @since   1.0.0
 	 */
 	public function preflight($route, JAdapterInstance $adapter) {}
 
@@ -42,6 +46,8 @@ class Com_FooInstallerScript
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
+	 *
+	 * @since   1.0.0
 	 */
 	public function postflight($route, JAdapterInstance $adapter) {}
 
@@ -51,6 +57,8 @@ class Com_FooInstallerScript
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
+	 *
+	 * @since   1.0.0
 	 */
 	public function install(JAdapterInstance $adapter) {}
 
@@ -60,6 +68,8 @@ class Com_FooInstallerScript
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
+	 *
+	 * @since   1.0.0
 	 */
 	public function update(JAdapterInstance $adapter) {}
 
@@ -67,6 +77,8 @@ class Com_FooInstallerScript
 	 * Called on uninstallation
 	 *
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 *
+	 * @since   1.0.0
 	 */
 	public function uninstall(JAdapterInstance $adapter) {}
 }
