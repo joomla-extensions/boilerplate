@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8.0" type="package" method="upgrade">
+    <packagename>joocial</packagename>
+    <packager>Extly, CB</packager>
+    <packagerurl>https://www.extly.com</packagerurl>
+
+    <name>Joocial 9</name>
+    <description><p>Joocial 9 - The future hub for content management systems.</p></description>
+
+  <version>9.0.0-beta1</version>
+  <creationDate>2018-04-23</creationDate>
+
+  <author>Extly.com</author>
+  <authorEmail>team@extly.com</authorEmail>
+  <authorUrl>https://www.extly.com</authorUrl>
+  <copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
+  <license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+
+    <!-- List of extensions to install -->
+    <files>
+        <!-- Component -->
+        <file type="component" id="com_joocial">component</file>
+
+        <!-- CLI scripts -->
+        <file type="file" id="joocial">file</file>
+
+        <!-- Modules -->
+        <file type="module" client="site" id="mod_joociallightrss">mod_joociallightrss</file>
+        <file type="module" client="site" id="mod_joocialtwfollow">mod_joocialtwfollow</file>
+        <file type="module" client="administrator" id="mod_joociallatest">mod_joociallatest</file>
+        <file type="module" client="administrator" id="mod_joocialmenu">mod_joocialmenu</file>
+
+        <!-- Plugins: joocial  -->
+        <!-- <file type="plugin" group="joocial" id="xxx">plg_joocial_v9.0.0-beta1.zip</file> -->
+
+        <!-- Plugins: content -->
+        <!-- <file type="plugin" group="content" id="xxx">plg_content_v9.0.0-beta1.zip</file> -->
+
+        <!-- Plugins: system -->
+        <file type="plugin" group="system" id="joocial">plg_system_joocial</file>
+
+        <!-- Plugins: user -->
+        <!-- <file type="plugin" group="user" id="xxx">plg_user_v9.0.0-beta1.zip</file> -->
+    </files>
+
+    <!-- Installation script -->
+    <scriptfile>script.joocial.php</scriptfile>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="Joocial 9">https://raw.githubusercontent.com/extly/joocial/master/update/pkg_joocial_updates.xml</server>
+    </updateservers>
+</extension>

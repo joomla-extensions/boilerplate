@@ -1,1 +1,56 @@
-.idea
+# Project management
+.vscode/
+.editorconfig
+.eslintrc.json
+.jsbeautifyrc
+.jshintrc
+.markdownlint.json
+jsconfig.json
+
+# Composer
+vendor/
+composer.lock
+
+# Node.js
+node_modules/
+
+# Cordova
+hooks/
+platforms/
+plugins/
+typings/
+
+# Build files
+build
+
+# Release directory
+release
+
+# Test configuration
+tests/config.php
+Tests/config.php
+
+# Version and manifest files
+component/*.xml
+modules/*/*/*.xml
+plugins/*/*/*.xml
+
+# Language files (symlinked)
+component/language/*
+modules/*/*/language/*
+plugins/*/*/language/*
+
+# Ionic
+.sourcemaps/
+tslint.json
+www/assets/*
+www/build/*
+
+# App for Joomla
+component/media/app/
+component/media/service/
+
+# Symfony
+var/
+
+# Symlinks
