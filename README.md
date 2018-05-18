@@ -2,6 +2,16 @@
 
 Boilerplate files for Joomla! extensions.
 
+## tl;dr
+
+```
+git clone ..anibalsanchez/extly-boilerplate-buildfiles-for-joomla.git
+npm install
+npm run build
+```
+
+That's it, you have a package with everything. To customize, delete what you ain't going to use from the `build` folder and the `root` folder.
+
 ## Installation
 
 This project provides the template files to create the structure of an installable extension for Joomla.
