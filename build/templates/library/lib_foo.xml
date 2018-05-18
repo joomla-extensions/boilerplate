@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension method="upgrade" type="library" version="1.0">
+  <name>[EXTENSION_NAME] Library</name>
+  <libraryname>[EXTENSION_ALIAS]</libraryname>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <description>
+    <![CDATA[
+[EXTENSION_DESC]
+  ]]>
+  </description>
+	<!-- <media destination="lib_[EXTENSION_ALIAS]" folder="media">
+		<folder>css</folder>
+		<folder>font</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media> -->
+  <files>
+    <folder>vendor</folder>
+    <filename>composer.json</filename>
+    <filename>lib_[EXTENSION_ALIAS].xml</filename>
+  </files>
+</extension>

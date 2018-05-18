@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="fields" method="upgrade">
+  <name>PLG_FIELDS_FOO</name>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <description>PLG_FIELDS_[TRANSLATION_KEY]_XML_DESCRIPTION</description>
+  <!-- Scripts to run on installation -->
+  <scriptfile></scriptfile>
+  <!-- Language files -->
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.plg_fields_[EXTENSION_ALIAS].ini</language>
+    <language tag="en-GB">en-GB/en-GB.plg_fields_[EXTENSION_ALIAS].sys.ini</language>
+  </languages>
+  <!-- Plugin files -->
+  <files>
+    <filename plugin="[EXTENSION_ALIAS]">[EXTENSION_ALIAS].php</filename>
+  </files>
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="[EXTENSION_NAME]">[EXTENSION_CDN]/update-plg_fields_[EXTENSION_ALIAS].xml</server>
+	</updateservers>
+</extension>

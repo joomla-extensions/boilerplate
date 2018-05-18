@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="system" method="upgrade">
+  <name>PLG_SYSTEM_FOO</name>
+  <version>1.0.0</version>
+  <creationDate>2018-05-18</creationDate>
+
+	<author>Extly, CB.</author>
+	<authorEmail>team@extly.com</authorEmail>
+	<authorUrl>https://www.extly.com</authorUrl>
+	<copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
+	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+  <description>PLG_SYSTEM_FOO_XML_DESCRIPTION</description>
+  <!-- Scripts to run on installation -->
+  <scriptfile></scriptfile>
+  <!-- Language files -->
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.plg_system_foo.ini</language>
+    <language tag="en-GB">en-GB/en-GB.plg_system_foo.sys.ini</language>
+  </languages>
+  <!-- Plugin files -->
+  <files>
+    <filename plugin="foo">foo.php</filename>
+  </files>
+  <!-- Update servers -->
+  <updateservers>
+    <server type="extension" priority="1" name="[EXTENSION_NAME]">https://cdn.extly.com/update-plg_system_foo.xml</server>
+  </updateservers>
+</extension>

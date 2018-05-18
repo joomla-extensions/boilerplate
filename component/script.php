@@ -1,13 +1,5 @@
 <?php
-/**
- * @package    Foo Name
- *
- * @author     Extly, CB. <team@extly.com>
- * @copyright  Copyright (c)2007-2018 Extly, CB. All rights reserved.
- * @license    GNU General Public License version 3 or later; see LICENSE.txt
- * @link       https://www.extly.com
- */
-
+// PHP_COPYRIGHT
 
 /**
  *  This program is free software: you can redistribute it and/or modify

@@ -1,0 +1,10 @@
+{
+    "require": {
+        "byjg/singleton-pattern": "^1.0",
+        "danielstjules/stringy": "^3.1",
+        "myclabs/php-enum": "^1.6",
+        "neitanod/forceutf8": "^2.0",
+        "symfony/stopwatch": "^4.0",
+        "symfony/yaml": "^4.0"
+    }
+}

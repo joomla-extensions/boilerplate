@@ -9,7 +9,7 @@
 
 var generationPlugins = [];
 
-var extensionTypes = ['package', 'component', 'modules', 'plugins', 'file', 'template'];
+var extensionTypes = ['package', 'component', 'modules', 'plugins', 'file', 'template', 'library'];
 
 const path = require('path');
 const ZipFilesPlugin = require('webpack-zip-files-plugin');
@@ -55,6 +55,8 @@ var tagTransformation = content => content
   .replace(/\[AUTHOR_EMAIL\]/g, definitions.AUTHOR_EMAIL)
   .replace(/\[AUTHOR_URL\]/g, definitions.AUTHOR_URL)
   .replace(/\[AUTHOR\]/g, definitions.AUTHOR)
+  .replace(/\[EXTENSION_CDN\]/g, definitions.EXTENSION_CDN)
+  .replace(/\[EXTENSION_CLASS_NAME\]/g, definitions.EXTENSION_CLASS_NAME)
   .replace(/\[EXTENSION_ALIAS\]/g, definitions.EXTENSION_ALIAS)
   .replace(/\[EXTENSION_DESC\]/g, definitions.EXTENSION_DESC)
   .replace(/\[EXTENSION_NAME\]/g, definitions.EXTENSION_NAME)
