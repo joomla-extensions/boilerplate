@@ -7,11 +7,15 @@
  *
  */
 
+// Array of Generation plugins
 var generationPlugins = [];
 
+// Extension directories to be visited
 var extensionTypes = ['package', 'component', 'modules', 'plugins', 'file', 'template', 'library'];
 
+// Required plugins
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const ZipFilesPlugin = require('webpack-zip-files-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const readDirRecursive = require('fs-readdir-recursive');
@@ -20,6 +24,7 @@ const fsExtra = require('fs-extra');
 const Dotenv = require('dotenv-webpack');
 const moment = require('moment');
 
+// Global constant definitions (.env)
 var definitions = {};
 
 var env = new Dotenv();
@@ -34,14 +39,20 @@ Object.keys(env.definitions).forEach((definition) => {
   definitions[key] = value;
 });
 
+// Other definitions
 var releaseDate = moment().format('YYYY-MM-DD');
 var year = moment().format('YYYY');
-
 var releaseDir = 'build/release';
 var releaseDirAbs = path.resolve(__dirname, releaseDir);
 fsExtra.removeSync(releaseDirAbs);
 fs.mkdirSync(releaseDirAbs);
 
+// Uglify Js
+// generationPlugins.push(new UglifyJsPlugin({
+//   include: /\/component\/media\/com_foo\/js\/script\.js/,
+// }));
+
+// Templates and Translations generation
 var tagTransformation = content => content
   .toString()
 
@@ -93,10 +104,7 @@ tplDirectories.forEach((tplDirectory) => {
 
 generationPlugins.push(new CopyWebpackPlugin(renderTemplates));
 
-/*
-  Zip generation
-*/
-
+// Zip generation
 tplDirectories = [extTemplates];
 var extensionTypesLevel1 = extensionTypes;
 var packageDir = extensionTypesLevel1.shift();
@@ -147,10 +155,7 @@ tplDirectories.forEach((tplDirectory) => {
   });
 });
 
-/*
-  Package generation
-*/
-
+// Package generation (if there is a package definition)
 var packageDirAbs = path.resolve(__dirname, packageDir);
 var packageMode = null;
 
@@ -199,10 +204,7 @@ if (packageMode) {
   console.log('Package definition not detected.');
 }
 
-/*
-  Webpack execution
-*/
-
+// Webpack execution
 module.exports = {
   entry: './.gitkeep',
   output: {

@@ -33,6 +33,7 @@
     "webpack-zip-files-plugin": "^1.0.0"
   },
   "dependencies": {
-    "dotenv-webpack": "^1.5.5"
+    "dotenv-webpack": "^1.5.5",
+    "uglifyjs-webpack-plugin": "^1.2.5"
   }
 }
