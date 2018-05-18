@@ -4,15 +4,15 @@ Boilerplate files for Joomla! extensions.
 
 ## Installation
 
-This project provides the boilerplates to create the structure of an installable extension for Joomla.
+This project provides the template files to create the structure of an installable extension for Joomla.
 
 To use it:
 
 - Copy all files into the target repository/ directory.
-- Remove what is not used
-- Add new files and directories following the sample organization
+- Remove what is not needed.
+- Add new files and directories following the sample organization.
 
-To create installable zip packages, the project must be initialized with [Webpack](https://webpack.js.org/) and the required plugins:
+To create installable the zip packages, the project must be initialized with [Webpack](https://webpack.js.org/) and the associated plugins:
 
   npm install
 
@@ -24,28 +24,19 @@ To build the extension:
 
 ## Customizing
 
-To customize the boilerplate using your own name you need to take the following steps:
+To customize the project using your own name you need to take the following steps:
 
 1; Modify **package.json** and **webpack.config.js** to match your repository:
-
-- name
-- version
-- description
-- repository
-- url
-- homepage
-
-2; Do a **case-sensitive** replace on the following strings and replace them with your own name:
-
-- foo
-- foo-alias
-- Foo
-- FOO
-- Foo Desc
+2; Copy the sample **.env.dist** to .env, and customize the constants.
 
 ## Build Templates
 
-In the build directory, the template files to generate manifest and language files are defined. They must be defined accordingly to generate the files for each extension.
+In the **build** directory, there are two folders that control the generation, and the release folder where the zip files of the extension are generated.
+
+- **Templates**, files where the constants are replaced
+- **Languages**, files where the constants are replaced
+
+They must be defined accordingly to generate the files for each extension to the associated destination folder.
 
 ## Copyright
 
