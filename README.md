@@ -6,7 +6,7 @@ Boilerplate files for Joomla! extensions.
 
 This project provides the template files to create the structure of an installable extension for Joomla.
 
-To use it:
+How To use it:
 
 - Copy all files into the target repository/ directory.
 - Remove what is not needed. If there is only one module folder, the build process will generate one module zip file. In the full sample project, the build process generates a package, with a component, a module, a template, a cli script, and a set of plugins; all the associated zip files and the complete package zip file.
@@ -14,13 +14,13 @@ To use it:
 
 To create installable the zip packages, the project must be initialized with [Webpack](https://webpack.js.org/) and the associated plugins:
 
-  npm install
+`npm install`
 
 ## Build task
 
 To build the extension:
 
-  npm run build
+`npm run build`
 
 ## Customizing
 
