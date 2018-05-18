@@ -52,5 +52,6 @@ component/media/service/
 
 # Symfony
 var/
+.env
 
 # Symlinks

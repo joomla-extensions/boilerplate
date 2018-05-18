@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="file" version="3.8.0" method="upgrade">
-	<name>file_joocial</name>
+	<name>file_foo</name>
 
-  <version>9.0.0-beta1</version>
-	<creationDate>2018-04-23</creationDate>
+  <version>1.0.0</version>
+	<creationDate>2018-05-18</creationDate>
 
-  <author>Extly.com</author>
-  <authorEmail>team@extly.com</authorEmail>
-  <authorUrl>https://www.extly.com</authorUrl>
-  <copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
-  <license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+	<author>Extly, CB.</author>
+	<authorEmail>team@extly.com</authorEmail>
+	<authorUrl>https://www.extly.com</authorUrl>
+	<copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
+	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
 
   <description><![CDATA[
-<p>Joocial 9 - The future hub for content management systems.</p>
-  ]]></description>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.
+]]></description>
 
   <!-- Fileset definition -->
   <fileset>
     <files target="cli">
-      <filename>joocial_cli.php</filename>
+      <filename>foo_cli.php</filename>
     </files>
   </fileset>
 

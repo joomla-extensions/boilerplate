@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.8.0" type="package" method="upgrade">
-    <packagename>joocial</packagename>
-    <packager>Extly, CB</packager>
+    <packagename>foo</packagename>
+    <packager>Extly, CB.</packager>
     <packagerurl>https://www.extly.com</packagerurl>
 
-    <name>Joocial 9</name>
-    <description><p>Joocial 9 - The future hub for content management systems.</p></description>
+    <name>Foo Name</name>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.</description>
 
-  <version>9.0.0-beta1</version>
-  <creationDate>2018-04-23</creationDate>
+  <version>##VERSION##</version>
+  <creationDate>2018-05-18</creationDate>
 
-  <author>Extly.com</author>
-  <authorEmail>team@extly.com</authorEmail>
-  <authorUrl>https://www.extly.com</authorUrl>
-  <copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
-  <license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+	<author>Extly, CB.</author>
+	<authorEmail>team@extly.com</authorEmail>
+	<authorUrl>https://www.extly.com</authorUrl>
+	<copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
+	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
 
     <!-- List of extensions to install -->
     <files>
         <!-- Component -->
-        <file type="component" id="com_joocial">component</file>
+        <file type="component" id="com_foo">component</file>
 
         <!-- CLI scripts -->
-        <file type="file" id="joocial">file</file>
+        <file type="file" id="foo">file</file>
 
         <!-- Modules -->
         <file type="module" client="site" id="mod_joociallightrss">mod_joociallightrss</file>
@@ -30,24 +30,24 @@
         <file type="module" client="administrator" id="mod_joociallatest">mod_joociallatest</file>
         <file type="module" client="administrator" id="mod_joocialmenu">mod_joocialmenu</file>
 
-        <!-- Plugins: joocial  -->
-        <!-- <file type="plugin" group="joocial" id="xxx">plg_joocial_v9.0.0-beta1.zip</file> -->
+        <!-- Plugins: foo  -->
+        <!-- <file type="plugin" group="foo" id="xxx">plg_foo_v##VERSION##.zip</file> -->
 
         <!-- Plugins: content -->
-        <!-- <file type="plugin" group="content" id="xxx">plg_content_v9.0.0-beta1.zip</file> -->
+        <!-- <file type="plugin" group="content" id="xxx">plg_content_v##VERSION##.zip</file> -->
 
         <!-- Plugins: system -->
-        <file type="plugin" group="system" id="joocial">plg_system_joocial</file>
+        <file type="plugin" group="system" id="foo">plg_system_foo</file>
 
         <!-- Plugins: user -->
-        <!-- <file type="plugin" group="user" id="xxx">plg_user_v9.0.0-beta1.zip</file> -->
+        <!-- <file type="plugin" group="user" id="xxx">plg_user_v##VERSION##.zip</file> -->
     </files>
 
     <!-- Installation script -->
-    <scriptfile>script.joocial.php</scriptfile>
+    <scriptfile>script.foo.php</scriptfile>
 
     <!-- Update servers -->
     <updateservers>
-        <server type="extension" priority="1" name="Joocial 9">https://raw.githubusercontent.com/extly/joocial/master/update/pkg_joocial_updates.xml</server>
+        <server type="extension" priority="1" name="Foo Name">https://raw.githubusercontent.com/extly/foo/master/update/pkg_foo_updates.xml</server>
     </updateservers>
 </extension>

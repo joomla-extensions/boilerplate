@@ -7,43 +7,6 @@
  *
  */
 
-var extensionName = 'Foo';
-var extensionDesc = 'Foo Desc';
-var releaseVersion = '1.0.0';
-var releaseExtensionAlias = 'foo-alias';
-
-var manifestAuthor = 'Extly, CB';
-
-var manifestAuthorUrl = 'https://www.extly.com';
-
-var manifestCopyright = `  <author>Extly.com</author>
-  <authorEmail>team@extly.com</authorEmail>
-  <authorUrl>https://www.extly.com</authorUrl>
-  <copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
-  <license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>`;
-
-var translationCopyright = `;
-; Extly, CB. <team@extly.com>
-; Copyright (c)2007-2018 Extly, CB. All rights reserved.
-; License GNU General Public License version 3 or later; see LICENSE.txt
-;`;
-
-var phpCopyright = `/**
- * @package    Extly.Apps
- *
- * @author     Extly, CB. <team@extly.com>
- * @copyright  Copyright (c)2007-2018 Extly, CB. All rights reserved.
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @link       https://www.extly.com
- */`;
-
-/* ----------------------------------------------------------------------------- */
-/* ----------------------------------------------------------------------------- */
-
-/*
-  Template rendering
-*/
-
 var generationPlugins = [];
 
 var extensionTypes = ['package', 'component', 'modules', 'plugins', 'file', 'template'];
@@ -54,10 +17,25 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const readDirRecursive = require('fs-readdir-recursive');
 const fs = require('fs');
 const fsExtra = require('fs-extra');
-
+const Dotenv = require('dotenv-webpack');
 const moment = require('moment');
 
+var definitions = {};
+
+var env = new Dotenv();
+Object.keys(env.definitions).forEach((definition) => {
+  var key = definition.replace('process.env.', '');
+  var value = env.definitions[definition];
+
+  value = value.replace(/^"(.+(?="$))"$/, '$1');
+  value = value.replace(/%CR%/g, '\n');
+  value = value.replace(/%TAB%/g, '\t');
+
+  definitions[key] = value;
+});
+
 var releaseDate = moment().format('YYYY-MM-DD');
+var year = moment().format('YYYY');
 
 var releaseDir = 'build/release';
 var releaseDirAbs = path.resolve(__dirname, releaseDir);
@@ -66,16 +44,27 @@ fs.mkdirSync(releaseDirAbs);
 
 var tagTransformation = content => content
   .toString()
-  .replace(/##MANIFEST_COPYRIGHT##/g, manifestCopyright)
-  .replace(/##PHP_COPYRIGHT##/g, phpCopyright)
-  .replace(/##TRANSLATION_COPYRIGHT##/g, translationCopyright)
-  .replace(/##EXTENSION_NAME##/g, extensionName)
-  .replace(/##EXTENSION_DESC##/g, extensionDesc)
-  .replace(/##EXTENSION_ALIAS##/g, releaseExtensionAlias)
-  .replace(/##AUTHOR##/g, manifestAuthor)
-  .replace(/##AUTHOR_URL##/g, manifestAuthorUrl)
-  .replace(/##VERSION##/g, releaseVersion)
-  .replace(/##DATE##/g, releaseDate);
+
+  .replace(/\[MANIFEST_COPYRIGHT\]/g, definitions.MANIFEST_COPYRIGHT)
+  .replace(/; \[TRANSLATION_COPYRIGHT\]/g, definitions.TRANSLATION_COPYRIGHT)
+  .replace('// [PHP_COPYRIGHT]', definitions.PHP_COPYRIGHT)
+  .replace('/* [CSS_COPYRIGHT] */', definitions.CSS_COPYRIGHT)
+  .replace('// [JS_COPYRIGHT]', definitions.JS_COPYRIGHT)
+  .replace(/\[COPYRIGHT\]/g, definitions.COPYRIGHT)
+
+  .replace(/\[AUTHOR_EMAIL\]/g, definitions.AUTHOR_EMAIL)
+  .replace(/\[AUTHOR_URL\]/g, definitions.AUTHOR_URL)
+  .replace(/\[AUTHOR\]/g, definitions.AUTHOR)
+  .replace(/\[EXTENSION_ALIAS\]/g, definitions.EXTENSION_ALIAS)
+  .replace(/\[EXTENSION_DESC\]/g, definitions.EXTENSION_DESC)
+  .replace(/\[EXTENSION_NAME\]/g, definitions.EXTENSION_NAME)
+  .replace(/\[LICENSE_CODE\]/g, definitions.LICENSE_CODE)
+  .replace(/\[LICENSE\]/g, definitions.LICENSE)
+  .replace(/\[RELEASE_VERSION\]/g, definitions.RELEASE_VERSION)
+  .replace(/\[TRANSLATION_KEY\]/g, definitions.TRANSLATION_KEY)
+
+  .replace(/\[DATE\]/g, releaseDate)
+  .replace(/\[YEAR\]/g, year);
 
 var renderTemplates = [];
 var extTemplates = 'build/templates';
@@ -131,12 +120,12 @@ tplDirectories.forEach((tplDirectory) => {
       var renamedExtElement = extElement;
 
       if (renamedExtElement === 'component') {
-        renamedExtElement = releaseExtensionAlias;
+        renamedExtElement = definitions.EXTENSION_ALIAS;
       } else if (renamedExtElement === 'file') {
         renamedExtElement = 'cli';
       }
 
-      var outputFile = path.resolve(__dirname, `${releaseDir}/${renamedExtElement}_v${releaseVersion}`);
+      var outputFile = path.resolve(__dirname, `${releaseDir}/${renamedExtElement}_v${definitions.RELEASE_VERSION}`);
       outputLevel1Files.push(srcDir);
 
       var zipFile = {
@@ -194,7 +183,7 @@ if (packageMode) {
     pkgEntries.push(item);
   });
 
-  var outputFile = path.resolve(__dirname, `${releaseDir}/pkg_${releaseExtensionAlias}_v${releaseVersion}`);
+  var outputFile = path.resolve(__dirname, `${releaseDir}/pkg_${definitions.EXTENSION_ALIAS}_v${definitions.RELEASE_VERSION}`);
 
   var zipFile = {
     entries: pkgEntries,
@@ -205,7 +194,7 @@ if (packageMode) {
   var itemZip = new ZipFilesPlugin(zipFile);
   generationPlugins.push(itemZip);
 } else {
-  console.log('NO PACKAGE');
+  console.log('Package definition not detected.');
 }
 
 /*
