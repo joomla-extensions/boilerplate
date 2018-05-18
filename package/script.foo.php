@@ -1,10 +1,15 @@
 <?php
 /**
- * @package      joocial
- * @copyright 	 Copyright (c)2007-2018 Extly, CB. All rights reserved.
- * @license      GNU GPLv3 <http://www.gnu.org/licenses/gpl.html> or later
- * @version      9
+ * @package    Foo Name
  *
+ * @author     Extly, CB. <team@extly.com>
+ * @copyright  Copyright (c)2007-2018 Extly, CB. All rights reserved.
+ * @license    GNU General Public License version 3 or later; see LICENSE.txt
+ * @link       https://www.extly.com
+ */
+
+
+/**
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -22,14 +27,14 @@
 // no direct access
 defined('_JEXEC') or die();
 
-class Pkg_JoocialInstallerScript
+class Pkg_fooInstallerScript
 {
 	/**
 	 * The name of our package, e.g. pkg_example. Used for dependency tracking.
 	 *
 	 * @var  string
 	 */
-	protected $packageName = 'pkg_joocial';
+	protected $packageName = 'pkg_foo';
 
 	/**
 	 * The minimum PHP version required to install this extension
@@ -59,7 +64,7 @@ class Pkg_JoocialInstallerScript
 	 * @var array
 	 */
 	protected $extensionsToEnable = [
-		// ['plugin', 'xxx', 1, 'joocial'],
+		// ['plugin', 'xxx', 1, 'foo'],
 	];
 
 	/**

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.8.0" method="upgrade">
-	<name>com_foo</name>
-
-  <version>[VERSION]</version>
-	<creationDate>2018-05-18</creationDate>
+  <name>com_foo</name>
+  <version>1.0.0</version>
+  <creationDate>2018-05-18</creationDate>
 
 	<author>Extly, CB.</author>
 	<authorEmail>team@extly.com</authorEmail>
@@ -11,81 +10,59 @@
 	<copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
 	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
 
-  <description><![CDATA[
+  <description>
+    <![CDATA[
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.
-  ]]></description>
-
-	<!-- Public front end files -->
-	<files folder="frontend">
+  ]]>
+  </description>
+  <!-- Public front end files -->
+  <files folder="frontend">
     <folder>views</folder>
-
-		<filename>foo.php</filename>
+    <filename>foo.php</filename>
     <filename>controller.php</filename>
-	</files>
-
-	<!-- Front end translation files -->
-	<languages folder="language/frontend">
-		<language tag="en-GB">en-GB/en-GB.com_foo.ini</language>
-	</languages>
-
-	<!-- Media files -->
-	<media destination="com_foo" folder="media/com_foo">
-		<folder>css</folder>
-		<folder>images</folder>
-		<folder>js</folder>
-	</media>
-
-	<!-- Administrator back-end section -->
-	<administration>
+  </files>
+  <!-- Front end translation files -->
+  <languages folder="language/frontend">
+    <language tag="en-GB">en-GB/en-GB.com_foo.ini</language>
+  </languages>
+  <!-- Media files -->
+  <media destination="com_foo" folder="media/com_foo">
+    <folder>css</folder>
+    <folder>images</folder>
+    <folder>js</folder>
+  </media>
+  <!-- Administrator back-end section -->
+  <administration>
     <!-- Administration menu -->
-		<menu view="app">COM_FOO_NAME</menu>
-		<!-- Back-end files -->
-		<files folder="backend">
-			<folder>helpers</folder>
-			<!-- <folder>sql</folder> -->
+    <menu view="app">COM_FOO_NAME</menu>
+    <!-- Back-end files -->
+    <files folder="backend">
+      <folder>helpers</folder>
+      <!-- <folder>sql</folder> -->
       <folder>views</folder>
-
-			<filename>foo.php</filename>
-			<filename>access.xml</filename>
-			<filename>config.xml</filename>
-			<filename>controller.php</filename>
-		</files>
-
-		<!-- Back-end translation files -->
-		<languages folder="language/backend">
-			<language tag="en-GB">en-GB/en-GB.com_foo.ini</language>
-			<language tag="en-GB">en-GB/en-GB.com_foo.sys.ini</language>
-			<language tag="es-ES">es-ES/es-ES.com_foo.ini</language>
-			<language tag="es-ES">es-ES/es-ES.com_foo.sys.ini</language>
-		</languages>
-	</administration>
-
-	<!-- SQL query files to execute on installation -->
-	<!-- <install>
-		<sql>
-			<file charset="utf8" driver="mysql">sql/install/mysql/install.sql</file>
-		</sql>
-	</install> -->
-
-	<!-- SQL query files to execute on uninstallation -->
-	<!-- <uninstall>
-		<sql>
-			<file charset="utf8" driver="mysql">sql/install/mysql/uninstall.sql</file>
-		</sql>
-	</uninstall> -->
-
-	<!-- SQL files to run on update -->
-	<!-- <update>
-		<schemas>
-			<schemapath charset="utf8" type="mysql">sql/updates/mysql</schemapath>
-		</schemas>
-	</update> -->
-
-	<!-- Installation / uninstallation script file -->
-	<scriptfile>script.com_foo.php</scriptfile>
-
-	<!-- Update servers -->
-	<updateservers>
-		<server type="extension" priority="1" name="Foo Name">http://cdn.extly.com/update-foo.xml</server>
-	</updateservers>
+      <filename>foo.php</filename>
+      <filename>access.xml</filename>
+      <filename>config.xml</filename>
+      <filename>controller.php</filename>
+    </files>
+    <!-- Back-end translation files -->
+    <languages folder="language/backend">
+      <language tag="en-GB">en-GB/en-GB.com_foo.ini</language>
+      <language tag="en-GB">en-GB/en-GB.com_foo.sys.ini</language>
+      <language tag="es-ES">es-ES/es-ES.com_foo.ini</language>
+      <language tag="es-ES">es-ES/es-ES.com_foo.sys.ini</language>
+    </languages>
+  </administration>
+  <!-- SQL query files to execute on installation -->
+  <!-- <install><sql><file charset="utf8" driver="mysql">sql/install/mysql/install.sql</file></sql></install> -->
+  <!-- SQL query files to execute on uninstallation -->
+  <!-- <uninstall><sql><file charset="utf8" driver="mysql">sql/install/mysql/uninstall.sql</file></sql></uninstall> -->
+  <!-- SQL files to run on update -->
+  <!-- <update><schemas><schemapath charset="utf8" type="mysql">sql/updates/mysql</schemapath></schemas></update> -->
+  <!-- Installation / uninstallation script file -->
+  <scriptfile>script.com_foo.php</scriptfile>
+  <!-- Update servers -->
+  <updateservers>
+    <server type="extension" priority="1" name="Foo Name">https://cdn.extly.com/update-foo.xml</server>
+  </updateservers>
 </extension>
