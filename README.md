@@ -9,7 +9,7 @@ This project provides the template files to create the structure of an installab
 To use it:
 
 - Copy all files into the target repository/ directory.
-- Remove what is not needed.
+- Remove what is not needed. If there is only one module folder, the build process will generate one module zip file. In the full sample project, the build process generates a package, with a component, a module, a template, a cli script, and a set of plugins; all the associated zip files and the complete package zip file.
 - Add new files and directories following the sample organization.
 
 To create installable the zip packages, the project must be initialized with [Webpack](https://webpack.js.org/) and the associated plugins:
