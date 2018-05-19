@@ -1,6 +1,8 @@
 # Extly Boilerplate Buildfiles for Joomla
 
-Boilerplate files for Joomla! extensions.
+Webpack-automated Boilerplate files for Joomla! extensions.
+
+[Webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. So, this is an implementation to build any Joomla extension in a package that includes: a component, modules, plugins, a CLI script and a template.
 
 ## tl;dr
 
