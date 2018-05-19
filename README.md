@@ -81,6 +81,10 @@ JS_COPYRIGHT="/*!%CR% * [EXTENSION_NAME]%CR% *%CR% * @license [LICENSE_CODE]%CR%
 CSS_COPYRIGHT="/*!%CR% * [EXTENSION_NAME]%CR% *%CR% * @license [LICENSE_CODE]%CR% * @version [RELEASE_VERSION]%CR% * @author  [AUTHOR], [AUTHOR_URL]%CR% * @updated [DATE]%CR% * @link    [AUTHOR_URL]%CR% *%CR% */%CR%"
 ```
 
+## Handy Bash Scripts
+
+The Webpack builds the extensions from templates and translations, based on the .env constants. However, the first time the project is created, there is a boring task of replacing Foo in every file of the project. To simplify the task, check the `build/replace_once.sh` and `build/replace_once_folder.sh` scripts, they replace the Foo string in most of the files for you ;-).
+
 ## Copyright
 
 - Copyright (c)2007-2018 Extly, CB. All rights reserved.
