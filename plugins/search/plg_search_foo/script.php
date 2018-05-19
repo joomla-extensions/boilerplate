@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    [EXTENSION_NAME]
  *
  * @author     Extly, CB <team@extly.com>
  * @copyright  Copyright (c)2007-2018 Extly, CB All rights reserved.

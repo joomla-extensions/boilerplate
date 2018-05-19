@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    [EXTENSION_NAME]
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -19,7 +19,7 @@ use Joomla\CMS\Session\Session;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
+ * @package  [EXTENSION_NAME]
  * @since    1.0
  */
 class PlgButtonFoo extends CMSPlugin

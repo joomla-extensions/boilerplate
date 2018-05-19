@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    [EXTENSION_NAME]
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -17,7 +17,7 @@ JLoader::register('FinderIndexerAdapter', JPATH_ADMINISTRATOR . '/components/com
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
+ * @package  [EXTENSION_NAME]
  * @since    1.0
  */
 class PlgFinderFoo extends FinderIndexerAdapter

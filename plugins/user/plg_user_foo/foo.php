@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    [EXTENSION_NAME]
  *
  * @author     Extly, CB <team@extly.com>
  * @copyright  Copyright (c)2007-2018 Extly, CB All rights reserved.
@@ -16,7 +16,7 @@ use Joomla\CMS\Plugin\CMSPlugin;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
+ * @package  [EXTENSION_NAME]
  * @since    1.0
  */
 class PlgUserFoo extends CMSPlugin
