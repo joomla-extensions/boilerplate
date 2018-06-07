@@ -2,7 +2,7 @@
 
 # A handy bash script to be execute only once on the extension-specific directories
 
-test -d build && build/replace_once_folder.sh build
+## test -d build && build/replace_once_folder.sh build
 
 test -d component && build/replace_once_folder.sh component
 test -d file && build/replace_once_folder.sh file
