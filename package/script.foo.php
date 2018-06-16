@@ -2,9 +2,9 @@
 /**
  * @package    Foo Name
  *
- * @author     Extly, CB <team@extly.com>
- * @copyright  Copyright (c)2007-2018 Extly, CB All rights reserved.
- * @license    GNU General Public License version 3 or later; see LICENSE.txt
+ * @author     Andrea Gentil - Anibal Sanchez <team@extly.com>
+ * @copyright  Copyright (c)2007-2018 Andrea Gentil - Anibal Sanchez All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       https://www.extly.com
  */
 
@@ -12,7 +12,7 @@
 /**
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
+ *  the Free Software Foundation, either version 2 of the License, or
  *  (at your option) any later version.
  *
  *  This program is distributed in the hope that it will be useful,
@@ -24,9 +24,20 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// no direct access
+// No direct access
 defined('_JEXEC') or die();
 
+use \Joomla\CMS\Application\ApplicationHelper as CMSAppHelper;
+use \Joomla\CMS\Factory as CMSFactory;
+use \Joomla\CMS\Log\Log as Log;
+use \Joomla\CMS\Cache\Cache as CMSCache;
+
+/**
+ * Foo InstallerScript.
+ *
+ * @package  Foo Name
+ * @since    1.0
+ */
 class Pkg_FooInstallerScript
 {
 	/**
@@ -63,9 +74,9 @@ class Pkg_FooInstallerScript
 	 *
 	 * @var array
 	 */
-	protected $extensionsToEnable = [
+	protected $extensionsToEnable = array(
 		// ['plugin', 'xxx', 1, 'foo'],
-	];
+	);
 
 	/**
 	 * =================================================================================================================
@@ -92,7 +103,7 @@ class Pkg_FooInstallerScript
 		if (!version_compare(PHP_VERSION, $this->minimumPHPVersion, 'ge'))
 		{
 			$msg = "<p>You need PHP $this->minimumPHPVersion or later to install this package</p>";
-			JLog::add($msg, JLog::WARNING, 'jerror');
+			Log::add($msg, Log::WARNING, 'jerror');
 
 			return false;
 		}
@@ -101,7 +112,7 @@ class Pkg_FooInstallerScript
 		if (!version_compare(JVERSION, $this->minimumJoomlaVersion, 'ge'))
 		{
 			$msg = "<p>You need Joomla! $this->minimumJoomlaVersion or later to install this component</p>";
-			JLog::add($msg, JLog::WARNING, 'jerror');
+			Log::add($msg, Log::WARNING, 'jerror');
 
 			return false;
 		}
@@ -110,7 +121,7 @@ class Pkg_FooInstallerScript
 		if (!version_compare(JVERSION, $this->maximumJoomlaVersion, 'le'))
 		{
 			$msg = "<p>You need Joomla! $this->maximumJoomlaVersion or earlier to install this component</p>";
-			JLog::add($msg, JLog::WARNING, 'jerror');
+			Log::add($msg, Log::WARNING, 'jerror');
 
 			return false;
 		}
@@ -125,6 +136,8 @@ class Pkg_FooInstallerScript
 	 *
 	 * @param   string                       $type   install, update or discover_update
 	 * @param   \JInstallerAdapterComponent  $parent Parent object
+	 *
+	 * @return  void
 	 */
 	public function postflight($type, $parent)
 	{
@@ -133,23 +146,22 @@ class Pkg_FooInstallerScript
 		 *
 		 * See bug report https://github.com/joomla/joomla-cms/issues/16147
 		 */
-		$conf = \JFactory::getConfig();
+		$conf = CMSFactory::getConfig();
 		$clearGroups = array('_system', 'com_modules', 'mod_menu', 'com_plugins', 'com_modules');
 		$cacheClients = array(0, 1);
 
 		foreach ($clearGroups as $group)
 		{
-			foreach ($cacheClients as $client_id)
+			foreach ($cacheClients as $clientId)
 			{
 				try
 				{
 					$options = array(
 						'defaultgroup' => $group,
-						'cachebase' => ($client_id) ? JPATH_ADMINISTRATOR . '/cache' : $conf->get('cache_path', JPATH_SITE . '/cache')
+						'cachebase' => ($clientId) ? JPATH_ADMINISTRATOR . '/cache' : $conf->get('cache_path', JPATH_SITE . '/cache')
 					);
 
-					/** @var JCache $cache */
-					$cache = \JCache::getInstance('callback', $options);
+					$cache = CMSCache::getInstance('callback', $options);
 					$cache->clean();
 				}
 				catch (Exception $exception)
@@ -160,7 +172,7 @@ class Pkg_FooInstallerScript
 				// Trigger the onContentCleanCache event.
 				try
 				{
-					JFactory::getApplication()->triggerEvent('onContentCleanCache', $options);
+					CMSFactory::getApplication()->triggerEvent('onContentCleanCache', $options);
 				}
 				catch (Exception $e)
 				{
@@ -175,7 +187,7 @@ class Pkg_FooInstallerScript
 	 *
 	 * @param   \JInstallerAdapterPackage  $parent  Parent object
 	 *
-	 * @return  bool
+	 * @return  boolean
 	 */
 	public function install($parent)
 	{
@@ -190,7 +202,7 @@ class Pkg_FooInstallerScript
 	 *
 	 * @param   \JInstallerAdapterPackage  $parent  Parent object
 	 *
-	 * @return  bool
+	 * @return  boolean
 	 */
 	public function uninstall($parent)
 	{
@@ -199,10 +211,12 @@ class Pkg_FooInstallerScript
 
 	/**
 	 * Enable modules and plugins after installing them
+	 *
+	 * @return  void
 	 */
 	private function enableExtensions()
 	{
-		$db = JFactory::getDbo();
+		$db = CMSFactory::getDbo();
 
 		foreach ($this->extensionsToEnable as $ext)
 		{
@@ -217,16 +231,18 @@ class Pkg_FooInstallerScript
 	 * @param   string   $name    The name of the extension (the element field).
 	 * @param   integer  $client  The application id (0: Joomla CMS site; 1: Joomla CMS administrator).
 	 * @param   string   $group   The extension group (for plugins).
+	 *
+	 * @return  void
 	 */
 	private function enableExtension($type, $name, $client = 1, $group = null)
 	{
-		$db = JFactory::getDbo();
+		$db = CMSFactory::getDbo();
 
 		$query = $db->getQuery(true)
-					->update('#__extensions')
-					->set($db->qn('enabled') . ' = ' . $db->q(1))
-		            ->where('type = ' . $db->quote($type))
-		            ->where('element = ' . $db->quote($name));
+			->update('#__extensions')
+			->set($db->qn('enabled') . ' = ' . $db->q(1))
+			->where('type = ' . $db->quote($type))
+			->where('element = ' . $db->quote($name));
 
 		switch ($type)
 		{
@@ -239,7 +255,7 @@ class Pkg_FooInstallerScript
 			case 'module':
 			case 'template':
 				// Languages, modules and templates have a client but not a folder
-				$client = JApplicationHelper::getClientInfo($client, true);
+				$client = CMSAppHelper::getClientInfo($client, true);
 				$query->where('client_id = ' . (int) $client->id);
 				break;
 

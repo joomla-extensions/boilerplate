@@ -4,9 +4,11 @@
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
- * @license    GNU General Public License version 3 or later; see LICENSE.txt
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       [AUTHOR_URL]
  */
+
+use Joomla\CMS\Installer\Adapter\PluginAdapter as CMSPluginAdapter;
 
 defined('_JEXEC') or die;
 
@@ -21,52 +23,72 @@ class PlgAuthenticationFooInstallerScript
 	/**
 	 * Constructor
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 */
-	public function __construct(JAdapterInstance $adapter) {}
+	public function __construct(CMSPluginAdapter $adapter)
+	{
+
+	}
 
 	/**
 	 * Called before any type of action
 	 *
-	 * @param   string  $route  Which action is happening (install|uninstall|discover_install|update)
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   string            $route    Which action is happening (install|uninstall|discover_install|update)
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function preflight($route, JAdapterInstance $adapter) {}
+	public function preflight($route, CMSPluginAdapter $adapter)
+	{
+		return true;
+	}
 
 	/**
 	 * Called after any type of action
 	 *
-	 * @param   string  $route  Which action is happening (install|uninstall|discover_install|update)
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   string            $route    Which action is happening (install|uninstall|discover_install|update)
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function postflight($route, JAdapterInstance $adapter) {}
+	public function postflight($route, CMSPluginAdapter $adapter)
+	{
+		return true;
+	}
 
 	/**
 	 * Called on installation
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function install(JAdapterInstance $adapter) {}
+	public function install(CMSPluginAdapter $adapter)
+	{
+		return true;
+	}
 
 	/**
 	 * Called on update
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function update(JAdapterInstance $adapter) {}
+	public function update(CMSPluginAdapter $adapter)
+	{
+		return true;
+	}
 
 	/**
 	 * Called on uninstallation
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
+	 *
+	 * @return  void
 	 */
-	public function uninstall(JAdapterInstance $adapter) {}
+	public function uninstall(CMSPluginAdapter $adapter)
+	{
+
+	}
 }

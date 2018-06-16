@@ -4,11 +4,7 @@
   <version>[RELEASE_VERSION]</version>
   <creationDate>[DATE]</creationDate>
 
-	<author>Extly, CB.</author>
-	<authorEmail>team@extly.com</authorEmail>
-	<authorUrl>https://www.extly.com</authorUrl>
-	<copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
-	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+[MANIFEST_COPYRIGHT]
 
   <description><![CDATA[
 [EXTENSION_DESC]

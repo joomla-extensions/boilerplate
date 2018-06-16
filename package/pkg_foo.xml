@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.8.0" type="package" method="upgrade">
   <packagename>foo</packagename>
-  <packager>Extly, CB</packager>
+  <packager>Andrea Gentil - Anibal Sanchez</packager>
   <packagerurl>https://www.extly.com</packagerurl>
   <name>Foo Name</name>
   <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.</description>
   <version>1.0.0</version>
-  <creationDate>2018-05-18</creationDate>
+  <creationDate>2018-06-16</creationDate>
 
-	<author>Extly, CB</author>
+	<author>Andrea Gentil - Anibal Sanchez</author>
 	<authorEmail>team@extly.com</authorEmail>
 	<authorUrl>https://www.extly.com</authorUrl>
-	<copyright>Copyright (c)2007-2018 Extly, CB All rights reserved.</copyright>
-	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+	<copyright>Copyright (c)2007-2018 Andrea Gentil - Anibal Sanchez All rights reserved.</copyright>
+	<license>GNU/GPLv2 www.gnu.org/licenses/gpl-2.0.html</license>
 
   <!-- List of extensions to install -->
   <files>

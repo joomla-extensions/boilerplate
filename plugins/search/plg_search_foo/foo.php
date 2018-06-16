@@ -1,10 +1,10 @@
 <?php
 /**
- * @package    [EXTENSION_NAME]
+ * @package    Foo Name
  *
- * @author     Extly, CB <team@extly.com>
- * @copyright  Copyright (c)2007-2018 Extly, CB All rights reserved.
- * @license    GNU General Public License version 3 or later; see LICENSE.txt
+ * @author     Andrea Gentil - Anibal Sanchez <team@extly.com>
+ * @copyright  Copyright (c)2007-2018 Andrea Gentil - Anibal Sanchez All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       https://www.extly.com
  */
 
@@ -17,7 +17,7 @@ use Joomla\Database\DatabaseDriver;
 /**
  * Foo plugin.
  *
- * @package  [EXTENSION_NAME]
+ * @package  Foo Name
  * @since    1.0
  */
 class PlgSearchFoo extends CMSPlugin

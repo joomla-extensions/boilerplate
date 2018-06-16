@@ -28,6 +28,10 @@ To create installable the zip packages, the project must be initialized with [We
 
 `npm install`
 
+### Requirements
+
+- Joomla 3.8, Joomla 4 or superior
+
 ## Build task
 
 To build the extension:
@@ -63,10 +67,10 @@ EXTENSION_CDN=https://cdn.extly.com
 
 RELEASE_VERSION=1.0.0
 
-LICENSE=GNU General Public License version 3 or later; see LICENSE.txt
-LICENSE_CODE=GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html
+LICENSE=GNU General Public License version 2 or later; see LICENSE.txt
+LICENSE_CODE=GNU/GPLv2 www.gnu.org/licenses/gpl-2.0.html
 
-AUTHOR=Extly, CB
+AUTHOR=Andrea Gentil - Anibal Sanchez
 AUTHOR_URL=https://www.extly.com
 AUTHOR_EMAIL=team@extly.com
 
@@ -85,7 +89,25 @@ CSS_COPYRIGHT="/*!%CR% * [EXTENSION_NAME]%CR% *%CR% * @license [LICENSE_CODE]%CR
 
 The Webpack builds the extensions from templates and translations, based on the .env constants. However, the first time the project is created, there is a boring task of replacing Foo in every file of the project. To simplify the task, check the `build/replace_once.sh` and `build/replace_once_folder.sh` scripts, they replace the Foo string in most of the files for you ;-).
 
+- `build/replace_once.sh`, to replace the Foo string in most of the files for you
+- `build/lib_*.sh`, to manage the library
+
+## Changelog
+
+### 2.0.0
+
+- Tested on Joomla 3.8 and 4
+- Joomla Codestyle review
+- License GPL v2 for Joomla Core compatibility
+- PHPUnit testing
+
+### 1.0.0
+
+- Initial version
+- Support of all extension types
+- Webpack generator
+
 ## Copyright
 
-- Copyright (c)2007-2018 Extly, CB. All rights reserved.
-- Distributed under the GNU General Public License version 3 or later
+- Copyright (c)2007-2018 Andrea Gentil - Anibal Sanchez. All rights reserved.
+- Distributed under the GNU General Public License version 2 or later

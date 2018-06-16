@@ -8,6 +8,8 @@
  * @link       [AUTHOR_URL]
  */
 
+use Joomla\CMS\Installer\Adapter\PluginAdapter as CMSPluginAdapter;
+
 defined('_JEXEC') or die;
 
 /**
@@ -21,52 +23,52 @@ class PlgFieldsFooInstallerScript
 	/**
 	 * Constructor
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 */
-	public function __construct(JAdapterInstance $adapter) {}
+	public function __construct(CMSPluginAdapter $adapter) {}
 
 	/**
 	 * Called before any type of action
 	 *
 	 * @param   string  $route  Which action is happening (install|uninstall|discover_install|update)
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function preflight($route, JAdapterInstance $adapter) {}
+	public function preflight($route, CMSPluginAdapter $adapter) {}
 
 	/**
 	 * Called after any type of action
 	 *
 	 * @param   string  $route  Which action is happening (install|uninstall|discover_install|update)
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function postflight($route, JAdapterInstance $adapter) {}
+	public function postflight($route, CMSPluginAdapter $adapter) {}
 
 	/**
 	 * Called on installation
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function install(JAdapterInstance $adapter) {}
+	public function install(CMSPluginAdapter $adapter) {}
 
 	/**
 	 * Called on update
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function update(JAdapterInstance $adapter) {}
+	public function update(CMSPluginAdapter $adapter) {}
 
 	/**
 	 * Called on uninstallation
 	 *
-	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
+	 * @param   CMSPluginAdapter  $adapter  The object responsible for running this script
 	 */
-	public function uninstall(JAdapterInstance $adapter) {}
+	public function uninstall(CMSPluginAdapter $adapter) {}
 }

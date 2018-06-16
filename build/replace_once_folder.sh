@@ -2,7 +2,7 @@
 
 # A handy bash script to be execute only once on the extension-specific directories
 
-EXTENSION_NAME="XTDir for Algolia"
+EXTENSION_NAME="XT Search for Algolia"
 EXTENSION_ALIAS="xtdir4alg"
 EXTENSION_CLASS_NAME="Xtdir4alg"
 TRANSLATION_KEY="XTDIR4ALG"
@@ -33,8 +33,8 @@ find $1 -name "*foo*" -type d -exec rename "s/foo/$EXTENSION_ALIAS/" {} \;
 find $1 -name "*foo*" -type f -exec rename "s/foo/$EXTENSION_ALIAS/" {} \;
 
 
-find $1 -type f -not -name "*.sh" -exec sed -i "s/\[AUTHOR\]/Andrea Gentil - Anibal Sanchez/g" {} \;
+find $1 -type f -not -name "*.sh" -exec sed -i "s/\[AUTHOR\]/Extly, CB/g" {} \;
 find $1 -type f -not -name "*.sh" -exec sed -i "s/\[AUTHOR_EMAIL\]/team@extly.com/g" {} \;
-find $1 -type f -not -name "*.sh" -exec sed -i "s/\[COPYRIGHT\]/Copyright (c)2018 Andrea Gentil - Anibal Sanchez All rights reserved./g" {} \;
+find $1 -type f -not -name "*.sh" -exec sed -i "s/\[COPYRIGHT\]/Copyright (c)2007-2018 Extly, CB All rights reserved./g" {} \;
 find $1 -type f -not -name "*.sh" -exec sed -i "s/\[LICENSE\]/GNU General Public License version 3 or later; see LICENSE.txt/g" {} \;
 find $1 -type f -not -name "*.sh" -exec sed -i "s/\[AUTHOR_URL\]/https\:\/\/www\.extly\.com/g" {} \;

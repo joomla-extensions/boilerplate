@@ -8,5 +8,4 @@
  * @link       [AUTHOR_URL]
  */
 
-
 defined('_JEXEC') or die;

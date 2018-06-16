@@ -1,10 +1,18 @@
 {
+    "name": "Foo Name Library",
+    "description": "Foo Name Library.",
     "require": {
-        "byjg/singleton-pattern": "^1.0",
+        "anibalsanchez/create-pattern": "^2.0",
         "danielstjules/stringy": "^3.1",
+        "dragonmantank/cron-expression": "^2.2",
+        "league/uri": "^4.0",
         "myclabs/php-enum": "^1.6",
         "neitanod/forceutf8": "^2.0",
+        "studiow/html": "^1.0",
         "symfony/stopwatch": "^4.0",
-        "symfony/yaml": "^4.0"
+        "symfony/yaml": "^4.0",
+        "php-http/curl-client": "^1.7",
+        "php-http/message": "^1.6",
+        "nesbot/carbon": "^1.30"
     }
 }

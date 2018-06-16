@@ -1,8 +1,8 @@
 /**
  * webpack.config.js
  *
- * @license   License GNU General Public License version 3 or later; see LICENSE.txt
- * @author    Extly, CB. <team@extly.com>
+ * @license   License GNU General Public License version 2 or later; see LICENSE.txt
+ * @author    Andrea Gentil - Anibal Sanchez <team@extly.com>
  * @copyright (c)2007-2018 Extly, CB. All rights reserved.
  *
  */

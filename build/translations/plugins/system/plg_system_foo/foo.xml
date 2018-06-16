@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="3.8" group="system" method="upgrade">
-  <name>PLG_SYSTEM_FOO</name>
-  <version>1.0.0</version>
-  <creationDate>2018-05-18</creationDate>
+  <name>plg_system_[EXTENSION_ALIAS]</name>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
 
-	<author>Extly, CB.</author>
-	<authorEmail>team@extly.com</authorEmail>
-	<authorUrl>https://www.extly.com</authorUrl>
-	<copyright>Copyright (c)2007-2018 Extly, CB. All rights reserved.</copyright>
-	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+[MANIFEST_COPYRIGHT]
+
   <description>PLG_SYSTEM_FOO_XML_DESCRIPTION</description>
   <!-- Scripts to run on installation -->
   <scriptfile></scriptfile>
