@@ -6,7 +6,7 @@
 
 [MANIFEST_COPYRIGHT]
 
-  <description>PLG_SYSTEM_FOO_XML_DESCRIPTION</description>
+  <description>PLG_SYSTEM_[TRANSLATION_KEY]_XML_DESCRIPTION</description>
   <!-- Scripts to run on installation -->
   <scriptfile></scriptfile>
   <!-- Language files -->
@@ -20,6 +20,6 @@
   </files>
   <!-- Update servers -->
   <updateservers>
-    <server type="extension" priority="1" name="[EXTENSION_NAME]">https://cdn.extly.com/update-plg_system_foo.xml</server>
+    <server type="extension" priority="1" name="[EXTENSION_NAME]">[EXTENSION_CDN]/update-plg_system_foo.xml</server>
   </updateservers>
 </extension>

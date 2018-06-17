@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="3.8" group="finder" method="upgrade">
-  <name>PLG_FINDER_FOO</name>
+  <name>PLG_FINDER_[TRANSLATION_KEY]</name>
   <version>[RELEASE_VERSION]</version>
   <creationDate>[DATE]</creationDate>
 

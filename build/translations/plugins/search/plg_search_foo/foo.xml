@@ -6,7 +6,7 @@
 
 [MANIFEST_COPYRIGHT]
 
-  <description>PLG_SEARCH_FOO_XML_DESCRIPTION</description>
+  <description>PLG_SEARCH_[TRANSLATION_KEY]_XML_DESCRIPTION</description>
   <!-- Scripts to run on installation -->
   <scriptfile>script.php</scriptfile>
   <!-- Language files -->
@@ -22,12 +22,12 @@
   <config>
     <fields name="params">
       <fieldset name="basic">
-        <field name="search_limit" type="number" label="PLG_SEARCH_FOO_SEARCHLIMIT_LABEL" description="PLG_SEARCH_FOO_SEARCHLIMIT_DESC" default="50" size="5" />
-        <field name="search_content" type="radio" label="PLG_SEARCH_FOO_ALL_LABEL" description="PLG_SEARCH_FOO_ALL_DESC" class="btn-group btn-group-yesno" default="0">
+        <field name="search_limit" type="number" label="PLG_SEARCH_[TRANSLATION_KEY]_SEARCHLIMIT_LABEL" description="PLG_SEARCH_[TRANSLATION_KEY]_SEARCHLIMIT_DESC" default="50" size="5" />
+        <field name="search_content" type="radio" label="PLG_SEARCH_[TRANSLATION_KEY]_ALL_LABEL" description="PLG_SEARCH_[TRANSLATION_KEY]_ALL_DESC" class="btn-group btn-group-yesno" default="0">
           <option value="1">JYES</option>
           <option value="0">JNO</option>
         </field>
-        <field name="search_archived" type="radio" label="PLG_SEARCH_FOO_ARCHIVED_LABEL" description="PLG_SEARCH_FOO_ARCHIVED_DESC" class="btn-group btn-group-yesno" default="0">
+        <field name="search_archived" type="radio" label="PLG_SEARCH_[TRANSLATION_KEY]_ARCHIVED_LABEL" description="PLG_SEARCH_[TRANSLATION_KEY]_ARCHIVED_DESC" class="btn-group btn-group-yesno" default="0">
           <option value="1">JYES</option>
           <option value="0">JNO</option>
         </field>
@@ -36,6 +36,6 @@
   </config>
 	<!-- Update servers -->
 	<updateservers>
-		<server type="extension" priority="1" name="[EXTENSION_NAME]">https://cdn.extly.com/update-plg_search_foo.xml</server>
+		<server type="extension" priority="1" name="[EXTENSION_NAME]">[EXTENSION_CDN]/update-plg_search_foo.xml</server>
 	</updateservers>
 </extension>

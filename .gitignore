@@ -6,12 +6,13 @@
 .jshintrc
 .markdownlint.json
 jsconfig.json
+.php_cs.dist
+.php_cs
 
 # Composer
+composer.phar
 vendor/
-library/vendor/
 composer.lock
-library/composer.lock
 
 # Node.js
 node_modules/
@@ -19,10 +20,14 @@ node_modules/
 # Cordova
 hooks/
 platforms/
+plugins/
 typings/
 
+# Build files
+build
+
 # Release directory
-build/release/*.zip
+release
 
 # Test configuration
 tests/config.php
@@ -30,21 +35,13 @@ Tests/config.php
 
 # Version and manifest files
 component/*.xml
-file/*.xml
-library/*.xml
 modules/*/*/*.xml
-package/*.xml
 plugins/*/*/*.xml
-template/*.xml
 
 # Language files (symlinked)
-component/**/*.ini
-file/**/*.ini
-library/**/*.ini
-modules/**/*.ini
-package/**/*.ini
-plugins/**/*.ini
-template/**/*.ini
+component/language/*
+modules/*/*/language/*
+plugins/*/*/language/*
 
 # Ionic
 .sourcemaps/
@@ -58,6 +55,5 @@ component/media/service/
 
 # Symfony
 var/
-.env
 
 # Symlinks

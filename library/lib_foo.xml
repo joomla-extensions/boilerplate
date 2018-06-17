@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension method="upgrade" type="library" version="1.0">
+  <name>Foo Name Library</name>
+  <libraryname>foo</libraryname>
+  <version>1.0.0</version>
+  <creationDate>2018-06-16</creationDate>
+
+	<author>Andrea Gentil - Anibal Sanchez</author>
+	<authorEmail>team@extly.com</authorEmail>
+	<authorUrl>https://www.extly.com</authorUrl>
+	<copyright>Copyright (c)2007-2018 Andrea Gentil - Anibal Sanchez All rights reserved.</copyright>
+	<license>GNU/GPLv2 www.gnu.org/licenses/gpl-2.0.html</license>
+
+  <description>
+    <![CDATA[
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.
+  ]]>
+  </description>
+	<!-- <media destination="lib_foo" folder="media">
+		<folder>css</folder>
+		<folder>font</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media> -->
+  <files>
+    <folder>vendor</folder>
+    <filename>composer.json</filename>
+    <filename>lib_foo.xml</filename>
+  </files>
+</extension>

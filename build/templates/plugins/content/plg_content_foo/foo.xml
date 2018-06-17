@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="3.8" group="content" method="upgrade">
-  <name>PLG_CONTENT_FOO</name>
+  <name>PLG_CONTENT_[TRANSLATION_KEY]</name>
   <version>[RELEASE_VERSION]</version>
   <creationDate>[DATE]</creationDate>
 
