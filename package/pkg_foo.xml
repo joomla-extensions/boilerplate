@@ -6,7 +6,7 @@
   <name>Foo Name</name>
   <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.</description>
   <version>1.0.0</version>
-  <creationDate>2018-06-16</creationDate>
+  <creationDate>2018-06-22</creationDate>
 
 	<author>Andrea Gentil - Anibal Sanchez</author>
 	<authorEmail>team@extly.com</authorEmail>
@@ -47,6 +47,6 @@
   <scriptfile>script.foo.php</scriptfile>
   <!-- Update servers -->
   <updateservers>
-    <server type="extension" priority="1" name="Foo Name">https://cdn.extly.com/update-pkg_foo.xml</server>
+    <server type="extension" priority="1" name="Foo Name">http://cdn.extly.com/update-pkg_foo.xml</server>
   </updateservers>
 </extension>

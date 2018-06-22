@@ -1,9 +1,5 @@
 # Extly Boilerplate Buildfiles for Joomla
 
-Webpack-automated Boilerplate files for Joomla! extensions.
-
-[Webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. So, this is an implementation to build any Joomla extension in a package that includes: a component, modules, plugins, a CLI script and a template.
-
 ## tl;dr
 
 ```
@@ -13,6 +9,41 @@ npm run build
 ```
 
 That's it, you have a package with everything. To customize, delete what you ain't going to use from the `build` folder and the `root` folder.
+
+## Objective
+
+This project has been created to standarize the creation of extensions for Joomla. It provides a quick way to initialize a project to create any kind of extension. According to my experience, this is the most common scenario:
+
+- NEW: A JavaScript App
+- A Component
+- CLI (file) scripts
+- A Library
+- Modules
+- Plugins
+- A Template
+- A Package, to distrute everything else.
+
+## Benefits
+
+**Standarization**: The main benefits comes to the standarization of the distribution of all extensions following the same organization.
+
+**Flexibility**: The project can be used to initialize any project, and customized simply deleting the folders that are not going to be used. The build script will package only what is found. For instance, if you want to distribute only a module, you can have only these directories to keep the main feature of the build process:
+
+- build/templates/modules/site/mod_foo
+- build/translations/template/language/en-GB
+- modules/site/mod_foo
+
+**Extension Manifests and Languages Separation**: The projects helps to organize the manifests and languages workflow separately from the primary extension source code.
+
+**NEW: JavaScript App management**: JavaScript Apps are not currently supported natively as extensions in Joomla. However, the workflow to develop them can be accomodated within a traditional extension structure. As a way to support them, I have introduced a new first-level folder "App", where it can be developed independently. At this time, the App is bundled with [Laravel Mix](https://laravel.com/docs/5.6/mix), that comes with a nice set of features to manage assets for a CMS. For instance, it can build Apps with:
+
+- JavaScript minification for production, hot and live builds, etc
+- Support of React, Preact, Babel, Vue, etc
+- It can also be extended with other Webpack plugins
+
+## Why Webpack-automated Boilerplate files for Joomla! extensions ?
+
+[Webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. So, this is an implementation to build any Joomla extension in a package that includes: a component, modules, plugins, a CLI script and a template.
 
 ## Installation
 
@@ -94,6 +125,11 @@ The Webpack builds the extensions from templates and translations, based on the 
 
 ## Changelog
 
+### 2.1.0
+
+- JavaScript App support
+- Laravel Mix
+
 ### 2.0.0
 
 - Tested on Joomla 3.8 and 4
@@ -106,6 +142,11 @@ The Webpack builds the extensions from templates and translations, based on the 
 - Initial version
 - Support of all extension types
 - Webpack generator
+
+## Acknowledgements
+
+- [joomla-extensions/boilerplate](https://github.com/joomla-extensions/boilerplate). *extly-boilerplate-buildfiles-for-joomla* project is an evolution of the original Joomla project (thanks @@roland-d!), extended to support all Joomla extension types and automation, keeping an eye on the additional complexity.
+- [akeeba/buildfiles](https://github.com/akeeba/buildfiles). Based on [Phing](https://www.phing.info/), *akeeba/buildfiles* has a similar approach to build extensions.
 
 ## Copyright
 

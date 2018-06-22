@@ -50,8 +50,11 @@ www/assets/*
 www/build/*
 
 # App for Joomla
-component/media/app/
-component/media/service/
+app/dist/
+app/etc/
+app/mix-manifest.json
+library/media/app/dist/
+library/media/service/
 
 # Symfony
 var/

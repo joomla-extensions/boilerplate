@@ -2,7 +2,7 @@
 <extension type="template" version="3.8" client="site" method="upgrade">
   <name>tpl_foo</name>
   <version>1.0.0</version>
-  <creationDate>2018-06-16</creationDate>
+  <creationDate>2018-06-22</creationDate>
 
 	<author>Andrea Gentil - Anibal Sanchez</author>
 	<authorEmail>team@extly.com</authorEmail>

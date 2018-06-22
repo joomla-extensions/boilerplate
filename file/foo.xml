@@ -2,7 +2,7 @@
 <extension type="file" version="3.8.0" method="upgrade">
 	<name>file_foo</name>
   <version>1.0.0</version>
-	<creationDate>2018-06-16</creationDate>
+	<creationDate>2018-06-22</creationDate>
 
 	<author>Andrea Gentil - Anibal Sanchez</author>
 	<authorEmail>team@extly.com</authorEmail>

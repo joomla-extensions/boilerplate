@@ -2,7 +2,7 @@
 <extension type="component" version="3.8.0" method="upgrade">
   <name>com_foo</name>
   <version>1.0.0</version>
-  <creationDate>2018-06-16</creationDate>
+  <creationDate>2018-06-22</creationDate>
 
 	<author>Andrea Gentil - Anibal Sanchez</author>
 	<authorEmail>team@extly.com</authorEmail>
@@ -63,6 +63,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dol
   <scriptfile>script.com_foo.php</scriptfile>
   <!-- Update servers -->
   <updateservers>
-    <server type="extension" priority="1" name="Foo Name">https://cdn.extly.com/update-foo.xml</server>
+    <server type="extension" priority="1" name="Foo Name">http://cdn.extly.com/update-foo.xml</server>
   </updateservers>
 </extension>

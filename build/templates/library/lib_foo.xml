@@ -12,12 +12,9 @@
 [EXTENSION_DESC]
   ]]>
   </description>
-	<!-- <media destination="lib_[EXTENSION_ALIAS]" folder="media">
-		<folder>css</folder>
-		<folder>font</folder>
-		<folder>images</folder>
-		<folder>js</folder>
-	</media> -->
+	<media destination="lib_[EXTENSION_ALIAS]" folder="media">
+		<folder>app</folder>
+	</media>
   <files>
     <folder>vendor</folder>
     <filename>composer.json</filename>
