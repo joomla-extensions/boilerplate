@@ -8,11 +8,11 @@ npm install
 npm run build
 ```
 
-That's it, you have a package with everything. To customize, delete what you ain't going to use from the `build` folder and the `root` folder.
+That's it; you have a package with everything. To customize, delete what you ain't going to use from the `build` folder and the `root` folder.
 
 ## Objective
 
-This project has been created to standarize the creation of extensions for Joomla. It provides a quick way to initialize a project to create any kind of extension. According to my experience, this is the most common scenario:
+This project has been created to standarize the creation of extensions for Joomla. It provides a quick way to initialize a project to create any type of extension. According to my experience, this is the most common scenario:
 
 - NEW: A JavaScript App
 - A Component
@@ -35,7 +35,7 @@ This project has been created to standarize the creation of extensions for Jooml
 
 **Extension Manifests and Languages Separation**: The projects helps to organize the manifests and languages workflow separately from the primary extension source code.
 
-**NEW: JavaScript App management**: JavaScript Apps are not currently supported natively as extensions in Joomla. However, the workflow to develop them can be accomodated within a traditional extension structure. As a way to support them, I have introduced a new first-level folder "App", where it can be developed independently. At this time, the App is bundled with [Laravel Mix](https://laravel.com/docs/5.6/mix), that comes with a nice set of features to manage assets for a CMS. For instance, it can build Apps with:
+**NEW: JavaScript App management**: JavaScript Apps are not currently supported natively as extensions in Joomla. However, the workflow to develop them can be accommodated within a traditional extension structure. As a way to support them, I have introduced a new first-level folder "App", where it can be developed independently. At this time, the App is bundled with [Laravel Mix](https://laravel.com/docs/5.6/mix), that comes with a rich set of features to manage assets for a CMS. For instance, it can build Apps with:
 
 - JavaScript minification for production, hot and live builds, etc
 - Support of React, Preact, Babel, Vue, etc
@@ -43,7 +43,7 @@ This project has been created to standarize the creation of extensions for Jooml
 
 ## Why Webpack-automated Boilerplate files for Joomla! extensions ?
 
-[Webpack](https://webpack.js.org/) is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. So, this is an implementation to build any Joomla extension in a package that includes: a component, modules, plugins, a CLI script and a template.
+[Webpack](https://webpack.js.org/) is a module bundler. Its primary purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, grouping, or packaging just about any resource or asset. So, this is an implementation to build any Joomla extension in a package that includes: a component, modules, plugins, a CLI script and a template.
 
 ## Installation
 
