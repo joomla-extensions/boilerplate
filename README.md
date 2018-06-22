@@ -21,7 +21,7 @@ This project has been created to standarize the creation of extensions for Jooml
 - Modules
 - Plugins
 - A Template
-- A Package, to distrute everything else.
+- A Package, to distrute everything.
 
 ## Benefits
 
