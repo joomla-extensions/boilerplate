@@ -145,7 +145,7 @@ The Webpack builds the extensions from templates and translations, based on the 
 
 ## Acknowledgements
 
-- [joomla-extensions/boilerplate](https://github.com/joomla-extensions/boilerplate). *extly-boilerplate-buildfiles-for-joomla* project is an evolution of the original Joomla project (thanks @@roland-d!), extended to support all Joomla extension types and automation, keeping an eye on the additional complexity.
+- [joomla-extensions/boilerplate](https://github.com/joomla-extensions/boilerplate). *extly-boilerplate-buildfiles-for-joomla* project is an evolution of the original Joomla project (thanks @roland-d!), extended to support all Joomla extension types and automation, keeping an eye on the additional complexity.
 - [akeeba/buildfiles](https://github.com/akeeba/buildfiles). Based on [Phing](https://www.phing.info/), *akeeba/buildfiles* has a similar approach to build extensions.
 
 ## Copyright
