@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8.0" type="package" method="upgrade">
+  <packagename>[EXTENSION_ALIAS]</packagename>
+  <packager>[AUTHOR]</packager>
+  <packagerurl>[AUTHOR_URL]</packagerurl>
+  <name>[EXTENSION_NAME]</name>
+  <description>[EXTENSION_DESC]</description>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <!-- List of extensions to install -->
+  <files>
+    <!-- Component -->
+    <file type="component" id="com_[EXTENSION_ALIAS]">component</file>
+
+    <!-- CLI scripts -->
+    <file type="file" id="[EXTENSION_ALIAS]">file</file>
+
+    <!-- Template -->
+    <file type="template" client="site" id="tpl_[EXTENSION_ALIAS]">template</file>
+
+    <!-- Modules -->
+    <file type="module" client="site" id="mod_[EXTENSION_ALIAS]">mod_[EXTENSION_ALIAS]</file>
+    <!-- <file type="module" client="administrator" id="mod_[EXTENSION_ALIAS]">mod_[EXTENSION_ALIAS]</file> -->
+
+    <!-- Library -->
+    <file type="library" id="lib_[EXTENSION_ALIAS]">library</file>
+
+    <!-- Plugins: [EXTENSION_ALIAS]  -->
+    <file type="plugin" group="authentication" id="[EXTENSION_ALIAS]">plg_authentication_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="behaviour" id="[EXTENSION_ALIAS]">plg_behaviour_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="content" id="[EXTENSION_ALIAS]">plg_content_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="editors-xtd" id="[EXTENSION_ALIAS]">plg_editors-xtd_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="fields" id="[EXTENSION_ALIAS]">plg_fields_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="finder" id="[EXTENSION_ALIAS]">plg_finder_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="search" id="[EXTENSION_ALIAS]">plg_search_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="system" id="[EXTENSION_ALIAS]">plg_system_[EXTENSION_ALIAS]</file>
+    <file type="plugin" group="user" id="[EXTENSION_ALIAS]">plg_user_[EXTENSION_ALIAS]</file>
+  </files>
+  <!-- Installation script -->
+  <scriptfile>script.[EXTENSION_ALIAS].php</scriptfile>
+  <!-- Update servers -->
+  <updateservers>
+    <server type="extension" priority="1" name="[EXTENSION_NAME]">[EXTENSION_CDN]/update-pkg_[EXTENSION_ALIAS].xml</server>
+  </updateservers>
+</extension>

@@ -1,59 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" version="3.8" client="site" method="upgrade">
-    <name>TPL_FOO</name>
-    <version>1.0</version>
-    <creationDate>[DATE]</creationDate>
-    <author>[AUTHOR]</author>
-    <authorEmail>[AUTHOR_EMAIL]</authorEmail>
-    <copyright>[COPYRIGHT]</copyright>
-    <description>TPL_FOO_XML_DESCRIPTION</description>
+  <name>tpl_foo</name>
+  <version>1.0.0</version>
+  <creationDate>2018-06-22</creationDate>
 
-    <files>
-        <filename>component.php</filename>
-        <filename>error.php</filename>
-        <filename>offline.php</filename>
-        <filename>index.php</filename>
-        <filename>templateDetails.xml</filename>
-        <filename>template_preview.png</filename>
-        <filename>template_thumbnail.png</filename>
-        <folder>css</folder>
-        <folder>html</folder>
-        <folder>images</folder>
-        <folder>js</folder>
-        <folder>language</folder>
-    </files>
+	<author>Andrea Gentil - Anibal Sanchez</author>
+	<authorEmail>team@extly.com</authorEmail>
+	<authorUrl>https://www.extly.com</authorUrl>
+	<copyright>Copyright (c)2007-2018 Andrea Gentil - Anibal Sanchez All rights reserved.</copyright>
+	<license>GNU/GPLv2 www.gnu.org/licenses/gpl-2.0.html</license>
 
-    <positions>
-        <position>banner</position>
-        <position>debug</position>
-        <position>position-0</position>
-        <position>position-1</position>
-        <position>position-2</position>
-        <position>position-3</position>
-        <position>position-4</position>
-        <position>position-5</position>
-        <position>position-6</position>
-        <position>position-7</position>
-        <position>position-8</position>
-        <position>position-9</position>
-        <position>position-10</position>
-        <position>position-11</position>
-        <position>position-12</position>
-        <position>position-13</position>
-        <position>position-14</position>
-        <position>footer</position>
-    </positions>
+  <description><![CDATA[
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus dolor at purus auctor, eget porta justo tempor. Vivamus finibus facilisis eros, at fringilla dolor dictum vitae.
+]]></description>
 
-    <config>
-        <fields name="params">
-            <fieldset name="advanced">
-                <field name="sitedescription"
-                       type="text"
-                       default=""
-                       label="JGLOBAL_DESCRIPTION"
-                       description="JGLOBAL_SUBHEADING_DESC"
-                       filter="string"/>
-            </fieldset>
-        </fields>
-    </config>
+  <files>
+    <filename>component.php</filename>
+    <filename>error.php</filename>
+    <filename>offline.php</filename>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+    <filename>template_preview.png</filename>
+    <filename>template_thumbnail.png</filename>
+    <folder>css</folder>
+    <folder>html</folder>
+    <folder>images</folder>
+    <folder>js</folder>
+  </files>
+  <positions>
+    <position>banner</position>
+    <position>debug</position>
+    <position>position-0</position>
+    <position>position-1</position>
+    <position>position-2</position>
+    <position>position-3</position>
+    <position>position-4</position>
+    <position>position-5</position>
+    <position>position-6</position>
+    <position>position-7</position>
+    <position>position-8</position>
+    <position>position-9</position>
+    <position>position-10</position>
+    <position>position-11</position>
+    <position>position-12</position>
+    <position>position-13</position>
+    <position>position-14</position>
+    <position>footer</position>
+  </positions>
+  <config>
+    <fields name="params">
+      <fieldset name="advanced">
+        <field name="sitedescription" type="text" default="" label="JGLOBAL_DESCRIPTION" description="JGLOBAL_SUBHEADING_DESC" filter="string"/>
+      </fieldset>
+    </fields>
+  </config>
 </extension>

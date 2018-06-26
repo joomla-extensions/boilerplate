@@ -1,10 +1,10 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    [EXTENSION_NAME]
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @license    [LICENSE]
  * @link       [AUTHOR_URL]
  */
 

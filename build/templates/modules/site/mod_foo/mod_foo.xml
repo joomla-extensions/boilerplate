@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+  <name>mod_[EXTENSION_ALIAS]</name>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <description>MOD_[TRANSLATION_KEY]_XML_DESCRIPTION</description>
+  <files>
+    <filename module="mod_[EXTENSION_ALIAS]">mod_[EXTENSION_ALIAS].php</filename>
+    <folder>tmpl</folder>
+    <filename>mod_[EXTENSION_ALIAS].xml</filename>
+  </files>
+  <languages>
+    <language tag="en-GB">language/en-GB/en-GB.mod_[EXTENSION_ALIAS].ini</language>
+    <language tag="en-GB">language/en-GB/en-GB.mod_[EXTENSION_ALIAS].sys.ini</language>
+  </languages>
+  <!-- Update servers -->
+  <updateservers>
+    <server type="extension" priority="1" name="[EXTENSION_NAME]">[EXTENSION_CDN]/update-mod_[EXTENSION_ALIAS].xml</server>
+  </updateservers>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="domain" type="url" label="MOD_[TRANSLATION_KEY]_URL_LABEL" description="MOD_[TRANSLATION_KEY]_URL_DESCRIPTION" hint="https://www.example.com" filter="url" validate="url" />
+      </fieldset>
+      <fieldset name="advanced">
+        <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+      </fieldset>
+    </fields>
+  </config>
+</extension>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="file" version="3.8.0" method="upgrade">
+	<name>file_[EXTENSION_ALIAS]</name>
+  <version>[RELEASE_VERSION]</version>
+	<creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <description><![CDATA[
+[EXTENSION_DESC]
+]]></description>
+
+  <!-- Fileset definition -->
+  <fileset>
+    <files target="cli">
+      <filename>[EXTENSION_ALIAS]_cli.php</filename>
+    </files>
+  </fileset>
+
+</extension>

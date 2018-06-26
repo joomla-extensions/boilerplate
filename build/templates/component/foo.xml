@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.8.0" method="upgrade">
+  <name>com_[EXTENSION_ALIAS]</name>
+  <version>[RELEASE_VERSION]</version>
+  <creationDate>[DATE]</creationDate>
+
+[MANIFEST_COPYRIGHT]
+
+  <description>
+    <![CDATA[
+[EXTENSION_DESC]
+  ]]>
+  </description>
+  <!-- Public front end files -->
+  <files folder="frontend">
+    <folder>views</folder>
+    <filename>[EXTENSION_ALIAS].php</filename>
+    <filename>controller.php</filename>
+  </files>
+  <!-- Front end translation files -->
+  <languages folder="language/frontend">
+    <language tag="en-GB">en-GB/en-GB.com_[EXTENSION_ALIAS].ini</language>
+  </languages>
+  <!-- Media files -->
+  <media destination="com_[EXTENSION_ALIAS]" folder="media/com_[EXTENSION_ALIAS]">
+    <folder>css</folder>
+    <folder>images</folder>
+    <folder>js</folder>
+  </media>
+  <!-- Administrator back-end section -->
+  <administration>
+    <!-- Administration menu -->
+    <menu view="app">COM_[TRANSLATION_KEY]_NAME</menu>
+    <!-- Back-end files -->
+    <files folder="backend">
+      <folder>helpers</folder>
+      <!-- <folder>sql</folder> -->
+      <folder>views</folder>
+      <filename>[EXTENSION_ALIAS].php</filename>
+      <filename>access.xml</filename>
+      <filename>config.xml</filename>
+      <filename>controller.php</filename>
+    </files>
+    <!-- Back-end translation files -->
+    <languages folder="language/backend">
+      <language tag="en-GB">en-GB/en-GB.com_[EXTENSION_ALIAS].ini</language>
+      <language tag="en-GB">en-GB/en-GB.com_[EXTENSION_ALIAS].sys.ini</language>
+      <language tag="es-ES">es-ES/es-ES.com_[EXTENSION_ALIAS].ini</language>
+      <language tag="es-ES">es-ES/es-ES.com_[EXTENSION_ALIAS].sys.ini</language>
+    </languages>
+  </administration>
+  <!-- SQL query files to execute on installation -->
+  <!-- <install><sql><file charset="utf8" driver="mysql">sql/install/mysql/install.sql</file></sql></install> -->
+  <!-- SQL query files to execute on uninstallation -->
+  <!-- <uninstall><sql><file charset="utf8" driver="mysql">sql/install/mysql/uninstall.sql</file></sql></uninstall> -->
+  <!-- SQL files to run on update -->
+  <!-- <update><schemas><schemapath charset="utf8" type="mysql">sql/updates/mysql</schemapath></schemas></update> -->
+  <!-- Installation / uninstallation script file -->
+  <scriptfile>script.com_[EXTENSION_ALIAS].php</scriptfile>
+  <!-- Update servers -->
+  <updateservers>
+    <server type="extension" priority="1" name="[EXTENSION_NAME]">[EXTENSION_CDN]/update-[EXTENSION_ALIAS].xml</server>
+  </updateservers>
+</extension>
