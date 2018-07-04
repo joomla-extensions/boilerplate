@@ -11,68 +11,50 @@
 defined('_JEXEC') or die;
 
 use \Joomla\CMS\Factory;
+use \Joomla\CMS\Language\Text;
 
-$app             = Factory::getApplication();
-$doc             = Factory::getDocument();
-$user            = Factory::getUser();
-$this->language  = $doc->language;
-$this->direction = $doc->direction;
+require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-// Output as HTML5
-$doc->setHtml5(true);
+tplFooHelper::loadCss();
+tplFooHelper::loadJs();
+tplFooHelper::setMetadata();
 
-// Getting params from template
-$params = $app->getTemplate(true)->params;
-
-// Detecting Active Variables
-$option   = $app->input->getCmd('option', '');
-$view     = $app->input->getCmd('view', '');
-$layout   = $app->input->getCmd('layout', '');
-$task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
-$sitename = $app->get('sitename');
-
-$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/template.js', array('version' => 'auto'));
-
-// Add Stylesheets
-$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css', array('version' => 'auto'));
-
-// Check for a custom CSS file
-$userCss = JPATH_SITE . '/templates/' . $this->template . '/css/user.css';
-
-if (file_exists($userCss) && filesize($userCss) > 0)
-{
-	$this->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/user.css', array('version' => 'auto'));
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<jdoc:include type="head" />
 </head>
-<body>
-<!-- Body -->
-<div class="body">
-	<a href="<?php echo $this->baseurl; ?>/">
-		<?php if ($this->params->get('sitedescription')) : ?>
-			<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
-		<?php endif; ?>
-	</a>
-	<jdoc:include type="modules" name="position-0" style="none" />
+<body class="<?php echo tplFooHelper::setBodySuffix(); ?>">
+<?php echo tplFooHelper::setAnalytics(0, 'your-analytics-id'); ?>
 
+<a href="#main" class="sr-only sr-only-focusable"><?php echo Text::_('TPL_FOO_SKIP_LINK_LABEL'); ?></a>
+
+<a href="<?php echo $this->baseurl; ?>/">
+    <?php if ($this->params->get('sitedescription')) : ?>
+        <?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
+    <?php endif; ?>
+</a>
+
+<nav role="navigation" >
+	<jdoc:include type="modules" name="position-0" style="none" />
+</nav>
+
+<main id="main">
 	<jdoc:include type="message" />
 	<jdoc:include type="component" />
+</main>
 
-	<?php if ($this->countModules('position-1')) : ?>
+<aside>
+    <?php if ($this->countModules('position-1')) : ?>
 		<jdoc:include type="modules" name="position-1" style="none" />
 	<?php endif; ?>
-</div>
-<!-- Footer -->
+</aside>
+
 <footer>
 	<jdoc:include type="modules" name="footer" style="none" />
 	<p>
-		&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+		&copy; <?php echo date('Y'); ?> <?php echo tplFooHelper::getSitename(); ?>
 	</p>
 </footer>
 <jdoc:include type="modules" name="debug" style="none" />
