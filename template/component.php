@@ -12,16 +12,12 @@ defined('_JEXEC') or die;
 
 use \Joomla\CMS\Factory;
 
-$app             = Factory::getApplication();
-$doc             = Factory::getDocument();
-$this->language  = $doc->language;
-$this->direction = $doc->direction;
+require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
 // Output as HTML5
 $doc->setHtml5(true);
 
-// Add Stylesheets
-$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css', array('version' => 'auto'));
+tplFooHelper::loadCss();
 
 ?>
 <!DOCTYPE html>
