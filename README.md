@@ -17,7 +17,7 @@ This project has been created to standarize the creation of extensions for Jooml
 - NEW: A JavaScript App
 - A Component
 - CLI (file) scripts
-- A Library
+- A Library, packing [Composer](https://getcomposer.org/) libraries
 - Modules
 - Plugins
 - A Template
