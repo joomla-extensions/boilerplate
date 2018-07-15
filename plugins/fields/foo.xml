@@ -7,7 +7,7 @@
 	<authorUrl>[AUTHOR_URL]</authorUrl>
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0</version>
+	<version>1.0.0</version>
 	<description>PLG_FIELDS_FOO_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->

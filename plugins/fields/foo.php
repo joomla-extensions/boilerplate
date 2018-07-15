@@ -18,7 +18,7 @@ JLoader::import('components.com_fields.libraries.fieldslistplugin', JPATH_ADMINI
  * Foo plugin.
  *
  * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @since    1.0.0
  */
 class plgFieldsFoo extends FieldsListPlugin
 {
@@ -26,7 +26,7 @@ class plgFieldsFoo extends FieldsListPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -34,7 +34,7 @@ class plgFieldsFoo extends FieldsListPlugin
 	 * Database object
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -42,7 +42,7 @@ class plgFieldsFoo extends FieldsListPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 
@@ -55,7 +55,7 @@ class plgFieldsFoo extends FieldsListPlugin
 	 *
 	 * @return  DOMElement
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function onCustomFieldsPrepareDom($field, DOMElement $parent, JForm $form)
 	{
@@ -72,7 +72,7 @@ class plgFieldsFoo extends FieldsListPlugin
 	 *
 	 * @return  boolean
 	 *
-	 * @since   3.7.0
+	 * @since   1.0.0
 	 */
 	public function onContentBeforeSave($context, $item, $isNew, $data = array())
 	{
