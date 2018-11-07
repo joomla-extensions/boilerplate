@@ -18,6 +18,7 @@ To customize the boilerplates using your own name you need to take the following
    * [PROJECT_NAME]
    * [AUTHOR]
    * [AUTHOR_EMAIL]
+   * [AUTHOR_URL]
    * [COPYRIGHT]
    * [PACKAGE_NAME]
    
