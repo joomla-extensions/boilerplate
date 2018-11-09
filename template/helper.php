@@ -1,6 +1,7 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    Joomla.Site
+ * @subpackage Template.foo
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -17,7 +18,9 @@ use \Joomla\CMS\Uri\Uri;
 /**
  * Foo template helper.
  *
- * @package  [PACKAGE_NAME]
+ * @package    Joomla.Site
+ * @subpackage Template.foo
+ * 
  * @since    1.0
  */
 class tplFooHelper
