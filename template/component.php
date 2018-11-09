@@ -14,10 +14,8 @@ use \Joomla\CMS\Factory;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-// Output as HTML5
-$doc->setHtml5(true);
-
 tplFooHelper::loadCss();
+tplFooHelper::setMetadata();
 
 ?>
 <!DOCTYPE html>
