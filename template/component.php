@@ -1,6 +1,7 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    Joomla.Site
+ * @subpackage Template.foo
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -14,10 +15,8 @@ use \Joomla\CMS\Factory;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-// Output as HTML5
-$doc->setHtml5(true);
-
 tplFooHelper::loadCss();
+tplFooHelper::setMetadata();
 
 ?>
 <!DOCTYPE html>

@@ -1,6 +1,7 @@
 <?php
 /**
- * @package    [PACKAGE_NAME]
+ * @package    Joomla.Site
+ * @subpackage Template.foo
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
