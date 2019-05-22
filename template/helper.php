@@ -20,8 +20,16 @@ use \Joomla\CMS\Uri\Uri;
  * @package  [PACKAGE_NAME]
  * @since    1.0
  */
-class tplFooHelper
+class TplFooHelper
 {
+	/**
+	 * Method to get Template
+	 *
+	 * @access public
+	 *
+	 * @return mixed
+	 * @throws Exception
+	 */
 	static public function template()
 	{
 		return Factory::getApplication()->getTemplate();
@@ -31,8 +39,6 @@ class tplFooHelper
 	 * Method to get current Page Option
 	 *
 	 * @access public
-	 *
-	 * @param null
 	 *
 	 * @return mixed
 	 * @since 1.0
@@ -48,8 +54,6 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
 	 * @return mixed
 	 * @since 1.0
 	 */
@@ -62,8 +66,6 @@ class tplFooHelper
 	 * Method to get current Page Layout
 	 *
 	 * @access public
-	 *
-	 * @param null
 	 *
 	 * @return mixed
 	 * @since version
@@ -78,8 +80,6 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
 	 * @return mixed
 	 * @since 1.0
 	 */
@@ -93,9 +93,7 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
-	 * @return int
+	 * @return integer
 	 * @since 1.0
 	 */
 	static public function getItemId()
@@ -122,9 +120,7 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
-	 * @return bool
+	 * @return boolean
 	 * @since  1.0
 	 */
 	static public function isHome()
@@ -141,7 +137,7 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param string $output Output type
+	 * @param   string $output Output type
 	 *
 	 * @return mixed
 	 * @since  1.0
@@ -150,6 +146,7 @@ class tplFooHelper
 	{
 		$path = Uri::getInstance()->getPath();
 		$path = preg_replace('/^\//', '', $path);
+
 		if ($output == 'array')
 		{
 			$path = explode('/', $path);
@@ -165,9 +162,7 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
-	 * @return bool
+	 * @return boolean
 	 * @since  1.0
 	 */
 	static public function setBodySuffix()
@@ -189,9 +184,9 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param string $generator
+	 * @param   string $generator Generator
 	 *
-	 * @return null
+	 * @return void
 	 *
 	 * @since  1.0
 	 */
@@ -205,8 +200,6 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
 	 * @return string
 	 * @since  1.0
 	 */
@@ -216,15 +209,13 @@ class tplFooHelper
 	}
 
 	/**
-     * Method to set some Meta data
-     *
+	 * Method to set some Meta data
+	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
-	 * @return null
+	 * @return void
 	 * @since  1.0
-    */
+	 */
 	static public function setMetadata()
 	{
 		$doc    = Factory::getDocument();
@@ -232,7 +223,7 @@ class tplFooHelper
 		$doc->setHtml5(true);
 		$doc->setMetaData('X-UA-Compatible', 'IE=edge', true);
 		$doc->setMetaData('viewport', 'width=device-width, initial-scale=1.0');
-		//self::setGenerator(self::getSitename());
+		self::setGenerator(self::getSitename());
 	}
 
 	/**
@@ -240,8 +231,8 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
+	 * @throws Exception
+	 * @return void
 	 * @since  1.0
 	 */
 	static public function loadCss()
@@ -262,8 +253,7 @@ class tplFooHelper
 	 *
 	 * @access public
 	 *
-	 * @param null
-	 *
+	 * @return void
 	 * @since  1.0
 	 */
 	static public function loadJs()
@@ -274,9 +264,8 @@ class tplFooHelper
 	/**
 	 * Method to set Analytics
 	 *
-	 * @param   int   $analytics  Number to indicate wich type of analytics to use
-	 * @param   array   $options      Array of extra options
-	 * @param   object  &$response    Authentication response object
+	 * @param   int $analyticsType  Number to indicate which type of analytics to use
+	 * @param   int $analyticsId    Google Analytics ID
 	 *
 	 * @return string
 	 * @since  1.0
