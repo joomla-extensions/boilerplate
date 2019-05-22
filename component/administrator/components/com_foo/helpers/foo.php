@@ -32,6 +32,6 @@ class FooHelper
 	 */
 	public function addSubmenu($vName)
 	{
-		HTML::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $submenu == 'foo');
+		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $submenu == 'foo');
 	}
 }
