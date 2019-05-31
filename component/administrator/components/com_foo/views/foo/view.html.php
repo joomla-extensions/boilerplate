@@ -11,6 +11,8 @@
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Toolbar\ToolbarHelper;
 
 defined('_JEXEC') or die;
 
@@ -56,7 +58,7 @@ class FooViewFoo extends HtmlView
 		// Show the sidebar
 		$this->helper = new FooHelper;
 		$this->helper->addSubmenu('foo');
-		$this->sidebar = JHtmlSidebar::render();
+		$this->sidebar = HTMLHelper::_('sidebar.render');
 
 		// Display it all
 		return parent::display($tpl);
@@ -71,12 +73,12 @@ class FooViewFoo extends HtmlView
 	 */
 	private function toolbar()
 	{
-		JToolBarHelper::title(Text::_('COM_FOO'), '');
+		ToolBarHelper::title(Text::_('COM_FOO'), '');
 
 		// Options button.
 		if (Factory::getUser()->authorise('core.admin', 'com_foo'))
 		{
-			JToolBarHelper::preferences('com_foo');
+			ToolBarHelper::preferences('com_foo');
 		}
 	}
 }

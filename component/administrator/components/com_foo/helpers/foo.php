@@ -9,6 +9,7 @@
  */
 
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\HTML\HTMLHelper;
 
 defined('_JEXEC') or die;
 
@@ -31,6 +32,6 @@ class FooHelper
 	 */
 	public function addSubmenu($vName)
 	{
-		JHtmlSidebar::addEntry(Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName == 'foo');
+		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName == 'foo');
 	}
 }
