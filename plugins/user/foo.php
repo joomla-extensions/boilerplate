@@ -16,8 +16,8 @@ use Joomla\CMS\Plugin\CMSPlugin;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgUserFoo extends CMSPlugin
 {
@@ -25,7 +25,7 @@ class plgUserFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -33,7 +33,7 @@ class plgUserFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -41,14 +41,14 @@ class plgUserFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 
 	/**
 	 * onUserAuthorisation.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -60,7 +60,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserAuthorisationFailure.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -72,7 +72,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserBeforeSave.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -84,7 +84,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserAfterSave.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -96,7 +96,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserBeforeDelete.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -108,7 +108,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserAfterDelete.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -120,7 +120,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserLogin.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -132,7 +132,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserLoginFailure.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -144,7 +144,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserAfterLogin.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -156,7 +156,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserLogout.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -168,7 +168,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserBeforeSaveGroup.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -180,7 +180,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserAfterSaveGroup.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -192,7 +192,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserBeforeDeleteGroup.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -204,7 +204,7 @@ class plgUserFoo extends CMSPlugin
 	/**
 	 * onUserAfterDeleteGroup.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */

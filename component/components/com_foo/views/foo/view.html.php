@@ -15,8 +15,8 @@ defined('_JEXEC') or die;
 /**
  * Foo view.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class FooViewFoo extends HtmlView
 {

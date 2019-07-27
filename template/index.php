@@ -11,8 +11,7 @@
 
 defined('_JEXEC') or die;
 
-use \Joomla\CMS\Factory;
-use \Joomla\CMS\Language\Text;
+use Joomla\CMS\Language\Text;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 

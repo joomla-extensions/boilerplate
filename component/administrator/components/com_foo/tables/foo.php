@@ -15,7 +15,8 @@ defined('_JEXEC') or die;
 /**
  * Foo table.
  *
- * @since       1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class TableFoo extends Table
 {
@@ -24,7 +25,7 @@ class TableFoo extends Table
 	 *
 	 * @param   JDatabaseDriver  $db  Database driver object.
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function __construct(JDatabaseDriver $db)
 	{

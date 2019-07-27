@@ -7,7 +7,7 @@
 	<authorUrl>[AUTHOR_URL]</authorUrl>
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0</version>
+	<version>1.0.0</version>
 	<description>PLG_BEHAVIOUR_FOO_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
@@ -15,8 +15,8 @@
 
 	<!-- Language files -->
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.plg_authentication_foo.ini</language>
-		<language tag="en-GB">en-GB/en-GB.plg_authentication_foo.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_behaviour_foo.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_behaviour_foo.sys.ini</language>
 	</languages>
 
 	<!-- Plugin files -->

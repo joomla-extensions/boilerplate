@@ -19,8 +19,8 @@ defined('_JEXEC') or die;
 /**
  * Foo view.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class FooViewFoo extends HtmlView
 {
@@ -28,7 +28,7 @@ class FooViewFoo extends HtmlView
 	 * Foo helper
 	 *
 	 * @var    FooHelper
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $helper;
 
@@ -36,7 +36,7 @@ class FooViewFoo extends HtmlView
 	 * The sidebar to show
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $sidebar = '';
 
@@ -48,7 +48,7 @@ class FooViewFoo extends HtmlView
 	 * @return  mixed  A string if successful, otherwise a JError object.
 	 *
 	 * @see     fetch()
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function display($tpl = null)
 	{
@@ -67,9 +67,9 @@ class FooViewFoo extends HtmlView
 	/**
 	 * Displays a toolbar for a specific page.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	private function toolbar()
 	{

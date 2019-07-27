@@ -17,8 +17,8 @@ use Joomla\Database\DatabaseDriver;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgContentFoo extends CMSPlugin
 {
@@ -26,7 +26,7 @@ class plgContentFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -34,7 +34,7 @@ class plgContentFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    DatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -42,7 +42,7 @@ class plgContentFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 
@@ -52,7 +52,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   string  $context  The context of the content passed to the plugin (added in 1.6).
 	 * @param   object  $article  A JTableContent object.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -67,7 +67,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   string  $context  The context of the content passed to the plugin (added in 1.6).
 	 * @param   object  $article  A JTableContent object.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -85,7 +85,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   mixed    &$params  The article params
 	 * @param   integer  $page     The 'page' number
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -103,7 +103,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   object   &$params  The article params
 	 * @param   integer  $page     The 'page' number
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -121,7 +121,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   object  $article  A JTableContent object.
 	 * @param   bool    $isNew    If the content is just about to be created.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -138,7 +138,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   object  $article  A JTableContent object
 	 * @param   bool    $isNew    If the content has just been created
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -156,7 +156,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   mixed    &$params  The article params
 	 * @param   integer  $page     The 'page' number
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -172,7 +172,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   array    $pks      A list of primary key ids of the content that has changed state.
 	 * @param   integer  $value    The value of the state that the content has been changed to.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -190,7 +190,7 @@ class plgContentFoo extends CMSPlugin
 	 * @param   mixed    &$params  The article params
 	 * @param   integer  $page     The 'page' number
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */

@@ -10,7 +10,8 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\Utilities\ArrayHelper;
+use Joomla\CMS\Application\CMSApplication;
+use Joomla\Database\DatabaseDriver;
 
 JLoader::register('PrivacyPlugin', JPATH_ADMINISTRATOR . '/components/com_privacy/helpers/plugin.php');
 JLoader::register('PrivacyRemovalStatus', JPATH_ADMINISTRATOR . '/components/com_privacy/helpers/removal/status.php');
@@ -18,8 +19,8 @@ JLoader::register('PrivacyRemovalStatus', JPATH_ADMINISTRATOR . '/components/com
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgPrivacyFoo extends PrivacyPlugin
 {
@@ -27,7 +28,7 @@ class plgPrivacyFoo extends PrivacyPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -35,7 +36,7 @@ class plgPrivacyFoo extends PrivacyPlugin
 	 * Database object
 	 *
 	 * @var    DatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -43,7 +44,7 @@ class plgPrivacyFoo extends PrivacyPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 
@@ -55,7 +56,7 @@ class plgPrivacyFoo extends PrivacyPlugin
 	 *
 	 * @return  PrivacyRemovalStatus
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function onPrivacyCanRemoveData(PrivacyTableRequest $request, JUser $user = null)
 	{
@@ -70,7 +71,7 @@ class plgPrivacyFoo extends PrivacyPlugin
 	 *
 	 * @return  PrivacyExportDomain[]
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function onPrivacyExportRequest(PrivacyTableRequest $request, JUser $user = null)
 	{
@@ -85,7 +86,7 @@ class plgPrivacyFoo extends PrivacyPlugin
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function onPrivacyRemoveData(PrivacyTableRequest $request, JUser $user = null)
 	{

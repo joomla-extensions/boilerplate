@@ -16,8 +16,8 @@ use Joomla\CMS\Plugin\CMSPlugin;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgSystemFoo extends CMSPlugin
 {
@@ -25,7 +25,7 @@ class plgSystemFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -33,7 +33,7 @@ class plgSystemFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -41,14 +41,14 @@ class plgSystemFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 
 	/**
 	 * onAfterInitialise.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -60,7 +60,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * onAfterRoute.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -72,7 +72,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * onAfterDispatch.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -84,7 +84,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * onAfterRender.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -97,7 +97,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * onAfterCompileHead.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -109,7 +109,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * OnAfterCompress.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */
@@ -121,7 +121,7 @@ class plgSystemFoo extends CMSPlugin
 	/**
 	 * onAfterRespond.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0
 	 */

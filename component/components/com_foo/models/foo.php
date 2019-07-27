@@ -15,8 +15,8 @@ defined('_JEXEC') or die;
 /**
  * Foo model.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class FooModelFoo extends BaseDatabaseModel
 {

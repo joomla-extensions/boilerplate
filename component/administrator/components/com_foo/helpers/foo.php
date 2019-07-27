@@ -16,8 +16,8 @@ defined('_JEXEC') or die;
 /**
  * Foo helper.
  *
- * @package     A package name
- * @since       1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class FooHelper
 {
@@ -26,12 +26,12 @@ class FooHelper
 	 *
 	 * @param   string  $vName  The name of the current view.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function addSubmenu($vName)
 	{
-		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName == 'foo');
+		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName === 'foo');
 	}
 }

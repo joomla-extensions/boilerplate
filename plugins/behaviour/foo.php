@@ -19,8 +19,8 @@ use Joomla\Event\DispatcherInterface;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgBehaviourFoo extends CMSPlugin
 {
@@ -28,7 +28,7 @@ class plgBehaviourFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -36,7 +36,7 @@ class plgBehaviourFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    DatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -44,7 +44,7 @@ class plgBehaviourFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 
@@ -56,7 +56,7 @@ class plgBehaviourFoo extends CMSPlugin
 	 *                                          Recognized key values include 'name', 'group', 'params', 'language'
 	 *                                          (this list is not meant to be comprehensive).
 	 *
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	public function __construct(&$subject, $config = array())
 	{

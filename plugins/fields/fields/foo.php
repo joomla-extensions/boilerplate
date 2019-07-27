@@ -15,8 +15,8 @@ JFormHelper::loadFieldClass('text');
 /**
  * Foo field plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0.0
  */
 class JFormFieldFoo extends JFormFieldText
 {

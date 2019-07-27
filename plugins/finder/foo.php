@@ -17,8 +17,8 @@ JLoader::register('FinderIndexerAdapter', JPATH_ADMINISTRATOR . '/components/com
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgFinderFoo extends FinderIndexerAdapter
 {
@@ -26,7 +26,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * The plugin identifier.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $context = 'Foo';
 
@@ -34,7 +34,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * The extension name.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $extension = 'com_foo';
 
@@ -42,7 +42,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * The sublayout to use when rendering the results.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $layout = 'foo';
 
@@ -50,7 +50,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * The type of content that the adapter indexes.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $type_title = 'Foo';
 
@@ -58,7 +58,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * The table name.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $table = '#__foo';
 
@@ -66,7 +66,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * Load the language file on instantiation.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 

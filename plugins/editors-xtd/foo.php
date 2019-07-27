@@ -19,8 +19,8 @@ use Joomla\CMS\Session\Session;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgButtonFoo extends CMSPlugin
 {
@@ -28,7 +28,7 @@ class plgButtonFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -36,7 +36,7 @@ class plgButtonFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -44,7 +44,7 @@ class plgButtonFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 

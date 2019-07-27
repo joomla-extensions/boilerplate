@@ -17,8 +17,8 @@ JLoader::import('components.com_fields.libraries.fieldslistplugin', JPATH_ADMINI
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgFieldsFoo extends FieldsListPlugin
 {

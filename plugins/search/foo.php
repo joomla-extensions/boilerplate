@@ -17,8 +17,8 @@ use Joomla\Database\DatabaseDriver;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgSearchFoo extends CMSPlugin
 {
@@ -26,7 +26,7 @@ class plgSearchFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -34,7 +34,7 @@ class plgSearchFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    DatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -42,7 +42,7 @@ class plgSearchFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 

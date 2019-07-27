@@ -16,8 +16,8 @@ use Joomla\CMS\Plugin\CMSPlugin;
 /**
  * Foo plugin.
  *
- * @package  [PACKAGE_NAME]
- * @since    1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgAuthenticationFoo extends CMSPlugin
 {
@@ -25,7 +25,7 @@ class plgAuthenticationFoo extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    CMSApplication
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $app;
 
@@ -33,7 +33,7 @@ class plgAuthenticationFoo extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    JDatabaseDriver
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $db;
 
@@ -41,7 +41,7 @@ class plgAuthenticationFoo extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
 

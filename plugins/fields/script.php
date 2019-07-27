@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 /**
  * Foo script file.
  *
- * @package     A package name
- * @since       1.0.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgFieldsFooInstallerScript
 {
@@ -23,7 +23,7 @@ class plgFieldsFooInstallerScript
 	 *
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
 	 *
-	 * @since       1.0.0
+	 * @since     1.0.0
 	 */
 	public function __construct(JAdapterInstance $adapter) {}
 
@@ -35,7 +35,7 @@ class plgFieldsFooInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 *
-	 * @since       1.0.0
+	 * @since     1.0.0
 	 */
 	public function preflight($route, JAdapterInstance $adapter) {}
 
@@ -47,7 +47,7 @@ class plgFieldsFooInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 *
-	 * @since       1.0.0
+	 * @since     1.0.0
 	 */
 	public function postflight($route, JAdapterInstance $adapter) {}
 
@@ -58,7 +58,7 @@ class plgFieldsFooInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 *
-	 * @since       1.0.0
+	 * @since     1.0.0
 	 */
 	public function install(JAdapterInstance $adapter) {}
 
@@ -69,7 +69,7 @@ class plgFieldsFooInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 *
-	 * @since       1.0.0
+	 * @since     1.0.0
 	 */
 	public function update(JAdapterInstance $adapter) {}
 
@@ -78,7 +78,7 @@ class plgFieldsFooInstallerScript
 	 *
 	 * @param   JAdapterInstance  $adapter  The object responsible for running this script
 	 *
-	 * @since       1.0.0
+	 * @since     1.0.0
 	 */
 	public function uninstall(JAdapterInstance $adapter) {}
 }

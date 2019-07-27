@@ -11,9 +11,9 @@
 
 defined('_JEXEC') or die;
 
-use \Joomla\CMS\Factory;
-use \Joomla\CMS\HTML\HTMLHelper;
-use \Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
 
 /**
  * Foo template helper.
@@ -21,7 +21,7 @@ use \Joomla\CMS\Uri\Uri;
  * @package    Joomla.Site
  * @subpackage Template.foo
  * 
- * @since    1.0
+ * @since   1.0.0
  */
 class TplFooHelper
 {

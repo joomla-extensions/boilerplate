@@ -11,8 +11,6 @@
 
 defined('_JEXEC') or die;
 
-use \Joomla\CMS\Factory;
-
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
 tplFooHelper::loadCss();

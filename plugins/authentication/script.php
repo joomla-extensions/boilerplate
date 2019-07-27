@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 /**
  * Foo script file.
  *
- * @package     A package name
- * @since       1.0
+ * @package   [PACKAGE_NAME]
+ * @since     1.0.0
  */
 class plgAuthenticationFooInstallerScript
 {
