@@ -44,9 +44,6 @@
 		<folder>models</folder>
 		<folder>views</folder>
 	</files>
-	<languages folder="components/com_foo">
-		<language tag="en-GB">language/en-GB/en-GB.com_foo.ini</language>
-	</languages>
 
 	<!-- Back-end files -->
 	<administration>
@@ -75,10 +72,6 @@
 			<folder>tables</folder>
 			<folder>views</folder>
 		</files>
-		<languages folder="administrator/components/com_foo/language">
-        		<language tag="en-GB">en-GB/en-GB.com_foo.ini</language>
-                	<language tag="en-GB">en-GB/en-GB.com_foo.sys.ini</language>
-		</languages>
 	</administration>
 
 	<!-- Update servers -->
