@@ -42,7 +42,7 @@ $loggedInUser  = Factory::getUser();
 						<?php echo HTMLHelper::_('grid.checkall'); ?>
 					</th>
 					<th width="1%" class="nowrap center">
-						<?php echo JHtml::_('searchtools.sort', 'JSTATUS', 'items.published', $listDirection, $listOrder); ?>
+						<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'items.published', $listDirection, $listOrder); ?>
 					</th>
 					<th class="left">
 						<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOO_FOO_TITLE', 'items.title', $listDirection, $listOrder); ?>
@@ -71,7 +71,7 @@ $loggedInUser  = Factory::getUser();
 						</td>
 						<td class="center">
 							<div class="btn-group">
-								<?php echo JHtml::_('jgrid.published', $item->published, $i, 'foos.', $canChange); ?>
+								<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'foos.', $canChange); ?>
 							</div>
 						</td>
 						<td>

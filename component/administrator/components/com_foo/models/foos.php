@@ -94,7 +94,15 @@ class FooModelFoos extends ListModel
 
 		if ($search)
 		{
-			$query->where($db->quoteName('items.title') . ' LIKE ' . $db->quote('%' . $search . '%'));
+			if (stripos($search, ':') !== false)
+			{
+				$itemId = substr($search, 3);
+				$query->where($db->quoteName('items.id') . ' = ' . (int) $itemId);
+			}
+			else
+			{
+				$query->where($db->quoteName('items.title') . ' LIKE ' . $db->quote('%' . $search . '%'));
+			}
 		}
 
 		$published = $this->getState('filter.published');
