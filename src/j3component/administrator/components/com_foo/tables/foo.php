@@ -8,15 +8,14 @@
  * @link       [AUTHOR_URL]
  */
 
-use Joomla\CMS\Table\Table;
-
 defined('_JEXEC') or die;
+
+use Joomla\CMS\Table\Table;
 
 /**
  * Foo table.
  *
- * @package   [PACKAGE_NAME]
- * @since     1.0.0
+ * @since  1.0.0
  */
 class TableFoo extends Table
 {
@@ -29,6 +28,6 @@ class TableFoo extends Table
 	 */
 	public function __construct(JDatabaseDriver $db)
 	{
-		parent::__construct('#__foo_items', 'item_id', $db);
+		parent::__construct('#__foo_items', 'id', $db);
 	}
 }

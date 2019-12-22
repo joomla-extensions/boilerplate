@@ -9,36 +9,45 @@
  */
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Form\Form;
+use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView;
-use Joomla\CMS\Toolbar\ToolbarHelper;
+use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
 
 /**
  * Foo view.
  *
- * @package   [PACKAGE_NAME]
- * @since     1.0.0
+ * @package  [PACKAGE_NAME]
+ * @since    1.0.0
  */
 class FooViewFoo extends HtmlView
 {
 	/**
-	 * Foo helper
+	 * Form with settings
 	 *
-	 * @var    FooHelper
+	 * @var    Form
 	 * @since  1.0.0
 	 */
-	protected $helper;
+	protected $form;
 
 	/**
-	 * The sidebar to show
+	 * The item object
 	 *
-	 * @var    string
+	 * @var    object
 	 * @since  1.0.0
 	 */
-	protected $sidebar = '';
+	protected $item;
+
+	/**
+	 * The model state
+	 *
+	 * @var    Registry
+	 * @since  1.0.0
+	 */
+	protected $state;
 
 	/**
 	 * Execute and display a template script.
@@ -48,17 +57,21 @@ class FooViewFoo extends HtmlView
 	 * @return  mixed  A string if successful, otherwise a JError object.
 	 *
 	 * @see     fetch()
+	 *
+	 * @throws  Exception
+	 *
 	 * @since   1.0.0
 	 */
 	public function display($tpl = null)
 	{
+		/** @var FoosModelFoo $model */
+		$model       = $this->getModel();
+		$this->form  = $model->getForm();
+		$this->item  = $model->getItem();
+		$this->state = $model->getState();
+
 		// Show the toolbar
 		$this->toolbar();
-
-		// Show the sidebar
-		$this->helper = new FooHelper;
-		$this->helper->addSubmenu('foo');
-		$this->sidebar = HTMLHelper::_('sidebar.render');
 
 		// Display it all
 		return parent::display($tpl);
@@ -69,16 +82,44 @@ class FooViewFoo extends HtmlView
 	 *
 	 * @return  void
 	 *
+	 * @throws  Exception
+	 *
 	 * @since   1.0.0
 	 */
 	private function toolbar()
 	{
-		ToolBarHelper::title(Text::_('COM_FOO'), '');
+		Factory::getApplication()->input->set('hidemainmenu', true);
 
-		// Options button.
-		if (Factory::getUser()->authorise('core.admin', 'com_foo'))
+		$canDo = ContentHelper::getActions('com_foo');
+		$isNew = ($this->item->id == 0);
+
+		JToolBarHelper::title(Text::_('COM_FOO_TITLE_FOO'));
+
+		// If not checked out, can save the item.
+		if ($canDo->get('core.edit') || ($canDo->get('core.create')))
 		{
-			ToolBarHelper::preferences('com_foo');
+			JToolBarHelper::apply('foo.apply', 'JTOOLBAR_APPLY');
+			JToolBarHelper::save('foo.save', 'JTOOLBAR_SAVE');
+		}
+
+		if ($canDo->get('core.create'))
+		{
+			JToolBarHelper::custom('foo.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
+		}
+
+		// If an existing item, can save to a copy.
+		if (!$isNew && $canDo->get('core.create'))
+		{
+			JToolBarHelper::custom('foo.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
+		}
+
+		if (empty($this->item->id))
+		{
+			JToolBarHelper::cancel('foo.cancel', 'JTOOLBAR_CANCEL');
+		}
+		else
+		{
+			JToolBarHelper::cancel('foo.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}
 }

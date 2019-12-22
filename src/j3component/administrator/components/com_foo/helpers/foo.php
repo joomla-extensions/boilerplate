@@ -8,16 +8,16 @@
  * @link       [AUTHOR_URL]
  */
 
+defined('_JEXEC') or die;
+
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
-
-defined('_JEXEC') or die;
 
 /**
  * Foo helper.
  *
- * @package   [PACKAGE_NAME]
- * @since     1.0.0
+ * @package  [PACKAGE_NAME]
+ * @since    1.0.0
  */
 class FooHelper
 {
@@ -32,6 +32,6 @@ class FooHelper
 	 */
 	public function addSubmenu($vName)
 	{
-		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foo', $vName === 'foo');
+		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foos', $vName === 'foos');
 	}
 }
