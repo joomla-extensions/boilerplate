@@ -1,0 +1,17 @@
+<updates>
+    <update>
+        <name>Foo</name>
+        <description>This is com_foo 1.0.1</description>
+        <element>com_foo</element>
+        <type>component</type>
+        <version>1.0.1</version>
+        <downloads>
+            <downloadurl type="full" format="zip">http://www.example.com/com_foo_101.zip</downloadurl>
+        </downloads>
+        <maintainer>Foo Creator</maintainer>
+        <maintainerurl>http://www.example.com</maintainerurl>
+        <targetplatform name="joomla" version="4.0"/>
+        <client>site</client>
+		<php_minimum>7.1</php_minimum>
+    </update>
+</updates>
