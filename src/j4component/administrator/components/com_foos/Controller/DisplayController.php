@@ -1,20 +1,20 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Controller;
+namespace Joomla\Component\Joomlathings\Administrator\Controller;
 
 defined('_JEXEC') or die;
 
 use Joomla\CMS\MVC\Controller\BaseController;
 
 /**
- * Foos master display controller.
+ * Joomlathings master display controller.
  *
  * @since  1.0.0
  */
@@ -26,7 +26,7 @@ class DisplayController extends BaseController
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $default_view = 'foos';
+	protected $default_view = 'joomlathings';
 
 	/**
 	 * Method to display a view.

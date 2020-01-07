@@ -13,11 +13,11 @@ use Joomla\CMS\MVC\Controller\BaseController;
 defined('_JEXEC') or die;
 
 /**
- * Foo controller.
+ * Joomlathing controller.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooControllerFoo extends BaseController
+class JoomlathingControllerJoomlathing extends BaseController
 {
 }

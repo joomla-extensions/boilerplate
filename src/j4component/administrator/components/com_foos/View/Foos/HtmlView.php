@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\View\Foos;
+namespace Joomla\Component\Joomlathings\Administrator\View\Joomlathings;
 
 defined('_JEXEC') or die;
 
@@ -18,10 +18,10 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\CMS\Toolbar\Toolbar;
 use Joomla\CMS\Toolbar\ToolbarHelper;
-use Joomla\Component\Foos\Administrator\Helper\FooHelper;
+use Joomla\Component\Joomlathings\Administrator\Helper\JoomlathingHelper;
 
 /**
- * View class for a list of foos.
+ * View class for a list of joomlathings.
  *
  * @since  1.0.0
  */
@@ -103,7 +103,7 @@ class HtmlView extends BaseHtmlView
 		// We don't need toolbar in the modal window.
 		if ($this->getLayout() !== 'modal')
 		{
-			FooHelper::addSubmenu('foos');
+			JoomlathingHelper::addSubmenu('joomlathings');
 			$this->addToolbar();
 			$this->sidebar = \JHtmlSidebar::render();
 		}
@@ -137,17 +137,17 @@ class HtmlView extends BaseHtmlView
 	 */
 	protected function addToolbar()
 	{
-		$canDo = ContentHelper::getActions('com_foos', 'category', $this->state->get('filter.category_id'));
+		$canDo = ContentHelper::getActions('com_joomlathings', 'category', $this->state->get('filter.category_id'));
 		$user  = Factory::getUser();
 
 		// Get the toolbar object instance
 		$toolbar = Toolbar::getInstance('toolbar');
 
-		ToolbarHelper::title(Text::_('COM_FOOS_MANAGER_FOOS'), 'address foo');
+		ToolbarHelper::title(Text::_('COM_JOOMLATHINGS_MANAGER_JOOMLATHINGS'), 'address joomlathing');
 
-		if ($canDo->get('core.create') || count($user->getAuthorisedCategories('com_foos', 'core.create')) > 0)
+		if ($canDo->get('core.create') || count($user->getAuthorisedCategories('com_joomlathings', 'core.create')) > 0)
 		{
-			$toolbar->addNew('foo.add');
+			$toolbar->addNew('joomlathing.add');
 		}
 
 		if ($canDo->get('core.edit.state'))
@@ -161,20 +161,20 @@ class HtmlView extends BaseHtmlView
 
 			$childBar = $dropdown->getChildToolbar();
 
-			$childBar->publish('foos.publish')->listCheck(true);
+			$childBar->publish('joomlathings.publish')->listCheck(true);
 
-			$childBar->unpublish('foos.unpublish')->listCheck(true);
+			$childBar->unpublish('joomlathings.unpublish')->listCheck(true);
 
-			$childBar->archive('foos.archive')->listCheck(true);
+			$childBar->archive('joomlathings.archive')->listCheck(true);
 
 			if ($user->authorise('core.admin'))
 			{
-				$childBar->checkin('foos.checkin')->listCheck(true);
+				$childBar->checkin('joomlathings.checkin')->listCheck(true);
 			}
 
 			if ($this->state->get('filter.published') != -2)
 			{
-				$childBar->trash('foos.trash')->listCheck(true);
+				$childBar->trash('joomlathings.trash')->listCheck(true);
 			}
 		}
 
@@ -185,21 +185,21 @@ class HtmlView extends BaseHtmlView
 
 		if ($this->state->get('filter.published') == -2 && $canDo->get('core.delete'))
 		{
-			$toolbar->delete('foos.delete')
+			$toolbar->delete('joomlathings.delete')
 				->text('JTOOLBAR_EMPTY_TRASH')
 				->message('JGLOBAL_CONFIRM_DELETE')
 				->listCheck(true);
 		}
 
-		if ($user->authorise('core.admin', 'com_foos') || $user->authorise('core.options', 'com_foos'))
+		if ($user->authorise('core.admin', 'com_joomlathings') || $user->authorise('core.options', 'com_joomlathings'))
 		{
-			$toolbar->preferences('com_foos');
+			$toolbar->preferences('com_joomlathings');
 		}
 
 		ToolbarHelper::divider();
 		ToolbarHelper::help('', false, 'http://joomla.org');
 
-		HTMLHelper::_('sidebar.setAction', 'index.php?option=com_foos');
+		HTMLHelper::_('sidebar.setAction', 'index.php?option=com_joomlathings');
 	}
 
 	/**

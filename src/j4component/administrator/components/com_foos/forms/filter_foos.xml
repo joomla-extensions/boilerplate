@@ -6,8 +6,8 @@
 		<field
 			name="search"
 			type="text"
-			label="COM_FOOS_FILTER_SEARCH_LABEL"
-			description="COM_FOOS_FILTER_SEARCH_DESC"
+			label="COM_JOOMLATHINGS_FILTER_SEARCH_LABEL"
+			description="COM_JOOMLATHINGS_FILTER_SEARCH_DESC"
 			hint="JSEARCH_FILTER"
 		/>
 
@@ -24,7 +24,7 @@
 			name="category_id"
 			type="category"
 			label="JOPTION_SELECT_CATEGORY"
-			extension="com_foos"
+			extension="com_joomlathings"
 			published="0,1,2"
 			onchange="this.form.submit();"
 			>

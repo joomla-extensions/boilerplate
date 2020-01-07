@@ -2,13 +2,13 @@
 
 /**
  * @package     Joomla.Site
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Site\Model;
+namespace Joomla\Component\Joomlathings\Site\Model;
 
 defined('_JEXEC') or die;
 
@@ -17,11 +17,11 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 
 /**
- * Foo model for the Joomla Foos component.
+ * Joomlathing model for the Joomla Joomlathings component.
  *
  * @since  1.0.0
  */
-class FooModel extends BaseDatabaseModel
+class JoomlathingModel extends BaseDatabaseModel
 {
 	/**
 	 * @var string item
@@ -29,9 +29,9 @@ class FooModel extends BaseDatabaseModel
 	protected $_item = null;
 
 	/**
-	 * Gets a foo
+	 * Gets a joomlathing
 	 *
-	 * @param   integer  $pk  Id for the foo
+	 * @param   integer  $pk  Id for the joomlathing
 	 *
 	 * @return  mixed Object or null
 	 *
@@ -55,7 +55,7 @@ class FooModel extends BaseDatabaseModel
 				$query = $db->getQuery(true);
 
 				$query->select('*')
-					->from($db->quoteName('#__foos_details', 'a'))
+					->from($db->quoteName('#__joomlathings_details', 'a'))
 					->where('a.id = ' . (int) $pk);
 
 				$db->setQuery($query);
@@ -63,7 +63,7 @@ class FooModel extends BaseDatabaseModel
 
 				if (empty($data))
 				{
-					throw new \Exception(Text::_('COM_FOOS_ERROR_FOO_NOT_FOUND'), 404);
+					throw new \Exception(Text::_('COM_JOOMLATHINGS_ERROR_JOOMLATHING_NOT_FOUND'), 404);
 				}
 
 				$this->_item[$pk] = $data;
@@ -91,7 +91,7 @@ class FooModel extends BaseDatabaseModel
 	{
 		$app = Factory::getApplication();
 
-		$this->setState('foo.id', $app->input->getInt('id'));
+		$this->setState('joomlathing.id', $app->input->getInt('id'));
 		$this->setState('params', $app->getParams());
 	}
 }

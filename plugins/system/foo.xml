@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="3.8" group="system" method="upgrade">
-	<name>PLG_SYSTEM_FOO</name>
+	<name>PLG_SYSTEM_JOOMLATHING</name>
 	<creationDate>[DATE]</creationDate>
 	<author>[AUTHOR]</author>
 	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
@@ -8,20 +8,20 @@
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.0</version>
-	<description>PLG_SYSTEM_FOO_XML_DESCRIPTION</description>
+	<description>PLG_SYSTEM_JOOMLATHING_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
 	<scriptfile></scriptfile>
 
 	<!-- Language files -->
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.plg_system_foo.ini</language>
-		<language tag="en-GB">en-GB/en-GB.plg_system_foo.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_joomlathing.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_joomlathing.sys.ini</language>
 	</languages>
 
 	<!-- Plugin files -->
 	<files>
-		<filename plugin="foo">foo.php</filename>
+		<filename plugin="joomlathing">joomlathing.php</filename>
 		<folder>language</folder>
 	</files>
 
@@ -33,8 +33,8 @@
 					name="sample"
 					type="text"
 					default="42"
-					label="PLG_SYSTEM_FOO_SAMPLE_LABEL"
-					description="PLG_SYSTEM_FOO_SAMPLE_DESCRIPTION"
+					label="PLG_SYSTEM_JOOMLATHING_SAMPLE_LABEL"
+					description="PLG_SYSTEM_JOOMLATHING_SAMPLE_DESCRIPTION"
 				/>
 			</fieldset>
 		</fields>
@@ -42,6 +42,6 @@
 
 	<!-- Update servers -->
 	<updateservers>
-		<server type="extension" priority="1" name="[PROJECT_NAME]">https://www.example.com/plg_foo.xml</server>
+		<server type="extension" priority="1" name="[PROJECT_NAME]">https://www.example.com/plg_joomlathing.xml</server>
 	</updateservers>
 </extension>

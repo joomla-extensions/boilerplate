@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<access component="com_foos">
+<access component="com_joomlathings">
 	<section name="component">
 		<action name="core.admin" title="JACTION_ADMIN" />
 		<action name="core.options" title="JACTION_OPTIONS" />

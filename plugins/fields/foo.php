@@ -15,12 +15,12 @@ use Joomla\CMS\Application\CMSApplication;
 JLoader::import('components.com_fields.libraries.fieldslistplugin', JPATH_ADMINISTRATOR);
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgFieldsFoo extends FieldsListPlugin
+class plgFieldsJoomlathing extends FieldsListPlugin
 {
 	/**
 	 * Application object

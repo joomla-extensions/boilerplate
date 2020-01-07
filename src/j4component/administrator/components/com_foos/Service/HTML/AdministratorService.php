@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Service\HTML;
+namespace Joomla\Component\Joomlathings\Administrator\Service\HTML;
 
 defined('JPATH_BASE') or die;
 
@@ -18,7 +18,7 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 
 /**
- * Foo HTML class.
+ * Joomlathing HTML class.
  *
  * @since  1.0.0
  */
@@ -27,35 +27,35 @@ class AdministratorService
 	/**
 	 * Get the associated language flags
 	 *
-	 * @param   integer  $fooid  The item id to search associations
+	 * @param   integer  $joomlathingid  The item id to search associations
 	 *
 	 * @return  string  The language HTML
 	 *
 	 * @throws  Exception
 	 */
-	public function association($fooid)
+	public function association($joomlathingid)
 	{
 		// Defaults
 		$html = '';
 
 		// Get the associations
-		if ($associations = Associations::getAssociations('com_foos', '#__foos_details', 'com_foos.item', $fooid, 'id', null))
+		if ($associations = Associations::getAssociations('com_joomlathings', '#__joomlathings_details', 'com_joomlathings.item', $joomlathingid, 'id', null))
 		{
 			foreach ($associations as $tag => $associated)
 			{
 				$associations[$tag] = (int) $associated->id;
 			}
 
-			// Get the associated foo items
+			// Get the associated joomlathing items
 			$db = Factory::getDbo();
 			$query = $db->getQuery(true)
 				->select('c.id, c.name as title')
 				->select('l.sef as lang_sef, lang_code')
-				->from('#__foos_details as c')
+				->from('#__joomlathings_details as c')
 				->select('cat.title as category_title')
 				->join('LEFT', '#__categories as cat ON cat.id=c.catid')
 				->where('c.id IN (' . implode(',', array_values($associations)) . ')')
-				->where('c.id != ' . $fooid)
+				->where('c.id != ' . $joomlathingid)
 				->join('LEFT', '#__languages as l ON c.language=l.lang_code')
 				->select('l.image')
 				->select('l.title as language_title');

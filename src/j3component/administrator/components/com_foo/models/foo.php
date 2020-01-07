@@ -19,19 +19,19 @@ use Joomla\String\StringHelper;
 defined('_JEXEC') or die;
 
 /**
- * Foo
+ * Joomlathing
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FoosModelFoo extends AdminModel
+class JoomlathingsModelJoomlathing extends AdminModel
 {
 	/**
 	 * @var   string  The prefix to use with controller messages.
 	 *
 	 * @since 1.0.0
 	 */
-	protected $text_prefix = 'COM_FOO';
+	protected $text_prefix = 'COM_JOOMLATHING';
 
 	/**
 	 * Method to get the record form.
@@ -45,7 +45,7 @@ class FoosModelFoo extends AdminModel
 	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
-		$form = $this->loadForm('com_foo.foo', 'foo', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_joomlathing.joomlathing', 'joomlathing', array('control' => 'jform', 'load_data' => $loadData));
 
 		if (empty($form))
 		{
@@ -66,7 +66,7 @@ class FoosModelFoo extends AdminModel
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = Factory::getApplication()->getUserState('com_foo.edit.foo.data', array());
+		$data = Factory::getApplication()->getUserState('com_joomlathing.edit.joomlathing.data', array());
 
 		if (empty($data))
 		{
@@ -101,11 +101,11 @@ class FoosModelFoo extends AdminModel
 				$data['alias'] = OutputFilter::stringURLSafe($data['title']);
 			}
 
-			$table = Table::getInstance('Foo', 'Table');
+			$table = Table::getInstance('Joomlathing', 'Table');
 
 			if ($table->load(array('alias' => $data['alias'])))
 			{
-				$msg = Text::_('COM_FOO_SAVE_WARNING');
+				$msg = Text::_('COM_JOOMLATHING_SAVE_WARNING');
 			}
 
 			list($title, $alias) = $this->generateNewTitle(0, $data['alias'], $data['title']);

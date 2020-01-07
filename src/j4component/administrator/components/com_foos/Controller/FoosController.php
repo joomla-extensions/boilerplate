@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Controller;
+namespace Joomla\Component\Joomlathings\Administrator\Controller;
 
 defined('_JEXEC') or die;
 
@@ -19,7 +19,7 @@ use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
  *
  * @since  1.0
  */
-class FoosController extends AdminController
+class JoomlathingsController extends AdminController
 {
 	/**
 	 * Constructor.
@@ -50,7 +50,7 @@ class FoosController extends AdminController
 	 *
 	 * @since   1.0
 	 */
-	public function getModel($name = 'Foo', $prefix = 'Administrator', $config = array('ignore_request' => true))
+	public function getModel($name = 'Joomlathing', $prefix = 'Administrator', $config = array('ignore_request' => true))
 	{
 		return parent::getModel($name, $prefix, $config);
 	}

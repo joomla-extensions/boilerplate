@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="component" version="3.8" method="upgrade">
-	<name>COM_FOO</name>
+	<name>COM_JOOMLATHING</name>
 	<creationDate>[DATE]</creationDate>
 	<author>[AUTHOR]</author>
 	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
@@ -8,7 +8,7 @@
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.0</version>
-	<description>COM_FOO_XML_DESCRIPTION</description>
+	<description>COM_JOOMLATHING_XML_DESCRIPTION</description>
 
 	<!-- Scripts to run on installation -->
 	<scriptfile>script.php</scriptfile>
@@ -28,15 +28,15 @@
 	</update>
 
 	<!-- Media files -->
-	<media folder="media/com_foo" destination="com_foo">
+	<media folder="media/com_joomlathing" destination="com_joomlathing">
 		<folder>css</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 	</media>
 
 	<!-- Front-end files -->
-	<files folder="components/com_foo">
-		<filename>foo.php</filename>
+	<files folder="components/com_joomlathing">
+		<filename>joomlathing.php</filename>
 		<filename>controller.php</filename>
 		<folder>controllers</folder>
 		<folder>language</folder>
@@ -48,18 +48,18 @@
 	<!-- Back-end files -->
 	<administration>
 		<!-- Menu entries -->
-		<menu view="foo">COM_FOO</menu>
+		<menu view="joomlathing">COM_JOOMLATHING</menu>
 		<submenu>
 			<!--
 				Note that all & must be escaped to &amp; for the file to be valid
 				XML and be parsed by the installer
 			-->
-			<menu link="option=com_foo">COM_FOO</menu>
+			<menu link="option=com_joomlathing">COM_JOOMLATHING</menu>
 		</submenu>
 
 		<!-- Core files -->
-		<files folder="administrator/components/com_foo">
-			<filename>foo.php</filename>
+		<files folder="administrator/components/com_joomlathing">
+			<filename>joomlathing.php</filename>
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
 			<filename>controller.php</filename>
@@ -76,6 +76,6 @@
 
 	<!-- Update servers -->
 	<updateservers>
-		<server type="extension" priority="1" name="[PROJECT_NAME]">https://www.example.com/foo.xml</server>
+		<server type="extension" priority="1" name="[PROJECT_NAME]">https://www.example.com/joomlathing.xml</server>
 	</updateservers>
 </extension>

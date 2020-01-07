@@ -17,12 +17,12 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Session\Session;
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgButtonFoo extends CMSPlugin
+class plgButtonJoomlathing extends CMSPlugin
 {
 	/**
 	 * Application object
@@ -59,14 +59,14 @@ class plgButtonFoo extends CMSPlugin
 	 */
 	public function onDisplay($name)
 	{
-		$link = 'index.php?option=com_foo&amp;view=foo&amp;layout=modal&amp;tmpl=component&amp;'
+		$link = 'index.php?option=com_joomlathing&amp;view=joomlathing&amp;layout=modal&amp;tmpl=component&amp;'
 			. Session::getFormToken() . '=1&amp;editor=' . $name;
 
 		$button = new CMSObject;
 		$button->modal = true;
 		$button->class = 'btn btn-secondary';
 		$button->link = $link;
-		$button->text = Text::_('PLG_EDITORSXTD_FOO_BUTTON_FOO');
+		$button->text = Text::_('PLG_EDITORSXTD_JOOMLATHING_BUTTON_JOOMLATHING');
 		$button->name = 'file-add';
 		$button->options = array(
 			'height'     => '300px',

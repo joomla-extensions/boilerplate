@@ -14,12 +14,12 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 
 /**
- * Foo helper.
+ * Joomlathing helper.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooHelper
+class JoomlathingHelper
 {
 	/**
 	 * Render submenu.
@@ -32,6 +32,6 @@ class FooHelper
 	 */
 	public function addSubmenu($vName)
 	{
-		HTMLHelper::_('sidebar.addEntry', Text::_('COM_FOO'), 'index.php?option=com_foo&view=foos', $vName === 'foos');
+		HTMLHelper::_('sidebar.addEntry', Text::_('COM_JOOMLATHING'), 'index.php?option=com_joomlathing&view=joomlathings', $vName === 'joomlathings');
 	}
 }

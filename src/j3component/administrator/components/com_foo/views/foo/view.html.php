@@ -18,12 +18,12 @@ use Joomla\Registry\Registry;
 defined('_JEXEC') or die;
 
 /**
- * Foo view.
+ * Joomlathing view.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooViewFoo extends HtmlView
+class JoomlathingViewJoomlathing extends HtmlView
 {
 	/**
 	 * Form with settings
@@ -64,7 +64,7 @@ class FooViewFoo extends HtmlView
 	 */
 	public function display($tpl = null)
 	{
-		/** @var FoosModelFoo $model */
+		/** @var JoomlathingsModelJoomlathing $model */
 		$model       = $this->getModel();
 		$this->form  = $model->getForm();
 		$this->item  = $model->getItem();
@@ -90,36 +90,36 @@ class FooViewFoo extends HtmlView
 	{
 		Factory::getApplication()->input->set('hidemainmenu', true);
 
-		$canDo = ContentHelper::getActions('com_foo');
+		$canDo = ContentHelper::getActions('com_joomlathing');
 		$isNew = ($this->item->id == 0);
 
-		JToolBarHelper::title(Text::_('COM_FOO_TITLE_FOO'));
+		JToolBarHelper::title(Text::_('COM_JOOMLATHING_TITLE_JOOMLATHING'));
 
 		// If not checked out, can save the item.
 		if ($canDo->get('core.edit') || ($canDo->get('core.create')))
 		{
-			JToolBarHelper::apply('foo.apply', 'JTOOLBAR_APPLY');
-			JToolBarHelper::save('foo.save', 'JTOOLBAR_SAVE');
+			JToolBarHelper::apply('joomlathing.apply', 'JTOOLBAR_APPLY');
+			JToolBarHelper::save('joomlathing.save', 'JTOOLBAR_SAVE');
 		}
 
 		if ($canDo->get('core.create'))
 		{
-			JToolBarHelper::custom('foo.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
+			JToolBarHelper::custom('joomlathing.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
 		}
 
 		// If an existing item, can save to a copy.
 		if (!$isNew && $canDo->get('core.create'))
 		{
-			JToolBarHelper::custom('foo.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
+			JToolBarHelper::custom('joomlathing.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
 		}
 
 		if (empty($this->item->id))
 		{
-			JToolBarHelper::cancel('foo.cancel', 'JTOOLBAR_CANCEL');
+			JToolBarHelper::cancel('joomlathing.cancel', 'JTOOLBAR_CANCEL');
 		}
 		else
 		{
-			JToolBarHelper::cancel('foo.cancel', 'JTOOLBAR_CLOSE');
+			JToolBarHelper::cancel('joomlathing.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}
 }

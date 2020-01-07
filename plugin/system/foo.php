@@ -15,12 +15,12 @@ use Joomla\Database\DatabaseDriver;
 defined('_JEXEC') or die;
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgSystemFoo extends CMSPlugin
+class plgSystemJoomlathing extends CMSPlugin
 {
 	/**
 	 * Application object
@@ -55,7 +55,7 @@ class plgSystemFoo extends CMSPlugin
 	 */
 	public function onAfterInitialise()
 	{
-		
+
 	}
 
 	/**
@@ -67,7 +67,7 @@ class plgSystemFoo extends CMSPlugin
 	 */
 	public function onAfterRoute()
 	{
-	
+
 	}
 
 	/**
@@ -79,7 +79,7 @@ class plgSystemFoo extends CMSPlugin
 	 */
 	public function onAfterDispatch()
 	{
-	
+
 	}
 
 	/**
@@ -104,7 +104,7 @@ class plgSystemFoo extends CMSPlugin
 	 */
 	public function onAfterCompileHead()
 	{
-	
+
 	}
 
 	/**
@@ -116,7 +116,7 @@ class plgSystemFoo extends CMSPlugin
 	 */
 	public function onAfterCompress()
 	{
-	
+
 	}
 
 	/**
@@ -128,6 +128,6 @@ class plgSystemFoo extends CMSPlugin
 	 */
 	public function onAfterRespond()
 	{
-	
+
 	}
 }

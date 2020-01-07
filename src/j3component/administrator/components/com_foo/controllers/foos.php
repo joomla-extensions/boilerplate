@@ -13,12 +13,12 @@ use Joomla\CMS\MVC\Controller\AdminController;
 defined('_JEXEC') or die;
 
 /**
- * Foos Controller.
+ * Joomlathings Controller.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooControllerFoos extends AdminController
+class JoomlathingControllerJoomlathings extends AdminController
 {
 	/**
 	 * The prefix to use with controller messages.
@@ -26,7 +26,7 @@ class FooControllerFoos extends AdminController
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $text_prefix = 'com_foo_foo';
+	protected $text_prefix = 'com_joomlathing_joomlathing';
 
 	/**
 	 * Method to get a model object, loading it if required.
@@ -39,7 +39,7 @@ class FooControllerFoos extends AdminController
 	 *
 	 * @since   1.0.0
 	 */
-	public function getModel($name = 'Foo', $prefix = 'FoosModel', $config = array('ignore_request' => true))
+	public function getModel($name = 'Joomlathing', $prefix = 'JoomlathingsModel', $config = array('ignore_request' => true))
 	{
 		return parent::getModel($name, $prefix, $config);
 	}

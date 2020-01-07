@@ -15,12 +15,12 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Database\DatabaseDriver;
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgContentFoo extends CMSPlugin
+class plgContentJoomlathing extends CMSPlugin
 {
 	/**
 	 * Application object

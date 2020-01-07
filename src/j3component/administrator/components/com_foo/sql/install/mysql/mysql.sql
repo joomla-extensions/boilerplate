@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__foo_items`
+CREATE TABLE IF NOT EXISTS `#__joomlathing_items`
 (
     `id`        INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
     `title`     VARCHAR(255)        NOT NULL,

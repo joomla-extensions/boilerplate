@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -24,10 +24,10 @@ $saveOrder = $listOrder == 'a.ordering';
 
 if ($saveOrder && !empty($this->items))
 {
-	$saveOrderingUrl = 'index.php?option=com_foos&task=foos.saveOrderAjax&tmpl=component&' . Session::getFormToken() . '=1';
+	$saveOrderingUrl = 'index.php?option=com_joomlathings&task=joomlathings.saveOrderAjax&tmpl=component&' . Session::getFormToken() . '=1';
 }
 ?>
-<form action="<?php echo Route::_('index.php?option=com_foos'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo Route::_('index.php?option=com_joomlathings'); ?>" method="post" name="adminForm" id="adminForm">
 	<div class="row">
 		<?php if (!empty($this->sidebar)) : ?>
 			<div id="j-sidebar-container" class="col-md-2">
@@ -42,9 +42,9 @@ if ($saveOrder && !empty($this->items))
 						<?php echo Text::_('JGLOBAL_NO_MATCHING_RESULTS'); ?>
 					</div>
 				<?php else : ?>
-					<table class="table" id="fooList">
+					<table class="table" id="joomlathingList">
 						<caption id="captionTable" class="sr-only">
-							<?php echo Text::_('COM_FOOS_TABLE_CAPTION'); ?>, <?php echo Text::_('JGLOBAL_SORTED_BY'); ?>
+							<?php echo Text::_('COM_JOOMLATHINGS_TABLE_CAPTION'); ?>, <?php echo Text::_('JGLOBAL_SORTED_BY'); ?>
 						</caption>
 						<thead>
 							<tr>
@@ -55,14 +55,14 @@ if ($saveOrder && !empty($this->items))
 									<?php echo HTMLHelper::_('grid.checkall'); ?>
 								</td>
 								<th scope="col" style="width:1%" class="text-center d-none d-md-table-cell">
-									<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOOS_TABLE_TABLEHEAD_NAME', 'a.name', $listDirn, $listOrder); ?>
+									<?php echo HTMLHelper::_('searchtools.sort', 'COM_JOOMLATHINGS_TABLE_TABLEHEAD_NAME', 'a.name', $listDirn, $listOrder); ?>
 								</th>
 								<th scope="col" style="width:10%" class="d-none d-md-table-cell">
 									<?php echo HTMLHelper::_('searchtools.sort', 'JGRID_HEADING_ACCESS', 'access_level', $listDirn, $listOrder); ?>
 								</th>
 								<?php if ($assoc) : ?>
 									<th scope="col" style="width:10%">
-										<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOOS_HEADING_ASSOCIATION', 'association', $listDirn, $listOrder); ?>
+										<?php echo HTMLHelper::_('searchtools.sort', 'COM_JOOMLATHINGS_HEADING_ASSOCIATION', 'association', $listDirn, $listOrder); ?>
 									</th>
 								<?php endif; ?>
 								<?php if (Multilanguage::isEnabled()) : ?>
@@ -109,13 +109,13 @@ if ($saveOrder && !empty($this->items))
 								</td>
 								<th scope="row" class="has-context">
 									<?php if ($item->checked_out) : ?>
-										<?php echo HTMLHelper::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'foos.', true); ?>
+										<?php echo HTMLHelper::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'joomlathings.', true); ?>
 									<?php endif; ?>
 									<div>
 										<?php echo $this->escape($item->name); ?>
 									</div>
 									<?php $editIcon = '<span class="fa fa-pencil-square mr-2" aria-hidden="true"></span>'; ?>
-									<a class="hasTooltip" href="<?php echo Route::_('index.php?option=com_foos&task=foo.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::_('JACTION_EDIT'); ?> <?php echo $this->escape(addslashes($item->name)); ?>">
+									<a class="hasTooltip" href="<?php echo Route::_('index.php?option=com_joomlathings&task=joomlathing.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::_('JACTION_EDIT'); ?> <?php echo $this->escape(addslashes($item->name)); ?>">
 										<?php echo $editIcon; ?><?php echo $this->escape($item->name); ?></a>
 									<div class="small">
 										<?php echo Text::_('JCATEGORY') . ': ' . $this->escape($item->category_title); ?>
@@ -129,7 +129,7 @@ if ($saveOrder && !empty($this->items))
 								<td class="d-none d-md-table-cell">
 									<?php if ($item->association) : ?>
 										<?php
-										echo HTMLHelper::_('foosadministrator.association', $item->id);
+										echo HTMLHelper::_('joomlathingsadministrator.association', $item->id);
 										?>
 									<?php endif; ?>
 								</td>
@@ -141,7 +141,7 @@ if ($saveOrder && !empty($this->items))
 								<?php endif; ?>
 								<td class="text-center">
 									<div class="btn-group">
-										<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'foos.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
+										<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'joomlathings.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
 									</div>
 								</td>
 								<td class="d-none d-md-table-cell">
@@ -152,13 +152,13 @@ if ($saveOrder && !empty($this->items))
 						</tbody>
 					</table>
 
-					<?php echo $this->pagination->getListFooter(); ?>
+					<?php echo $this->pagination->getListJoomlathingter(); ?>
 
 					<?php echo HTMLHelper::_(
 						'bootstrap.renderModal',
 						'collapseModal',
 						array(
-							'title'  => Text::_('COM_FOOS_BATCH_OPTIONS'),
+							'title'  => Text::_('COM_JOOMLATHINGS_BATCH_OPTIONS'),
 							'footer' => $this->loadTemplate('batch_footer'),
 						),
 						$this->loadTemplate('batch_body')

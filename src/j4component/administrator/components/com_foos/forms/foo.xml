@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-	<fieldset 
-		addruleprefix="Joomla\Component\Foos\Administrator\Rule"
-		addfieldprefix="Joomla\Component\Foos\Administrator\Field"
+	<fieldset
+		addruleprefix="Joomla\Component\Joomlathings\Administrator\Rule"
+		addfieldprefix="Joomla\Component\Joomlathings\Administrator\Field"
 	>
 		<field
 			name="id"
@@ -18,11 +18,11 @@
 			type="text"
 			validate="Letter"
 			class="validate-letter"
-			label="COM_FOOS_FIELD_NAME_LABEL"
+			label="COM_JOOMLATHINGS_FIELD_NAME_LABEL"
 			size="40"
 			required="true"
 		 />
-		
+
 		<field
 			name="alias"
 			type="text"
@@ -57,7 +57,7 @@
 		<field
 			name="publish_up"
 			type="calendar"
-			label="COM_FOOS_FIELD_PUBLISH_UP_LABEL"
+			label="COM_JOOMLATHINGS_FIELD_PUBLISH_UP_LABEL"
 			translateformat="true"
 			showtime="true"
 			size="22"
@@ -67,7 +67,7 @@
 		<field
 			name="publish_down"
 			type="calendar"
-			label="COM_FOOS_FIELD_PUBLISH_DOWN_LABEL"
+			label="COM_JOOMLATHINGS_FIELD_PUBLISH_DOWN_LABEL"
 			translateformat="true"
 			showtime="true"
 			size="22"
@@ -78,7 +78,7 @@
 			name="catid"
 			type="categoryedit"
 			label="JCATEGORY"
-			extension="com_foos"
+			extension="com_joomlathings"
 			addfieldprefix="Joomla\Component\Categories\Administrator\Field"
 			required="true"
 			default=""
@@ -107,7 +107,7 @@
 			name="ordering"
 			type="ordering"
 			label="JFIELD_ORDERING_LABEL"
-			content_type="com_foos.foo"
+			content_type="com_joomlathings.joomlathing"
 		/>
 	</fieldset>
 	<fields name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
@@ -115,7 +115,7 @@
 			<field
 				name="show_name"
 				type="list"
-				label="COM_FOOS_FIELD_PARAMS_NAME_LABEL"
+				label="COM_JOOMLATHINGS_FIELD_PARAMS_NAME_LABEL"
 				useglobal="true"
 			>
 				<option value="0">JHIDE</option>
@@ -123,12 +123,12 @@
 			</field>
 
 			<field
-				name="foos_layout"
+				name="joomlathings_layout"
 				type="componentlayout"
 				label="JFIELD_ALT_LAYOUT_LABEL"
 				class="custom-select"
-				extension="com_foos"
-				view="foo"
+				extension="com_joomlathings"
+				view="joomlathing"
 				useglobal="true"
 			/>
 		</fieldset>

@@ -17,17 +17,17 @@ use Joomla\CMS\Toolbar\ToolbarHelper;
 defined('_JEXEC') or die;
 
 /**
- * Foo view.
+ * Joomlathing view.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class FooViewFoo extends HtmlView
+class JoomlathingViewJoomlathing extends HtmlView
 {
 	/**
-	 * Foo helper
+	 * Joomlathing helper
 	 *
-	 * @var    FooHelper
+	 * @var    JoomlathingHelper
 	 * @since  1.0.0
 	 */
 	protected $helper;
@@ -56,8 +56,8 @@ class FooViewFoo extends HtmlView
 		$this->toolbar();
 
 		// Show the sidebar
-		$this->helper = new FooHelper;
-		$this->helper->addSubmenu('foo');
+		$this->helper = new JoomlathingHelper;
+		$this->helper->addSubmenu('joomlathing');
 		$this->sidebar = HTMLHelper::_('sidebar.render');
 
 		// Display it all
@@ -73,12 +73,12 @@ class FooViewFoo extends HtmlView
 	 */
 	private function toolbar()
 	{
-		ToolBarHelper::title(Text::_('COM_FOO'), '');
+		ToolBarHelper::title(Text::_('COM_JOOMLATHING'), '');
 
 		// Options button.
-		if (Factory::getUser()->authorise('core.admin', 'com_foo'))
+		if (Factory::getUser()->authorise('core.admin', 'com_joomlathing'))
 		{
-			ToolBarHelper::preferences('com_foo');
+			ToolBarHelper::preferences('com_joomlathing');
 		}
 	}
 }

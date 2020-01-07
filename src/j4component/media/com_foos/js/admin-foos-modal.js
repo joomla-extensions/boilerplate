@@ -6,21 +6,21 @@
   'use strict';
   /**
     * Javascript to insert the link
-    * View element calls jSelectFoo when a foo is clicked
-    * jSelectFoo creates the link tag, sends it to the editor,
+    * View element calls jSelectJoomlathing when a joomlathing is clicked
+    * jSelectJoomlathing creates the link tag, sends it to the editor,
     * and closes the select frame.
     */
 
-  window.jSelectFoo = function (id, title, catid, object, link, lang) {
+  window.jSelectJoomlathing = function (id, title, catid, object, link, lang) {
     var hreflang = '';
 
-    if (!Joomla.getOptions('xtd-foos')) {
+    if (!Joomla.getOptions('xtd-joomlathings')) {
       // Something went wrong
       window.parent.Joomla.Modal.getCurrent().close();
       return false;
     }
 
-    var _Joomla$getOptions = Joomla.getOptions('xtd-foos'),
+    var _Joomla$getOptions = Joomla.getOptions('xtd-joomlathings'),
         editor = _Joomla$getOptions.editor;
 
     if (lang !== '') {
@@ -43,8 +43,8 @@
         event.preventDefault();
         var functionName = event.target.getAttribute('data-function');
 
-        if (functionName === 'jSelectFoo') {
-          // Used in xtd_foos
+        if (functionName === 'jSelectJoomlathing') {
+          // Used in xtd_joomlathings
           window[functionName](event.target.getAttribute('data-id'), event.target.getAttribute('data-title'), null, null, event.target.getAttribute('data-uri'), event.target.getAttribute('data-language'), null);
         } else {
           // Used in com_menus

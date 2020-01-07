@@ -17,12 +17,12 @@ JLoader::register('PrivacyPlugin', JPATH_ADMINISTRATOR . '/components/com_privac
 JLoader::register('PrivacyRemovalStatus', JPATH_ADMINISTRATOR . '/components/com_privacy/helpers/removal/status.php');
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgPrivacyFoo extends PrivacyPlugin
+class plgPrivacyJoomlathing extends PrivacyPlugin
 {
 	/**
 	 * Application object

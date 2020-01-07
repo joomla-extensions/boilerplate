@@ -14,12 +14,12 @@ use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Plugin\CMSPlugin;
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgAuthenticationFoo extends CMSPlugin
+class plgAuthenticationJoomlathing extends CMSPlugin
 {
 	/**
 	 * Application object

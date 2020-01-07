@@ -18,12 +18,12 @@ use Joomla\Registry\Registry;
 defined('_JEXEC') or die;
 
 /**
- * Foo view.
+ * Joomlathing view.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooViewFoos extends HtmlView
+class JoomlathingViewJoomlathings extends HtmlView
 {
 	/**
 	 * Array with profiles
@@ -52,7 +52,7 @@ class FooViewFoos extends HtmlView
 	/**
 	 * Companies helper
 	 *
-	 * @var    FooHelper
+	 * @var    JoomlathingHelper
 	 * @since  1.0.0
 	 */
 	protected $helper;
@@ -101,21 +101,21 @@ class FooViewFoos extends HtmlView
 	 */
 	public function display($tpl = null)
 	{
-		/** @var FooModelFoos $model */
+		/** @var JoomlathingModelJoomlathings $model */
 		$model               = $this->getModel();
 		$this->items         = $model->getItems();
 		$this->state         = $model->getState();
 		$this->pagination    = $model->getPagination();
 		$this->filterForm    = $model->getFilterForm();
 		$this->activeFilters = $model->getActiveFilters();
-		$this->canDo         = ContentHelper::getActions('com_foo');
+		$this->canDo         = ContentHelper::getActions('com_joomlathing');
 
 		// Show the toolbar
 		$this->toolbar();
 
 		// Show the sidebar
-		$this->helper = new FooHelper;
-		$this->helper->addSubmenu('foos');
+		$this->helper = new JoomlathingHelper;
+		$this->helper->addSubmenu('joomlathings');
 		$this->sidebar = JHtmlSidebar::render();
 
 		// Display it all
@@ -131,38 +131,38 @@ class FooViewFoos extends HtmlView
 	 */
 	private function toolbar()
 	{
-		JToolBarHelper::title(Text::_('COM_FOO_FOO'), '');
+		JToolBarHelper::title(Text::_('COM_JOOMLATHING_JOOMLATHING'), '');
 
 		if ($this->canDo->get('core.create'))
 		{
-			JToolbarHelper::addNew('foo.add');
+			JToolbarHelper::addNew('joomlathing.add');
 		}
 
 		if ($this->canDo->get('core.edit') || $this->canDo->get('core.edit.own'))
 		{
-			JToolbarHelper::editList('foo.edit');
+			JToolbarHelper::editList('joomlathing.edit');
 		}
 
 		if ($this->canDo->get('core.edit.state'))
 		{
-			JToolbarHelper::publish('foos.publish', 'JTOOLBAR_PUBLISH', true);
-			JToolbarHelper::unpublish('foos.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-			JToolbarHelper::archiveList('foos.archive');
+			JToolbarHelper::publish('joomlathings.publish', 'JTOOLBAR_PUBLISH', true);
+			JToolbarHelper::unpublish('joomlathings.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+			JToolbarHelper::archiveList('joomlathings.archive');
 		}
 
 		if ($this->state->get('filter.published') == -2 && $this->canDo->get('core.delete'))
 		{
-			JToolbarHelper::deleteList('JGLOBAL_CONFIRM_DELETE', 'foos.delete', 'JTOOLBAR_EMPTY_TRASH');
+			JToolbarHelper::deleteList('JGLOBAL_CONFIRM_DELETE', 'joomlathings.delete', 'JTOOLBAR_EMPTY_TRASH');
 		}
 		elseif ($this->canDo->get('core.edit.state'))
 		{
-			JToolbarHelper::trash('foos.trash');
+			JToolbarHelper::trash('joomlathings.trash');
 		}
 
 		// Options button.
-		if (Factory::getUser()->authorise('core.admin', 'com_foo'))
+		if (Factory::getUser()->authorise('core.admin', 'com_joomlathing'))
 		{
-			JToolBarHelper::preferences('com_foo');
+			JToolBarHelper::preferences('com_joomlathing');
 		}
 	}
 }

@@ -13,12 +13,12 @@ use Joomla\CMS\MVC\Model\ListModel;
 defined('_JEXEC') or die;
 
 /**
- * Foos
+ * Joomlathings
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooModelFoos extends ListModel
+class JoomlathingModelJoomlathings extends ListModel
 {
 	/**
 	 * Constructor.
@@ -88,7 +88,7 @@ class FooModelFoos extends ListModel
 					)
 				)
 			)
-			->from($db->quoteName('#__foo_items', 'items'));
+			->from($db->quoteName('#__joomlathing_items', 'items'));
 
 		$search = $this->getState('filter.search');
 

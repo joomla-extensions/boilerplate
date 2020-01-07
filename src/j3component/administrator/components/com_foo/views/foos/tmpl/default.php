@@ -24,7 +24,7 @@ $listDirection = $this->escape($this->state->get('list.direction'));
 $loggedInUser  = Factory::getUser();
 
 ?>
-<form action="index.php?option=com_foo&view=foos" method="post" name="adminForm" id="adminForm" class="form-validate form-horizontal">
+<form action="index.php?option=com_joomlathing&view=joomlathings" method="post" name="adminForm" id="adminForm" class="form-validate form-horizontal">
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
 	</div>
@@ -45,7 +45,7 @@ $loggedInUser  = Factory::getUser();
 						<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'items.published', $listDirection, $listOrder); ?>
 					</th>
 					<th class="left">
-						<?php echo HTMLHelper::_('searchtools.sort', 'COM_FOO_FOO_TITLE', 'items.title', $listDirection, $listOrder); ?>
+						<?php echo HTMLHelper::_('searchtools.sort', 'COM_JOOMLATHING_JOOMLATHING_TITLE', 'items.title', $listDirection, $listOrder); ?>
 					</th>
 				</tr>
 				</thead>
@@ -59,7 +59,7 @@ $loggedInUser  = Factory::getUser();
 				<tbody>
 				<?php
 				$canEdit   = $this->canDo->get('core.edit');
-				$canChange = $loggedInUser->authorise('core.edit.state',	'com_foo');
+				$canChange = $loggedInUser->authorise('core.edit.state',	'com_joomlathing');
 
 				foreach ($this->items as $i => $item) :
 					?>
@@ -71,13 +71,13 @@ $loggedInUser  = Factory::getUser();
 						</td>
 						<td class="center">
 							<div class="btn-group">
-								<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'foos.', $canChange); ?>
+								<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'joomlathings.', $canChange); ?>
 							</div>
 						</td>
 						<td>
 							<div class="name break-word">
 								<?php if ($canEdit) : ?>
-									<a href="<?php echo Route::_('index.php?option=com_foo&task=foo.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::sprintf('COM_FOOS_EDIT_FOO', $this->escape($item->title)); ?>">
+									<a href="<?php echo Route::_('index.php?option=com_joomlathing&task=joomlathing.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::sprintf('COM_JOOMLATHINGS_EDIT_JOOMLATHING', $this->escape($item->title)); ?>">
 										<?php echo $this->escape($item->title); ?></a>
 								<?php else : ?>
 									<?php echo $this->escape($item->title); ?>

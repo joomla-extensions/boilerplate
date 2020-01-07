@@ -13,10 +13,10 @@ use Joomla\CMS\Layout\FileLayout;
 
 defined('_JEXEC') or die;
 
-HTMLHelper::_('script', 'com_foo/script.js', array('version' => 'auto', 'relative' => true));
-HTMLHelper::_('stylesheet', 'com_foo/style.css', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'com_joomlathing/script.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('stylesheet', 'com_joomlathing/style.css', array('version' => 'auto', 'relative' => true));
 
-$layout = new FileLayout('foo.page');
+$layout = new FileLayout('joomlathing.page');
 $data = array();
 $data['text'] = 'Hello Joomla!';
 echo $layout->render($data);

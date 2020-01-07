@@ -24,7 +24,7 @@ $noUser    = true;
 		<?php if ($published >= 0) : ?>
 			<div class="form-group col-md-6">
 				<div class="controls">
-					<?php echo LayoutHelper::render('joomla.html.batch.item', ['extension' => 'com_foos']); ?>
+					<?php echo LayoutHelper::render('joomla.html.batch.item', ['extension' => 'com_joomlathings']); ?>
 				</div>
 			</div>
 		<?php endif; ?>

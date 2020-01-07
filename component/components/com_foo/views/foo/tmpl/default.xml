@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="COM_FOO_FOO">
+	<layout title="COM_JOOMLATHING_JOOMLATHING">
 		<message>
-			<![CDATA[COM_FOO_FOO_DESC_MENU]]>
+			<![CDATA[COM_JOOMLATHING_JOOMLATHING_DESC_MENU]]>
 		</message>
 	</layout>
 </metadata>

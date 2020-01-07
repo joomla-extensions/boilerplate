@@ -11,12 +11,12 @@
 defined('_JEXEC') or die;
 
 /**
- * Foo script file.
+ * Joomlathing script file.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgFieldsFooInstallerScript
+class plgFieldsJoomlathingInstallerScript
 {
 	/**
 	 * Constructor

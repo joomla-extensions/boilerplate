@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Field\Modal;
+namespace Joomla\Component\Joomlathings\Administrator\Field\Modal;
 
 defined('JPATH_BASE') or die;
 
@@ -18,11 +18,11 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Session\Session;
 
 /**
- * Supports a modal foo picker.
+ * Supports a modal joomlathing picker.
  *
  * @since  1.0
  */
-class FooField extends FormField
+class JoomlathingField extends FormField
 {
 	/**
 	 * The form field type.
@@ -30,7 +30,7 @@ class FooField extends FormField
 	 * @var     string
 	 * @since   1.0
 	 */
-	protected $type = 'Modal_Foo';
+	protected $type = 'Modal_Joomlathing';
 
 	/**
 	 * Method to get the field input markup.
@@ -44,11 +44,11 @@ class FooField extends FormField
 		$allowClear  = ((string) $this->element['clear'] != 'false');
 		$allowSelect = ((string) $this->element['select'] != 'false');
 
-		// The active foo id field.
+		// The active joomlathing id field.
 		$value = (int) $this->value > 0 ? (int) $this->value : '';
 
 		// Create the modal id.
-		$modalId = 'Foo_' . $this->id;
+		$modalId = 'Joomlathing_' . $this->id;
 
 		// Add the modal field script to the document head.
 		HTMLHelper::_('script', 'system/fields/modal-fields.min.js', array('version' => 'auto', 'relative' => true));
@@ -66,8 +66,8 @@ class FooField extends FormField
 			if (!isset($scriptSelect[$this->id]))
 			{
 				Factory::getDocument()->addScriptDeclaration("
-				function jSelectFoo_" . $this->id . "(id, title, object) {
-					window.processModalSelect('Foo', '" . $this->id . "', id, title, '', object);
+				function jSelectJoomlathing_" . $this->id . "(id, title, object) {
+					window.processModalSelect('Joomlathing', '" . $this->id . "', id, title, '', object);
 				}
 				"
 				);
@@ -77,25 +77,25 @@ class FooField extends FormField
 		}
 
 		// Setup variables for display.
-		$linkFoos = 'index.php?option=com_foos&amp;view=foos&amp;layout=modal&amp;tmpl=component&amp;' . Session::getFormToken() . '=1';
-		$linkFoo  = 'index.php?option=com_foos&amp;view=foo&amp;layout=modal&amp;tmpl=component&amp;' . Session::getFormToken() . '=1';
-		$modalTitle   = Text::_('COM_FOOS_CHANGE_FOO');
+		$linkJoomlathings = 'index.php?option=com_joomlathings&amp;view=joomlathings&amp;layout=modal&amp;tmpl=component&amp;' . Session::getFormToken() . '=1';
+		$linkJoomlathing  = 'index.php?option=com_joomlathings&amp;view=joomlathing&amp;layout=modal&amp;tmpl=component&amp;' . Session::getFormToken() . '=1';
+		$modalTitle   = Text::_('COM_JOOMLATHINGS_CHANGE_JOOMLATHING');
 
 		if (isset($this->element['language']))
 		{
-			$linkFoos .= '&amp;forcedLanguage=' . $this->element['language'];
-			$linkFoo   .= '&amp;forcedLanguage=' . $this->element['language'];
+			$linkJoomlathings .= '&amp;forcedLanguage=' . $this->element['language'];
+			$linkJoomlathing   .= '&amp;forcedLanguage=' . $this->element['language'];
 			$modalTitle     .= ' &#8212; ' . $this->element['label'];
 		}
 
-		$urlSelect = $linkFoos . '&amp;function=jSelectFoo_' . $this->id;
+		$urlSelect = $linkJoomlathings . '&amp;function=jSelectJoomlathing_' . $this->id;
 
 		if ($value)
 		{
 			$db    = Factory::getDbo();
 			$query = $db->getQuery(true)
 				->select($db->quoteName('name'))
-				->from($db->quoteName('#__foos_details'))
+				->from($db->quoteName('#__joomlathings_details'))
 				->where($db->quoteName('id') . ' = ' . (int) $value);
 			$db->setQuery($query);
 
@@ -109,9 +109,9 @@ class FooField extends FormField
 			}
 		}
 
-		$title = empty($title) ? Text::_('COM_FOOS_SELECT_A_FOO') : htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
+		$title = empty($title) ? Text::_('COM_JOOMLATHINGS_SELECT_A_JOOMLATHING') : htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
 
-		// The current foo display field.
+		// The current joomlathing display field.
 		$html  = '';
 
 		if ($allowSelect || $allowNew || $allowEdit || $allowClear)
@@ -126,7 +126,7 @@ class FooField extends FormField
 			$html .= '<span class="input-group-append">';
 		}
 
-		// Select foo button
+		// Select joomlathing button
 		if ($allowSelect)
 		{
 			$html .= '<button'
@@ -135,12 +135,12 @@ class FooField extends FormField
 				. ' data-toggle="modal"'
 				. ' type="button"'
 				. ' data-target="#ModalSelect' . $modalId . '"'
-				. ' title="' . HTMLHelper::tooltipText('COM_FOOS_CHANGE_FOO') . '">'
+				. ' title="' . HTMLHelper::tooltipText('COM_JOOMLATHINGS_CHANGE_JOOMLATHING') . '">'
 				. '<span class="icon-file" aria-hidden="true"></span> ' . Text::_('JSELECT')
 				. '</button>';
 		}
 
-		// Clear foo button
+		// Clear joomlathing button
 		if ($allowClear)
 		{
 			$html .= '<button'
@@ -157,7 +157,7 @@ class FooField extends FormField
 			$html .= '</span></span>';
 		}
 
-		// Select foo modal
+		// Select joomlathing modal
 		if ($allowSelect)
 		{
 			$html .= HTMLHelper::_(
@@ -180,7 +180,7 @@ class FooField extends FormField
 		$class = $this->required ? ' class="required modal-value"' : '';
 
 		$html .= '<input type="hidden" id="' . $this->id . '_id"' . $class . ' data-required="' . (int) $this->required . '" name="' . $this->name
-			. '" data-text="' . htmlspecialchars(Text::_('COM_FOOS_SELECT_A_FOO', true), ENT_COMPAT, 'UTF-8') . '" value="' . $value . '">';
+			. '" data-text="' . htmlspecialchars(Text::_('COM_JOOMLATHINGS_SELECT_A_JOOMLATHING', true), ENT_COMPAT, 'UTF-8') . '" value="' . $value . '">';
 
 		return $html;
 	}

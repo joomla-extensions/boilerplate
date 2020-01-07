@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Site\View\Foo;
+namespace Joomla\Component\Joomlathings\Site\View\Joomlathing;
 
 defined('_JEXEC') or die;
 
@@ -16,7 +16,7 @@ use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\Registry\Registry;
 
 /**
- * HTML Foos View class for the Foo component
+ * HTML Joomlathings View class for the Joomlathing component
  *
  * @since  1.0.0
  */
@@ -64,17 +64,17 @@ class HtmlView extends BaseHtmlView
 		$temp->merge($itemparams);
 		$item->params = $temp;
 
-		Factory::getApplication()->triggerEvent('onContentPrepare', array ('com_foos.foo', &$item));
+		Factory::getApplication()->triggerEvent('onContentPrepare', array ('com_joomlathings.joomlathing', &$item));
 
 		// Store the events for later
 		$item->event = new \stdClass;
-		$results = Factory::getApplication()->triggerEvent('onContentAfterTitle', array('com_foos.foo', &$item, &$item->params));
+		$results = Factory::getApplication()->triggerEvent('onContentAfterTitle', array('com_joomlathings.joomlathing', &$item, &$item->params));
 		$item->event->afterDisplayTitle = trim(implode("\n", $results));
 
-		$results = Factory::getApplication()->triggerEvent('onContentBeforeDisplay', array('com_foos.foo', &$item, &$item->params));
+		$results = Factory::getApplication()->triggerEvent('onContentBeforeDisplay', array('com_joomlathings.joomlathing', &$item, &$item->params));
 		$item->event->beforeDisplayContent = trim(implode("\n", $results));
 
-		$results = Factory::getApplication()->triggerEvent('onContentAfterDisplay', array('com_foos.foo', &$item, &$item->params));
+		$results = Factory::getApplication()->triggerEvent('onContentAfterDisplay', array('com_joomlathings.joomlathing', &$item, &$item->params));
 		$item->event->afterDisplayContent = trim(implode("\n", $results));
 
 		return parent::display($tpl);

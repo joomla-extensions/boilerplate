@@ -5,7 +5,7 @@
 			   type="rules"
 			   label="JCONFIG_PERMISSIONS_LABEL"
 			   filter="rules"
-			   component="com_foo"
+			   component="com_joomlathing"
 			   section="component">
 		</field>
 	</fieldset>

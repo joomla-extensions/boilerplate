@@ -13,12 +13,12 @@ use Joomla\CMS\Table\Table;
 defined('_JEXEC') or die;
 
 /**
- * Foo table.
+ * Joomlathing table.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class TableFoo extends Table
+class TableJoomlathing extends Table
 {
 	/**
 	 * Constructor
@@ -29,6 +29,6 @@ class TableFoo extends Table
 	 */
 	public function __construct(JDatabaseDriver $db)
 	{
-		parent::__construct('#__foo_items', 'item_id', $db);
+		parent::__construct('#__joomlathing_items', 'item_id', $db);
 	}
 }

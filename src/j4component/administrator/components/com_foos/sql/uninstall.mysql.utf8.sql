@@ -1,2 +1,2 @@
-DROP TABLE IF EXISTS `#__foos_details`;
+DROP TABLE IF EXISTS `#__joomlathings_details`;
 

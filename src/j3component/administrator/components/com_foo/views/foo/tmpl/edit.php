@@ -24,7 +24,7 @@ HTMLHelper::_('formbehavior.chosen');
 Factory::getDocument()->addScriptDeclaration(<<<JS
 		Joomla.submitbutton = function(task)
 		{
-			if (task === 'foo.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task === 'joomlathing.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task, document.getElementById('adminForm'));
 			}
@@ -32,7 +32,7 @@ Factory::getDocument()->addScriptDeclaration(<<<JS
 JS
 );
 ?>
-<form action="<?php echo Route::_('index.php?option=com_foo&layout=edit&id=' . (int) $this->item->id); ?>"
+<form action="<?php echo Route::_('index.php?option=com_joomlathing&layout=edit&id=' . (int) $this->item->id); ?>"
       method="post" name="adminForm" enctype="multipart/form-data" id="adminForm" class="form-validate">
 	<?php echo LayoutHelper::render('joomla.edit.title_alias', $this); ?>
 

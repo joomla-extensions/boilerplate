@@ -15,12 +15,12 @@ use Joomla\CMS\Component\ComponentHelper;
 JLoader::register('FinderIndexerAdapter', JPATH_ADMINISTRATOR . '/components/com_finder/helpers/indexer/adapter.php');
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgFinderFoo extends FinderIndexerAdapter
+class plgFinderJoomlathing extends FinderIndexerAdapter
 {
 	/**
 	 * The plugin identifier.
@@ -28,7 +28,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $context = 'Foo';
+	protected $context = 'Joomlathing';
 
 	/**
 	 * The extension name.
@@ -36,7 +36,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $extension = 'com_foo';
+	protected $extension = 'com_joomlathing';
 
 	/**
 	 * The sublayout to use when rendering the results.
@@ -44,7 +44,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $layout = 'foo';
+	protected $layout = 'joomlathing';
 
 	/**
 	 * The type of content that the adapter indexes.
@@ -52,7 +52,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $type_title = 'Foo';
+	protected $type_title = 'Joomlathing';
 
 	/**
 	 * The table name.
@@ -60,7 +60,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	protected $table = '#__foo';
+	protected $table = '#__joomlathing';
 
 	/**
 	 * Load the language file on instantiation.
@@ -86,7 +86,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	public function onFinderCategoryChangeState($extension, $pks, $value)
 	{
 		// Make sure we're handling com_content categories.
-		if ($extension === 'com_foo')
+		if ($extension === 'com_joomlathing')
 		{
 			$this->categoryStateChange($pks, $value);
 		}
@@ -105,7 +105,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	 */
 	public function onFinderAfterDelete($context, $table)
 	{
-		if ($context === 'com_foo.foo')
+		if ($context === 'com_joomlathing.joomlathing')
 		{
 			$id = $table->id;
 		}
@@ -140,7 +140,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	public function onFinderAfterSave($context, $row, $isNew)
 	{
 		// We only want to handle articles here.
-		if ($context === 'com_foo.foo')
+		if ($context === 'com_joomlathing.joomlathing')
 		{
 			// Check if the access levels are different.
 			if (!$isNew && $this->old_access != $row->access)
@@ -182,7 +182,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	public function onFinderBeforeSave($context, $row, $isNew)
 	{
 		// We only want to handle articles here.
-		if ($context === 'com_foo.foo')
+		if ($context === 'com_joomlathing.joomlathing')
 		{
 			// Query the database for the old access level if the item isn't new.
 			if (!$isNew)
@@ -220,7 +220,7 @@ class plgFinderFoo extends FinderIndexerAdapter
 	public function onFinderChangeState($context, $pks, $value)
 	{
 		// We only want to handle articles here.
-		if ($context === 'com_foo.foo')
+		if ($context === 'com_joomlathing.joomlathing')
 		{
 			$this->itemStateChange($pks, $value);
 		}

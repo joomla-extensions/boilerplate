@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Site\Controller;
+namespace Joomla\Component\Joomlathings\Site\Controller;
 
 defined('_JEXEC') or die;
 
@@ -15,7 +15,7 @@ use Joomla\CMS\MVC\Controller\BaseController;
 use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
 
 /**
- * Foos Component Controller
+ * Joomlathings Component Controller
  *
  * @since  1.0.0
  */

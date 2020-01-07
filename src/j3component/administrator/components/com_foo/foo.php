@@ -15,15 +15,15 @@ use Joomla\CMS\MVC\Controller\BaseController;
 defined('_JEXEC') or die;
 
 // Access check.
-if (!Factory::getUser()->authorise('core.manage', 'com_foo'))
+if (!Factory::getUser()->authorise('core.manage', 'com_joomlathing'))
 {
 	throw new InvalidArgumentException(Text::_('JERROR_ALERTNOAUTHOR'), 404);
 }
 
 // Require the helper
-require_once JPATH_COMPONENT_ADMINISTRATOR . '/helpers/foo.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR . '/helpers/joomlathing.php';
 
 // Execute the task
-$controller = BaseController::getInstance('foo');
+$controller = BaseController::getInstance('joomlathing');
 $controller->execute(Factory::getApplication()->input->get('task'));
 $controller->redirect();

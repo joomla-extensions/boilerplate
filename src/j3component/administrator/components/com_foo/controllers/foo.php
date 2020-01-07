@@ -13,11 +13,11 @@ use Joomla\CMS\MVC\Controller\FormController;
 defined('_JEXEC') or die;
 
 /**
- * Foo Controller.
+ * Joomlathing Controller.
  *
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class FooControllerFoo extends FormController
+class JoomlathingControllerJoomlathing extends FormController
 {
 }

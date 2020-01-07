@@ -17,12 +17,12 @@ use Joomla\Database\DatabaseDriver;
 use Joomla\Event\DispatcherInterface;
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgBehaviourFoo extends CMSPlugin
+class plgBehaviourJoomlathing extends CMSPlugin
 {
 	/**
 	 * Application object

@@ -13,11 +13,11 @@ use Joomla\CMS\MVC\View\HtmlView;
 defined('_JEXEC') or die;
 
 /**
- * Foo view.
+ * Joomlathing view.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class FooViewFoo extends HtmlView
+class JoomlathingViewJoomlathing extends HtmlView
 {
 }

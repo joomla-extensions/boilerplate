@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="COM_FOOS_FOO_VIEW_WITHHEAD_TITLE">
+	<layout title="COM_JOOMLATHINGS_JOOMLATHING_VIEW_WITHHEAD_TITLE">
 		<message>
-			<![CDATA[COM_FOOS_FOO_VIEW_WITHHEAD_DESC]]>
+			<![CDATA[COM_JOOMLATHINGS_JOOMLATHING_VIEW_WITHHEAD_DESC]]>
 		</message>
 	</layout>
 	<!-- Add fields to the request variables for the layout. -->
 	<fields name="request">
 		<fieldset name="request"
-			addfieldprefix="Joomla\Component\Foos\Administrator\Field"
+			addfieldprefix="Joomla\Component\Joomlathings\Administrator\Field"
 		>
 			<field
 				name="id"
-				type="modal_foo"
-				label="COM_FOOS_SELECT_FOO_LABEL"
+				type="modal_joomlathing"
+				label="COM_JOOMLATHINGS_SELECT_JOOMLATHING_LABEL"
 				required="true"
 				select="true"
 				new="true"

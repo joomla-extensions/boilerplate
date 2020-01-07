@@ -1,6 +1,6 @@
 <changelogs>
 	<changelog>
-		<element>com_foos</element>
+		<element>com_joomlathings</element>
 		<type>component</type>
 		<version>1.0.0</version>
 		<note>
@@ -8,7 +8,7 @@
 		</note>
 	</changelog>
 	<changelog>
-		<element>com_foos</element>
+		<element>com_joomlathings</element>
 		<type>component</type>
 		<version>1.0.0</version>
 		<note>
@@ -16,7 +16,7 @@
 		</note>
 	</changelog>
 	<changelog>
-		<element>com_foos</element>
+		<element>com_joomlathings</element>
 		<type>component</type>
 		<version>1.24.0</version>
 		<security>

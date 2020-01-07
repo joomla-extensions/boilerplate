@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Model;
+namespace Joomla\Component\Joomlathings\Administrator\Model;
 
 defined('_JEXEC') or die;
 
@@ -17,11 +17,11 @@ use Joomla\CMS\MVC\Model\ListModel;
 use Joomla\Utilities\ArrayHelper;
 
 /**
- * Methods supporting a list of foo records.
+ * Methods supporting a list of joomlathing records.
  *
  * @since  1.0
  */
-class FoosModel extends ListModel
+class JoomlathingsModel extends ListModel
 {
 	/**
 	 * Constructor.
@@ -95,7 +95,7 @@ class FoosModel extends ListModel
 			)
 		);
 
-		$query->from($db->quoteName('#__foos_details', 'a'));
+		$query->from($db->quoteName('#__joomlathings_details', 'a'));
 
 		// Join over the asset groups.
 		$query->select($db->quoteName('ag.title', 'access_level'))
@@ -129,7 +129,7 @@ class FoosModel extends ListModel
 				->where(
 					[
 						$db->quoteName('asso1.id') . ' = ' . $db->quoteName('a.id'),
-						$db->quoteName('asso1.context') . ' = ' . $db->quote('com_foos.item'),
+						$db->quoteName('asso1.context') . ' = ' . $db->quote('com_joomlathings.item'),
 					]
 				);
 

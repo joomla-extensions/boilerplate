@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -17,14 +17,14 @@ use Joomla\CMS\Session\Session;
 
 $app = Factory::getApplication();
 
-HTMLHelper::_('script', 'com_foos/admin-foos-modal.min.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'com_joomlathings/admin-joomlathings-modal.min.js', array('version' => 'auto', 'relative' => true));
 
-$function  = $app->input->getCmd('function', 'jSelectFoos');
+$function  = $app->input->getCmd('function', 'jSelectJoomlathings');
 $onclick   = $this->escape($function);
 ?>
 <div class="container-popup">
 
-	<form action="<?php echo Route::_('index.php?option=com_foos&view=foos&layout=modal&tmpl=component&function=' . $function . '&' . Session::getFormToken() . '=1'); ?>" method="post" name="adminForm" id="adminForm" class="form-inline">
+	<form action="<?php echo Route::_('index.php?option=com_joomlathings&view=joomlathings&layout=modal&tmpl=component&function=' . $function . '&' . Session::getFormToken() . '=1'); ?>" method="post" name="adminForm" id="adminForm" class="form-inline">
 
 		<?php if (empty($this->items)) : ?>
 			<div class="alert alert-warning">
@@ -34,7 +34,7 @@ $onclick   = $this->escape($function);
 			<table class="table table-sm">
 				<thead>
 					<caption id="captionTable" class="sr-only">
-						<?php echo Text::_('COM_FOOS_TABLE_CAPTION'); ?>, <?php echo Text::_('JGLOBAL_SORTED_BY'); ?>
+						<?php echo Text::_('COM_JOOMLATHINGS_TABLE_CAPTION'); ?>, <?php echo Text::_('JGLOBAL_SORTED_BY'); ?>
 					</caption>
 					<tr>
 						<th scope="col" style="width:10%" class="d-none d-md-table-cell">

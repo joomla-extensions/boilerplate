@@ -1,20 +1,20 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Helper;
+namespace Joomla\Component\Joomlathings\Administrator\Helper;
 
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Association\AssociationExtensionHelper;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Table\Table;
-use Joomla\Component\Foos\Site\Helper\AssociationHelper;
+use Joomla\Component\Joomlathings\Site\Helper\AssociationHelper;
 
 /**
  * Content associations helper.
@@ -30,7 +30,7 @@ class AssociationsHelper extends AssociationExtensionHelper
 	 *
 	 * @since   3.7.0
 	 */
-	protected $extension = 'com_foos';
+	protected $extension = 'com_joomlathings';
 
 	/**
 	 * Array of item types
@@ -39,7 +39,7 @@ class AssociationsHelper extends AssociationExtensionHelper
 	 *
 	 * @since   3.7.0
 	 */
-	protected $itemTypes = array('foo', 'category');
+	protected $itemTypes = array('joomlathing', 'category');
 
 	/**
 	 * Has the extension association support
@@ -123,8 +123,8 @@ class AssociationsHelper extends AssociationExtensionHelper
 
 		switch ($typeName)
 		{
-			case 'foo':
-				$table = Table::getInstance('FooTable', 'Joomla\\Component\\Foos\\Administrator\\Table\\');
+			case 'joomlathing':
+				$table = Table::getInstance('JoomlathingTable', 'Joomla\\Component\\Joomlathings\\Administrator\\Table\\');
 				break;
 
 			case 'category':
@@ -163,7 +163,7 @@ class AssociationsHelper extends AssociationExtensionHelper
 		{
 			switch ($typeName)
 			{
-				case 'foo':
+				case 'joomlathing':
 					$fields['title'] = 'a.name';
 					$fields['state'] = 'a.published';
 
@@ -173,10 +173,10 @@ class AssociationsHelper extends AssociationExtensionHelper
 					$support['save2copy'] = true;
 
 					$tables = array(
-						'a' => '#__foos_details'
+						'a' => '#__joomlathings_details'
 					);
 
-					$title = 'foo';
+					$title = 'joomlathing';
 					break;
 
 				case 'category':

@@ -15,12 +15,12 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Database\DatabaseDriver;
 
 /**
- * Foo plugin.
+ * Joomlathing plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgSearchFoo extends CMSPlugin
+class plgSearchJoomlathing extends CMSPlugin
 {
 	/**
 	 * Application object
@@ -56,7 +56,7 @@ class plgSearchFoo extends CMSPlugin
 	public function onContentSearchAreas()
 	{
 		static $areas = array(
-			'tags' => 'PLG_SEARCH_FOO_FOO'
+			'tags' => 'PLG_SEARCH_JOOMLATHING_JOOMLATHING'
 		);
 
 		return $areas;
@@ -79,6 +79,6 @@ class plgSearchFoo extends CMSPlugin
 	 */
 	public function onContentSearch($text, $phrase = '', $ordering = '', $areas = null)
 	{
-	
+
 	}
 }

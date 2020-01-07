@@ -13,11 +13,11 @@ use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 defined('_JEXEC') or die;
 
 /**
- * Foo model.
+ * Joomlathing model.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class FooModelFoo extends BaseDatabaseModel
+class JoomlathingModelJoomlathing extends BaseDatabaseModel
 {
 }

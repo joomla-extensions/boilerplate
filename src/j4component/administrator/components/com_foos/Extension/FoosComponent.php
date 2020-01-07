@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Extension;
+namespace Joomla\Component\Joomlathings\Administrator\Extension;
 
 defined('JPATH_PLATFORM') or die;
 
@@ -18,15 +18,15 @@ use Joomla\CMS\Categories\CategoryServiceTrait;
 use Joomla\CMS\Extension\BootableExtensionInterface;
 use Joomla\CMS\Extension\MVCComponent;
 use Joomla\CMS\HTML\HTMLRegistryAwareTrait;
-use Joomla\Component\Foos\Administrator\Service\HTML\AdministratorService;
+use Joomla\Component\Joomlathings\Administrator\Service\HTML\AdministratorService;
 use Psr\Container\ContainerInterface;
 
 /**
- * Component class for com_foos
+ * Component class for com_joomlathings
  *
  * @since  1.0.0
  */
-class FoosComponent extends MVCComponent
+class JoomlathingsComponent extends MVCComponent
 implements BootableExtensionInterface, CategoryServiceInterface, AssociationServiceInterface
 {
 	use CategoryServiceTrait;
@@ -48,7 +48,7 @@ implements BootableExtensionInterface, CategoryServiceInterface, AssociationServ
 	 */
 	public function boot(ContainerInterface $container)
 	{
-		$this->getRegistry()->register('foosadministrator', new AdministratorService);
+		$this->getRegistry()->register('joomlathingsadministrator', new AdministratorService);
 	}
 
 	/**
@@ -62,7 +62,7 @@ implements BootableExtensionInterface, CategoryServiceInterface, AssociationServ
 	 */
 	protected function getTableNameForSection(string $section = null)
 	{
-		return ($section === 'category' ? 'categories' : 'foos_details');
+		return ($section === 'category' ? 'categories' : 'joomlathings_details');
 
 	}
 }

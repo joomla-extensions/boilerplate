@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Controller;
+namespace Joomla\Component\Joomlathings\Administrator\Controller;
 
 defined('_JEXEC') or die;
 
@@ -15,11 +15,11 @@ use Joomla\CMS\MVC\Controller\FormController;
 use Joomla\CMS\Router\Route;
 
 /**
- * Controller for a single foo
+ * Controller for a single joomlathing
  *
  * @since  1.0
  */
-class FooController extends FormController
+class JoomlathingController extends FormController
 {
 	/**
 	 * Method to run batch operations.
@@ -34,10 +34,10 @@ class FooController extends FormController
 	{
 		$this->checkToken();
 
-		$model = $this->getModel('Foo', 'Administrator', array());
+		$model = $this->getModel('Joomlathing', 'Administrator', array());
 
 		// Preset the redirect
-		$this->setRedirect(Route::_('index.php?option=com_foos&view=foos' . $this->getRedirectToListAppend(), false));
+		$this->setRedirect(Route::_('index.php?option=com_joomlathings&view=joomlathings' . $this->getRedirectToListAppend(), false));
 
 		return parent::batch($model);
 	}

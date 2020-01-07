@@ -13,11 +13,11 @@ use Joomla\CMS\MVC\Model\ListModel;
 defined('_JEXEC') or die;
 
 /**
- * Foo
+ * Joomlathing
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class FooModelFoo extends ListModel
+class JoomlathingModelJoomlathing extends ListModel
 {
 }

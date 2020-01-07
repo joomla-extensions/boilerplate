@@ -1,13 +1,13 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_foos
+ * @subpackage  com_joomlathings
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Joomla\Component\Foos\Administrator\Table;
+namespace Joomla\Component\Joomlathings\Administrator\Table;
 
 defined('_JEXEC') or die;
 
@@ -17,11 +17,11 @@ use Joomla\Database\DatabaseDriver;
 use Joomla\Registry\Registry;
 
 /**
- * Foos Table class.
+ * Joomlathings Table class.
  *
  * @since  1.0
  */
-class FooTable extends Table
+class JoomlathingTable extends Table
 {
 	/**
 	 * Indicates that columns fully support the NULL value in the database
@@ -40,9 +40,9 @@ class FooTable extends Table
 	 */
 	public function __construct(DatabaseDriver $db)
 	{
-		$this->typeAlias = 'com_foos.foo';
+		$this->typeAlias = 'com_joomlathings.joomlathing';
 
-		parent::__construct('#__foos_details', 'id', $db);
+		parent::__construct('#__joomlathings_details', 'id', $db);
 	}
 
 	/**

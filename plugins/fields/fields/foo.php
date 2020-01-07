@@ -13,12 +13,12 @@ defined('_JEXEC') or die;
 JFormHelper::loadFieldClass('text');
 
 /**
- * Foo field plugin.
+ * Joomlathing field plugin.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0.0
  */
-class JFormFieldFoo extends JFormFieldText
+class JFormFieldJoomlathing extends JFormFieldText
 {
-    protected $type = 'Foo';
+    protected $type = 'Joomlathing';
 }
