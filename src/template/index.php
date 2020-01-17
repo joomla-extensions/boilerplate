@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Site
- * @subpackage Template.joomlathing
+ * @subpackage Template.joomlaextensionboilerplate
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -15,9 +15,9 @@ use Joomla\CMS\Language\Text;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-tplJoomlathingHelper::loadCss();
-tplJoomlathingHelper::loadJs();
-tplJoomlathingHelper::setMetadata();
+tplJoomlaextensionboilerplateHelper::loadCss();
+tplJoomlaextensionboilerplateHelper::loadJs();
+tplJoomlaextensionboilerplateHelper::setMetadata();
 
 ?>
 <!DOCTYPE html>
@@ -25,10 +25,10 @@ tplJoomlathingHelper::setMetadata();
 <head>
 	<jdoc:include type="head" />
 </head>
-<body class="<?php echo tplJoomlathingHelper::setBodySuffix(); ?>">
-<?php echo tplJoomlathingHelper::setAnalytics(0, 'your-analytics-id'); ?>
+<body class="<?php echo tplJoomlaextensionboilerplateHelper::setBodySuffix(); ?>">
+<?php echo tplJoomlaextensionboilerplateHelper::setAnalytics(0, 'your-analytics-id'); ?>
 
-<a href="#main" class="sr-only sr-only-focusable"><?php echo Text::_('TPL_JOOMLATHING_SKIP_LINK_LABEL'); ?></a>
+<a href="#main" class="sr-only sr-only-focusable"><?php echo Text::_('TPL_JOOMLAEXTENSIONBOILERPLATE_SKIP_LINK_LABEL'); ?></a>
 
 <a href="<?php echo $this->baseurl; ?>/">
     <?php if ($this->params->get('sitedescription')) : ?>
@@ -54,7 +54,7 @@ tplJoomlathingHelper::setMetadata();
 <footer>
 	<jdoc:include type="modules" name="footer" style="none" />
 	<p>
-		&copy; <?php echo date('Y'); ?> <?php echo tplJoomlathingHelper::getSitename(); ?>
+		&copy; <?php echo date('Y'); ?> <?php echo tplJoomlaextensionboilerplateHelper::getSitename(); ?>
 	</p>
 </footer>
 <jdoc:include type="modules" name="debug" style="none" />

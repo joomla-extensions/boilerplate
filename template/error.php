@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Site
- * @subpackage Template.joomlathing
+ * @subpackage Template.joomlaextensionboilerplate
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]

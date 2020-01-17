@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Site
- * @subpackage Template.joomlathing
+ * @subpackage Template.joomlaextensionboilerplate
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-tplJoomlathingHelper::loadCss();
-tplJoomlathingHelper::setMetadata();
+tplJoomlaextensionboilerplateHelper::loadCss();
+tplJoomlaextensionboilerplateHelper::setMetadata();
 
 ?>
 <!DOCTYPE html>

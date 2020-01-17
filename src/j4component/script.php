@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_joomlathings
+ * @subpackage  com_joomlaextensionboilerplates
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -13,11 +13,11 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Log\Log;
 
 /**
- * Script file of Joomlathing Component
+ * Script file of Joomlaextensionboilerplate Component
  *
  * @since  1.0.0
  */
-class Com_JoomlathingsInstallerScript
+class Com_JoomlaextensionboilerplatesInstallerScript
 {
 	/**
 	 * Minimum Joomla version to check
@@ -46,7 +46,7 @@ class Com_JoomlathingsInstallerScript
 	 */
 	public function install($parent): bool
 	{
-		echo Text::_('COM_JOOMLATHINGS_INSTALLERSCRIPT_INSTALL');
+		echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_INSTALLERSCRIPT_INSTALL');
 
 		return true;
 	}
@@ -62,7 +62,7 @@ class Com_JoomlathingsInstallerScript
 	 */
 	public function uninstall($parent): bool
 	{
-		echo Text::_('COM_JOOMLATHINGS_INSTALLERSCRIPT_UNINSTALL');
+		echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_INSTALLERSCRIPT_UNINSTALL');
 
 		return true;
 	}
@@ -79,7 +79,7 @@ class Com_JoomlathingsInstallerScript
 	 */
 	public function update($parent): bool
 	{
-		echo Text::_('COM_JOOMLATHINGS_INSTALLERSCRIPT_UPDATE');
+		echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_INSTALLERSCRIPT_UPDATE');
 
 		return true;
 	}
@@ -125,7 +125,7 @@ class Com_JoomlathingsInstallerScript
 			}
 		}
 
-		echo Text::_('COM_JOOMLATHINGS_INSTALLERSCRIPT_PREFLIGHT');
+		echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_INSTALLERSCRIPT_PREFLIGHT');
 
 		return true;
 	}
@@ -143,7 +143,7 @@ class Com_JoomlathingsInstallerScript
 	 */
 	public function postflight($type, $parent)
 	{
-		echo Text::_('COM_JOOMLATHINGS_INSTALLERSCRIPT_POSTFLIGHT');
+		echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_INSTALLERSCRIPT_POSTFLIGHT');
 
 		return true;
 	}

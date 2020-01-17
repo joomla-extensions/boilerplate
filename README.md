@@ -2,7 +2,7 @@
 Boilerplate files for Joomla! extensions.
 
 # Installation
-The boilerplates can be installed as-is using the Extension Manager. However, the component, module and plugin will be called Joomlathing :)
+The boilerplates can be installed as-is using the Extension Manager. However, the component, module and plugin will be called Joomlaextensionboilerplate :)
 
 To create installable zip packages, you only need to zip the folder with the files and it is ready to be installed.
 
@@ -10,9 +10,9 @@ To create installable zip packages, you only need to zip the folder with the fil
 To customize the boilerplates using your own name you need to take the following steps:
 
 1. Do a **case-sensitive** replace on the following strings and replace them with your own name:
-   * joomlathing
-   * Joomlathing
-   * JOOMLATHING
+   * joomlaextensionboilerplate
+   * Joomlaextensionboilerplate
+   * JOOMLAEXTENSIONBOILERPLATE
 2. Do a **case-sensitive** replace on the following tags with their actual information:
    * [DATE]
    * [PROJECT_NAME]
