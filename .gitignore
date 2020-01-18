@@ -1,1 +1,64 @@
-.idea
+# Builds
+build
+releases
+
+# OSX
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# PHPStorm
+.idea/
+
+# Sublime Text
+*.sublime*
+
+# Eclipse
+.buildpath
+.project
+.settings
+
+# Temp files
+*.tmp
+*.bak
+*.swp
+*~.nib
+*~
+
+# Phing
+build.properties
+phing-latest.phar
+
+# Github pages and Jekyll files
+/_site/
+/Gemfile
+/Gemfile.lock
+
+# composer
+composer.phar
+vendor/*
+
+# Robo
+robo.phar
+RoboFile.ini
+
+# Test related files
+tests/acceptance.suite.yml
+tests/*/*Tester.php
+tests/_support/_generated/*TesterActions.php
+tests/joomla*
+tests/_output*
+selenium-server-standalone.jar
+codecept.phar
+selenium.log
+tests/cache
+
+# Package building related
+/dist
+jorobo.ini
+
