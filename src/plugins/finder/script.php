@@ -11,12 +11,12 @@
 defined('_JEXEC') or die;
 
 /**
- * Foo script file.
+ * Joomlaextensionboilerplate script file.
  *
  * @package   [PACKAGE_NAME]
  * @since     1.0.0
  */
-class plgFinderFooInstallerScript
+class plgFinderJoomlaextensionboilerplateInstallerScript
 {
 	/**
 	 * Constructor

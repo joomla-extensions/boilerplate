@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" version="3.8" client="site" method="upgrade">
-    <name>foo</name>
+    <name>joomlaextensionboilerplate</name>
     <version>1.0</version>
     <creationDate>[DATE]</creationDate>
     <author>[AUTHOR]</author>
     <authorEmail>[AUTHOR_EMAIL]</authorEmail>
     <copyright>[COPYRIGHT]</copyright>
-    <description>TPL_FOO_XML_DESCRIPTION</description>
+    <description>TPL_JOOMLAEXTENSIONBOILERPLATE_XML_DESCRIPTION</description>
 
     <files>
         <filename>component.php</filename>
