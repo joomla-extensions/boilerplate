@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Site
- * @subpackage Template.foo
+ * @subpackage Template.joomlaextensionboilerplate
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -16,14 +16,14 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Uri\Uri;
 
 /**
- * Foo template helper.
+ * Joomlaextensionboilerplate template helper.
  *
  * @package    Joomla.Site
- * @subpackage Template.foo
- * 
+ * @subpackage Template.joomlaextensionboilerplate
+ *
  * @since   1.0.0
  */
-class TplFooHelper
+class TplJoomlaextensionboilerplateHelper
 {
 	/**
 	 * Method to get Template
