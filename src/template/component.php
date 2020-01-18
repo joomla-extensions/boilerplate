@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Site
- * @subpackage Template.joomlaextensionboilerplate
+ * @subpackage Template.foo
  *
  * @author     [AUTHOR] <[AUTHOR_EMAIL]>
  * @copyright  [COPYRIGHT]
@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-tplJoomlaextensionboilerplateHelper::loadCss();
-tplJoomlaextensionboilerplateHelper::setMetadata();
+tplFooHelper::loadCss();
+tplFooHelper::setMetadata();
 
 ?>
 <!DOCTYPE html>
