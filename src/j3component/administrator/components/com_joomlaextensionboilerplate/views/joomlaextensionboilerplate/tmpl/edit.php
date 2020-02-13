@@ -15,7 +15,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 
-defined('_JEXEC') or die;
+/** @var JoomlaextensionboilerplateViewJoomlaextensionboilerplate $this */
 
 HTMLHelper::_('behavior.formvalidation');
 HTMLHelper::_('behavior.keepalive');

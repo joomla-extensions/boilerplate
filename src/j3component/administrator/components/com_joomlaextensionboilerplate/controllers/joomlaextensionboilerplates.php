@@ -8,9 +8,9 @@
  * @link       [AUTHOR_URL]
  */
 
-use Joomla\CMS\MVC\Controller\AdminController;
-
 defined('_JEXEC') or die;
+
+use Joomla\CMS\MVC\Controller\AdminController;
 
 /**
  * Joomlaextensionboilerplates Controller.
@@ -31,16 +31,19 @@ class JoomlaextensionboilerplateControllerJoomlaextensionboilerplates extends Ad
 	/**
 	 * Method to get a model object, loading it if required.
 	 *
-	 * @param   string $name   The model name. Optional.
-	 * @param   string $prefix The class prefix. Optional.
-	 * @param   array  $config Configuration array for model. Optional.
+	 * @param   string  $name    The model name. Optional.
+	 * @param   string  $prefix  The class prefix. Optional.
+	 * @param   array   $config  Configuration array for model. Optional.
 	 *
 	 * @return  \JModelLegacy  The model.
 	 *
 	 * @since   1.0.0
 	 */
-	public function getModel($name = 'Joomlaextensionboilerplate', $prefix = 'JoomlaextensionboilerplatesModel', $config = array('ignore_request' => true))
-	{
+	public function getModel(
+		$name = 'Joomlaextensionboilerplate',
+		$prefix = 'JoomlaextensionboilerplatesModel',
+		$config = ['ignore_request' => true]
+	) {
 		return parent::getModel($name, $prefix, $config);
 	}
 }

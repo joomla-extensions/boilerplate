@@ -10,6 +10,9 @@
 
 defined('_JEXEC') or die;
 
+/**
+ * @var array $displayData
+ */
 extract($displayData, EXTR_OVERWRITE);
 
 echo $text;

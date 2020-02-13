@@ -8,9 +8,9 @@
  * @link       [AUTHOR_URL]
  */
 
-use Joomla\CMS\MVC\Model\BaseDatabaseModel;
-
 defined('_JEXEC') or die;
+
+use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 
 /**
  * Joomlaextensionboilerplate model.

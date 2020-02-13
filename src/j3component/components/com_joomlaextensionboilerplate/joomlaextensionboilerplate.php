@@ -8,10 +8,10 @@
  * @link       [AUTHOR_URL]
  */
 
+defined('_JEXEC') or die;
+
 use Joomla\CMS\Factory;
 use Joomla\CMS\MVC\Controller\BaseController;
-
-defined('_JEXEC') or die;
 
 $controller = BaseController::getInstance('joomlaextensionboilerplate');
 $controller->execute(Factory::getApplication()->input->get('task'));

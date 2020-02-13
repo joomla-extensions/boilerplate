@@ -48,13 +48,13 @@
 	<!-- Back-end files -->
 	<administration>
 		<!-- Menu entries -->
-		<menu view="joomlaextensionboilerplate">COM_JOOMLAEXTENSIONBOILERPLATE</menu>
+		<menu view="joomlaextensionboilerplates">COM_JOOMLAEXTENSIONBOILERPLATE</menu>
 		<submenu>
 			<!--
 				Note that all & must be escaped to &amp; for the file to be valid
 				XML and be parsed by the installer
 			-->
-			<menu link="option=com_joomlaextensionboilerplate">COM_JOOMLAEXTENSIONBOILERPLATE</menu>
+			<menu link="option=com_joomlaextensionboilerplates">COM_JOOMLAEXTENSIONBOILERPLATE</menu>
 		</submenu>
 
 		<!-- Core files -->

@@ -8,11 +8,11 @@
  * @link       [AUTHOR_URL]
  */
 
+defined('_JEXEC') or die;
+
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\Controller\BaseController;
-
-defined('_JEXEC') or die;
 
 // Access check.
 if (!Factory::getUser()->authorise('core.manage', 'com_joomlaextensionboilerplate'))

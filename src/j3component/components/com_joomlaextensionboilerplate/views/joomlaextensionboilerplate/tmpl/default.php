@@ -8,15 +8,17 @@
  * @link       [AUTHOR_URL]
  */
 
+defined('_JEXEC') or die;
+
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\FileLayout;
 
-defined('_JEXEC') or die;
+/** @var JoomlaextensionboilerplateViewJoomlaextensionboilerplate $this */
 
-HTMLHelper::_('script', 'com_joomlaextensionboilerplate/script.js', array('version' => 'auto', 'relative' => true));
-HTMLHelper::_('stylesheet', 'com_joomlaextensionboilerplate/style.css', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'com_joomlaextensionboilerplate/script.js', ['version' => 'auto', 'relative' => true]);
+HTMLHelper::_('stylesheet', 'com_joomlaextensionboilerplate/style.css', ['version' => 'auto', 'relative' => true]);
 
-$layout = new FileLayout('joomlaextensionboilerplate.page');
-$data = array();
+$layout       = new FileLayout('joomlaextensionboilerplate.page');
+$data         = [];
 $data['text'] = 'Hello Joomla!';
 echo $layout->render($data);

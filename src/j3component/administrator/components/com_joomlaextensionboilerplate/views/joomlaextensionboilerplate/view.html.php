@@ -8,14 +8,15 @@
  * @link       [AUTHOR_URL]
  */
 
+defined('_JEXEC') or die;
+
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Form;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView;
+use Joomla\CMS\Toolbar\ToolbarHelper;
 use Joomla\Registry\Registry;
-
-defined('_JEXEC') or die;
 
 /**
  * Joomlaextensionboilerplate view.
@@ -56,11 +57,11 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplate extends HtmlView
 	 *
 	 * @return  mixed  A string if successful, otherwise a JError object.
 	 *
-	 * @see     fetch()
+	 * @since   1.0.0
 	 *
 	 * @throws  Exception
 	 *
-	 * @since   1.0.0
+	 * @see     fetch()
 	 */
 	public function display($tpl = null)
 	{
@@ -82,44 +83,56 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplate extends HtmlView
 	 *
 	 * @return  void
 	 *
-	 * @throws  Exception
-	 *
 	 * @since   1.0.0
+	 *
+	 * @throws  Exception
 	 */
 	private function toolbar()
 	{
 		Factory::getApplication()->input->set('hidemainmenu', true);
 
 		$canDo = ContentHelper::getActions('com_joomlaextensionboilerplate');
-		$isNew = ($this->item->id == 0);
+		$isNew = ((int) $this->item->id === 0);
 
-		JToolBarHelper::title(Text::_('COM_JOOMLAEXTENSIONBOILERPLATE_TITLE_JOOMLAEXTENSIONBOILERPLATE'));
+		ToolbarHelper::title(Text::_('COM_JOOMLAEXTENSIONBOILERPLATE_TITLE_JOOMLAEXTENSIONBOILERPLATE'));
 
 		// If not checked out, can save the item.
 		if ($canDo->get('core.edit') || ($canDo->get('core.create')))
 		{
-			JToolBarHelper::apply('joomlaextensionboilerplate.apply', 'JTOOLBAR_APPLY');
-			JToolBarHelper::save('joomlaextensionboilerplate.save', 'JTOOLBAR_SAVE');
+			ToolbarHelper::apply('joomlaextensionboilerplate.apply', 'JTOOLBAR_APPLY');
+			ToolbarHelper::save('joomlaextensionboilerplate.save', 'JTOOLBAR_SAVE');
 		}
 
 		if ($canDo->get('core.create'))
 		{
-			JToolBarHelper::custom('joomlaextensionboilerplate.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
+			ToolbarHelper::custom(
+				'joomlaextensionboilerplate.save2new',
+				'save-new.png',
+				'save-new_f2.png',
+				'JTOOLBAR_SAVE_AND_NEW',
+				false
+			);
 		}
 
 		// If an existing item, can save to a copy.
 		if (!$isNew && $canDo->get('core.create'))
 		{
-			JToolBarHelper::custom('joomlaextensionboilerplate.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
+			ToolbarHelper::custom(
+				'joomlaextensionboilerplate.save2copy',
+				'save-copy.png',
+				'save-copy_f2.png',
+				'JTOOLBAR_SAVE_AS_COPY',
+				false
+			);
 		}
 
 		if (empty($this->item->id))
 		{
-			JToolBarHelper::cancel('joomlaextensionboilerplate.cancel', 'JTOOLBAR_CANCEL');
+			ToolbarHelper::cancel('joomlaextensionboilerplate.cancel', 'JTOOLBAR_CANCEL');
 		}
 		else
 		{
-			JToolBarHelper::cancel('joomlaextensionboilerplate.cancel', 'JTOOLBAR_CLOSE');
+			ToolbarHelper::cancel('joomlaextensionboilerplate.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}
 }

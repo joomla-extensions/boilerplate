@@ -8,9 +8,9 @@
  * @link       [AUTHOR_URL]
  */
 
-use Joomla\CMS\MVC\Model\ListModel;
-
 defined('_JEXEC') or die;
+
+use Joomla\CMS\MVC\Model\ListModel;
 
 /**
  * Joomlaextensionboilerplates
@@ -27,11 +27,11 @@ class JoomlaextensionboilerplateModelJoomlaextensionboilerplates extends ListMod
 	 *
 	 * @since   1.0.0
 	 */
-	public function __construct($config = array())
+	public function __construct($config = [])
 	{
 		if (empty($config['filter_fields']))
 		{
-			$config['filter_fields'] = array(
+			$config['filter_fields'] = [
 				'id',
 				'items.id',
 				'title',
@@ -40,7 +40,7 @@ class JoomlaextensionboilerplateModelJoomlaextensionboilerplates extends ListMod
 				'items.alias',
 				'published',
 				'items.published',
-			);
+			];
 		}
 
 		parent::__construct($config);
@@ -62,8 +62,18 @@ class JoomlaextensionboilerplateModelJoomlaextensionboilerplates extends ListMod
 	 *
 	 * @since   1.0.0
 	 */
-	protected function populateState($ordering = 'items.title', $direction = 'ASC')
+	protected function populateState($ordering = null, $direction = null)
 	{
+		if ($ordering === null)
+		{
+			$ordering = 'items.title';
+		}
+
+		if ($direction === null)
+		{
+			$direction = 'ASC';
+		}
+
 		parent::populateState($ordering, $direction);
 	}
 
@@ -80,12 +90,12 @@ class JoomlaextensionboilerplateModelJoomlaextensionboilerplates extends ListMod
 		$query = parent::getListQuery()
 			->select(
 				$db->quoteName(
-					array(
+					[
 						'items.id',
 						'items.title',
 						'items.alias',
 						'items.published',
-					)
+					]
 				)
 			)
 			->from($db->quoteName('#__joomlaextensionboilerplate_items', 'items'));
@@ -94,7 +104,7 @@ class JoomlaextensionboilerplateModelJoomlaextensionboilerplates extends ListMod
 
 		if ($search)
 		{
-			if (stripos($search, ':') !== false)
+			if (strpos($search, ':') !== false)
 			{
 				$itemId = substr($search, 3);
 				$query->where($db->quoteName('items.id') . ' = ' . (int) $itemId);

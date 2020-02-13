@@ -32,6 +32,11 @@ class JoomlaextensionboilerplateHelper
 	 */
 	public function addSubmenu($vName)
 	{
-		HTMLHelper::_('sidebar.addEntry', Text::_('COM_JOOMLAEXTENSIONBOILERPLATE'), 'index.php?option=com_joomlaextensionboilerplate&view=joomlaextensionboilerplates', $vName === 'joomlaextensionboilerplates');
+		HTMLHelper::_(
+			'sidebar.addEntry',
+			Text::_('COM_JOOMLAEXTENSIONBOILERPLATE'),
+			'index.php?option=com_joomlaextensionboilerplate&view=joomlaextensionboilerplates',
+			$vName === 'joomlaextensionboilerplates'
+		);
 	}
 }

@@ -8,14 +8,16 @@
  * @link       [AUTHOR_URL]
  */
 
+defined('_JEXEC') or die;
+
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\Form;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView;
 use Joomla\CMS\Pagination\Pagination;
+use Joomla\CMS\Toolbar\ToolbarHelper;
 use Joomla\Registry\Registry;
-
-defined('_JEXEC') or die;
 
 /**
  * Joomlaextensionboilerplate view.
@@ -29,9 +31,9 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplates extends HtmlView
 	 * Array with profiles
 	 *
 	 * @var    array
-	 * @since  1.1.0.0
+	 * @since  1.0.0
 	 */
-	protected $items;
+	protected $items = [];
 
 	/**
 	 * The model state
@@ -68,10 +70,10 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplates extends HtmlView
 	/**
 	 * Form with filters
 	 *
-	 * @var    array
+	 * @var    Form
 	 * @since  1.0.0
 	 */
-	public $filterForm = array();
+	public $filterForm;
 
 	/**
 	 * List of active filters
@@ -79,7 +81,7 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplates extends HtmlView
 	 * @var    array
 	 * @since  1.0.0
 	 */
-	public $activeFilters = array();
+	public $activeFilters = [];
 
 	/**
 	 * Actions registry
@@ -96,8 +98,11 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplates extends HtmlView
 	 *
 	 * @return  mixed  A string if successful, otherwise a JError object.
 	 *
-	 * @see     fetch()
 	 * @since   1.0.0
+	 *
+	 * @throws Exception
+	 *
+	 * @see    fetch()
 	 */
 	public function display($tpl = null)
 	{
@@ -125,44 +130,48 @@ class JoomlaextensionboilerplateViewJoomlaextensionboilerplates extends HtmlView
 	/**
 	 * Displays a toolbar for a specific page.
 	 *
-	 * @return  void.
+	 * @return  void
 	 *
 	 * @since   1.0.0
 	 */
 	private function toolbar()
 	{
-		JToolBarHelper::title(Text::_('COM_JOOMLAEXTENSIONBOILERPLATE_JOOMLAEXTENSIONBOILERPLATE'), '');
+		ToolbarHelper::title(Text::_('COM_JOOMLAEXTENSIONBOILERPLATE_JOOMLAEXTENSIONBOILERPLATE'), '');
 
 		if ($this->canDo->get('core.create'))
 		{
-			JToolbarHelper::addNew('joomlaextensionboilerplate.add');
+			ToolbarHelper::addNew('joomlaextensionboilerplate.add');
 		}
 
 		if ($this->canDo->get('core.edit') || $this->canDo->get('core.edit.own'))
 		{
-			JToolbarHelper::editList('joomlaextensionboilerplate.edit');
+			ToolbarHelper::editList('joomlaextensionboilerplate.edit');
 		}
 
 		if ($this->canDo->get('core.edit.state'))
 		{
-			JToolbarHelper::publish('joomlaextensionboilerplates.publish', 'JTOOLBAR_PUBLISH', true);
-			JToolbarHelper::unpublish('joomlaextensionboilerplates.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-			JToolbarHelper::archiveList('joomlaextensionboilerplates.archive');
+			ToolbarHelper::publish('joomlaextensionboilerplates.publish', 'JTOOLBAR_PUBLISH', true);
+			ToolbarHelper::unpublish('joomlaextensionboilerplates.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+			ToolbarHelper::archiveList('joomlaextensionboilerplates.archive');
 		}
 
-		if ($this->state->get('filter.published') == -2 && $this->canDo->get('core.delete'))
+		if ((int) $this->state->get('filter.published') === -2 && $this->canDo->get('core.delete'))
 		{
-			JToolbarHelper::deleteList('JGLOBAL_CONFIRM_DELETE', 'joomlaextensionboilerplates.delete', 'JTOOLBAR_EMPTY_TRASH');
+			ToolbarHelper::deleteList(
+				'JGLOBAL_CONFIRM_DELETE',
+				'joomlaextensionboilerplates.delete',
+				'JTOOLBAR_EMPTY_TRASH'
+			);
 		}
 		elseif ($this->canDo->get('core.edit.state'))
 		{
-			JToolbarHelper::trash('joomlaextensionboilerplates.trash');
+			ToolbarHelper::trash('joomlaextensionboilerplates.trash');
 		}
 
 		// Options button.
 		if (Factory::getUser()->authorise('core.admin', 'com_joomlaextensionboilerplate'))
 		{
-			JToolBarHelper::preferences('com_joomlaextensionboilerplate');
+			ToolbarHelper::preferences('com_joomlaextensionboilerplate');
 		}
 	}
 }

@@ -8,9 +8,9 @@
  * @link       [AUTHOR_URL]
  */
 
-use Joomla\CMS\MVC\Controller\FormController;
-
 defined('_JEXEC') or die;
+
+use Joomla\CMS\MVC\Controller\FormController;
 
 /**
  * Joomlaextensionboilerplate Controller.
