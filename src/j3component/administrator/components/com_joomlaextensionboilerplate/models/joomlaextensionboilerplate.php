@@ -20,7 +20,7 @@ use Joomla\CMS\MVC\Model\AdminModel;
  * @package  [PACKAGE_NAME]
  * @since    1.0.0
  */
-class JoomlaextensionboilerplatesModelJoomlaextensionboilerplate extends AdminModel
+class JoomlaextensionboilerplateModelJoomlaextensionboilerplate extends AdminModel
 {
 	/**
 	 * @var   string  The prefix to use with controller messages.
