@@ -12,6 +12,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 
 defined('_JEXEC') or die;
 
+// The below line is no longer used in Joomla 4
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
 require ModuleHelper::getLayoutPath('mod_joomlaextensionboilerplate', $params->get('layout', 'default'));
