@@ -11,13 +11,16 @@ namespace Joomla\Component\Joomlaextensionboilerplates\Administrator\View\Joomla
 
 defined('_JEXEC') or die;
 
+use Exception;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\Form;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\CMS\Toolbar\ToolbarHelper;
+use Joomla\Component\Joomlaextensionboilerplates\Administrator\Model\JoomlaextensionboilerplateModel;
 
 /**
  * View to edit a joomlaextensionboilerplate.
@@ -27,9 +30,9 @@ use Joomla\CMS\Toolbar\ToolbarHelper;
 class HtmlView extends BaseHtmlView
 {
 	/**
-	 * The \JForm object
+	 * The Form object
 	 *
-	 * @var  \JForm
+	 * @var  Form
 	 */
 	protected $form;
 
@@ -46,13 +49,19 @@ class HtmlView extends BaseHtmlView
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
 	 * @return  mixed  A string if successful, otherwise an Error object.
+	 *
+	 * @since   1.0.0
+	 * @throws  Exception
 	 */
 	public function display($tpl = null)
 	{
-		$this->item = $this->get('Item');
+		/** @var JoomlaextensionboilerplateModel $model */
+		$model      = $this->getModel();
+		$this->item = $model->getItem();
 
 		// If we are forcing a language in modal (used for associations).
-		if ($this->getLayout() === 'modal' && $forcedLanguage = Factory::getApplication()->input->get('forcedLanguage', '', 'cmd'))
+		if ($this->getLayout() === 'modal'
+			&& $forcedLanguage = Factory::getApplication()->input->get('forcedLanguage', '', 'cmd'))
 		{
 			// Set the language field to the forcedLanguage and disable changing it.
 			$this->form->setValue('language', null, $forcedLanguage);
@@ -72,17 +81,20 @@ class HtmlView extends BaseHtmlView
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
+	 * @throws  Exception
 	 */
-	protected function addToolbar()
+	private function addToolbar(): void
 	{
 		Factory::getApplication()->input->set('hidemainmenu', true);
 
-		$user = Factory::getUser();
+		$user   = Factory::getUser();
 		$userId = $user->id;
-		$isNew = ($this->item->id == 0);
+		$isNew  = ($this->item->id == 0);
 
-		ToolbarHelper::title($isNew ? Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_MANAGER_JOOMLAEXTENSIONBOILERPLATE_NEW') : Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_MANAGER_JOOMLAEXTENSIONBOILERPLATE_EDIT'), 'address joomlaextensionboilerplate');
+		ToolbarHelper::title($isNew ? Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_MANAGER_JOOMLAEXTENSIONBOILERPLATE_NEW')
+			: Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_MANAGER_JOOMLAEXTENSIONBOILERPLATE_EDIT'),
+			'address joomlaextensionboilerplate');
 
 		// Since we don't track these assets at the item level, use the category id.
 		$canDo = ContentHelper::getActions('com_joomlaextensionboilerplates', 'category', $this->item->catid);
@@ -98,7 +110,7 @@ class HtmlView extends BaseHtmlView
 				ToolbarHelper::saveGroup(
 					[
 						['save', 'joomlaextensionboilerplate.save'],
-						['save2new', 'joomlaextensionboilerplate.save2new']
+						['save2new', 'joomlaextensionboilerplate.save2new'],
 					],
 					'btn-success'
 				);
@@ -109,7 +121,9 @@ class HtmlView extends BaseHtmlView
 		else
 		{
 			// Since it's an existing record, check the edit permission, or fall back to edit own if the owner.
-			$itemEditable = $canDo->get('core.edit') || ($canDo->get('core.edit.own') && $this->item->created_by == $userId);
+			$itemEditable = $canDo->get('core.edit')
+				|| ($canDo->get('core.edit.own')
+					&& $this->item->created_by == $userId);
 
 			$toolbarButtons = [];
 
@@ -140,7 +154,8 @@ class HtmlView extends BaseHtmlView
 
 			if (Associations::isEnabled() && ComponentHelper::isEnabled('com_associations'))
 			{
-				ToolbarHelper::custom('joomlaextensionboilerplate.editAssociations', 'contract', 'contract', 'JTOOLBAR_ASSOCIATIONS', false, false);
+				ToolbarHelper::custom('joomlaextensionboilerplate.editAssociations', 'contract', 'contract',
+					'JTOOLBAR_ASSOCIATIONS', false, false);
 			}
 
 			ToolbarHelper::cancel('joomlaextensionboilerplate.cancel', 'JTOOLBAR_CLOSE');

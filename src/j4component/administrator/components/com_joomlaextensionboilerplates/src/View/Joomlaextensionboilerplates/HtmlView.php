@@ -11,14 +11,20 @@ namespace Joomla\Component\Joomlaextensionboilerplates\Administrator\View\Joomla
 
 defined('_JEXEC') or die;
 
+use Exception;
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\Form;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\MVC\View\GenericDataException;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
+use Joomla\CMS\Object\CMSObject;
+use Joomla\CMS\Pagination\Pagination;
 use Joomla\CMS\Toolbar\Toolbar;
 use Joomla\CMS\Toolbar\ToolbarHelper;
 use Joomla\Component\Joomlaextensionboilerplates\Administrator\Helper\JoomlaextensionboilerplateHelper;
+use Joomla\Component\Joomlaextensionboilerplates\Administrator\Model\JoomlaextensionboilerplatesModel;
 
 /**
  * View class for a list of joomlaextensionboilerplates.
@@ -32,26 +38,26 @@ class HtmlView extends BaseHtmlView
 	 *
 	 * @var  array
 	 */
-	protected $items;
+	protected $items = [];
 
 	/**
 	 * The pagination object
 	 *
-	 * @var  \JPagination
+	 * @var  Pagination
 	 */
 	protected $pagination;
 
 	/**
 	 * The model state
 	 *
-	 * @var  \JObject
+	 * @var  CMSObject
 	 */
 	protected $state;
 
 	/**
 	 * Form object for search filters
 	 *
-	 * @var  \JForm
+	 * @var  Form
 	 */
 	public $filterForm;
 
@@ -60,7 +66,7 @@ class HtmlView extends BaseHtmlView
 	 *
 	 * @var  array
 	 */
-	public $activeFilters;
+	public $activeFilters = [];
 
 	/**
 	 * The sidebar markup
@@ -77,19 +83,22 @@ class HtmlView extends BaseHtmlView
 	 * @return  void
 	 *
 	 * @since   1.0.0
+	 * @throws  Exception
 	 */
 	public function display($tpl = null): void
 	{
-		$this->items = $this->get('Items');
-		$this->pagination = $this->get('Pagination');
-		$this->filterForm = $this->get('FilterForm');
-		$this->activeFilters = $this->get('ActiveFilters');
-		$this->state = $this->get('State');
+		/** @var JoomlaextensionboilerplatesModel $model */
+		$model               = $this->getModel();
+		$this->items         = $model->getItems();
+		$this->pagination    = $model->getPagination();
+		$this->filterForm    = $model->getFilterForm();
+		$this->activeFilters = $model->getActiveFilters();
+		$this->state         = $model->getState();
+		$errors              = $this->getErrors();
 
-		// Check for errors.
-		if (count($errors = $this->get('Errors')))
+		if (count($errors))
 		{
-			throw new \JViewGenericdataexception(implode("\n", $errors), 500);
+			throw new GenericDataException(implode("\n", $errors), 500);
 		}
 
 		// Preprocess the list of items to find ordering divisions.
@@ -114,7 +123,8 @@ class HtmlView extends BaseHtmlView
 			if ($forcedLanguage = Factory::getApplication()->input->get('forcedLanguage', '', 'CMD'))
 			{
 				// If the language is forced we can't allow to select the language, so transform the language selector filter into a hidden field.
-				$languageXml = new \SimpleXMLElement('<field name="language" type="hidden" default="' . $forcedLanguage . '" />');
+				$languageXml = new \SimpleXMLElement('<field name="language" type="hidden" default="' . $forcedLanguage
+					. '" />');
 				$this->filterForm->setField($languageXml, 'filter', true);
 
 				// Also, unset the active language filter so the search tools is not open by default with this filter.
@@ -137,15 +147,20 @@ class HtmlView extends BaseHtmlView
 	 */
 	protected function addToolbar()
 	{
-		$canDo = ContentHelper::getActions('com_joomlaextensionboilerplates', 'category', $this->state->get('filter.category_id'));
-		$user  = Factory::getUser();
+		$canDo = ContentHelper::getActions('com_joomlaextensionboilerplates',
+			'category',
+			$this->state->get('filter.category_id'));
+		$user  = Factory::getApplication()->getIdentity();
 
 		// Get the toolbar object instance
 		$toolbar = Toolbar::getInstance('toolbar');
 
-		ToolbarHelper::title(Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_MANAGER_JOOMLAEXTENSIONBOILERPLATES'), 'address joomlaextensionboilerplate');
+		ToolbarHelper::title(Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_MANAGER_JOOMLAEXTENSIONBOILERPLATES'),
+			'address joomlaextensionboilerplate');
 
-		if ($canDo->get('core.create') || count($user->getAuthorisedCategories('com_joomlaextensionboilerplates', 'core.create')) > 0)
+		if ($canDo->get('core.create')
+			|| count($user->getAuthorisedCategories('com_joomlaextensionboilerplates',
+				'core.create')) > 0)
 		{
 			$toolbar->addNew('joomlaextensionboilerplate.add');
 		}
@@ -191,7 +206,9 @@ class HtmlView extends BaseHtmlView
 				->listCheck(true);
 		}
 
-		if ($user->authorise('core.admin', 'com_joomlaextensionboilerplates') || $user->authorise('core.options', 'com_joomlaextensionboilerplates'))
+		if ($user->authorise('core.admin', 'com_joomlaextensionboilerplates')
+			|| $user->authorise('core.options',
+				'com_joomlaextensionboilerplates'))
 		{
 			$toolbar->preferences('com_joomlaextensionboilerplates');
 		}
@@ -211,7 +228,7 @@ class HtmlView extends BaseHtmlView
 	 */
 	protected function getSortFields()
 	{
-		return array(
+		return [
 			'a.ordering'     => Text::_('JGRID_HEADING_ORDERING'),
 			'a.published'    => Text::_('JSTATUS'),
 			'a.name'         => Text::_('JGLOBAL_TITLE'),
@@ -219,6 +236,6 @@ class HtmlView extends BaseHtmlView
 			'a.access'       => Text::_('JGRID_HEADING_ACCESS'),
 			'a.language'     => Text::_('JGRID_HEADING_LANGUAGE'),
 			'a.id'           => Text::_('JGRID_HEADING_ID'),
-		);
+		];
 	}
 }

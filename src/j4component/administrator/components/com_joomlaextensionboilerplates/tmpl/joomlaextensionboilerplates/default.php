@@ -15,9 +15,12 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Session\Session;
+use Joomla\Component\Joomlaextensionboilerplates\Administrator\View\Joomlaextensionboilerplate\HtmlView;
 
-$canChange  = true;
-$assoc = Associations::isEnabled();
+/** @var HtmlView $this */
+
+$canChange = true;
+$assoc     = Associations::isEnabled();
 $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn  = $this->escape($this->state->get('list.direction'));
 $saveOrder = $listOrder == 'a.ordering';
@@ -157,10 +160,10 @@ if ($saveOrder && !empty($this->items))
 					<?php echo HTMLHelper::_(
 						'bootstrap.renderModal',
 						'collapseModal',
-						array(
+						[
 							'title'  => Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_BATCH_OPTIONS'),
 							'footer' => $this->loadTemplate('batch_footer'),
-						),
+						],
 						$this->loadTemplate('batch_body')
 					); ?>
 

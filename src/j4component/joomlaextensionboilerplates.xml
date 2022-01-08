@@ -7,9 +7,9 @@
 	<authorUrl>[AUTHOR_URL]</authorUrl>
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later;</license>
-	<version>24.0.0</version>
+	<version>1.0.0</version>
 	<description>COM_JOOMLAEXTENSIONBOILERPLATES_XML_DESCRIPTION</description>
-	<namespace>Joomla\Component\Joomlaextensionboilerplates</namespace>
+	<namespace path="src">Joomla\Component\Joomlaextensionboilerplates</namespace>
 	<scriptfile>script.php</scriptfile>
 	<install> <!-- Runs on install -->
 		<sql>
@@ -28,11 +28,9 @@
 	</update>
 	<!-- Frond-end files -->
 	<files folder="components/com_joomlaextensionboilerplates">
-		<folder>Controller</folder>
-		<folder>Model</folder>
-		<folder>View</folder>
-		<folder>tmpl</folder>
 		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
 	</files>
     <media folder="media/com_joomlaextensionboilerplates" destination="com_joomlaextensionboilerplates">
 		<folder>js</folder>
@@ -43,27 +41,21 @@
 		<menu view="joomlaextensionboilerplates">COM_JOOMLAEXTENSIONBOILERPLATES</menu>
 		<submenu>
 			<menu link="option=com_joomlaextensionboilerplates">COM_JOOMLAEXTENSIONBOILERPLATES</menu>
+			<submenu>
 			<menu link="option=com_categories&amp;extension=com_joomlaextensionboilerplates"
-				view="categories" img="class:joomlaextensionboilerplates-cat" alt="Joomlaextensionboilerplates/Categories">JCATEGORY</menu>
+				view="joomlaextensionboilerplates" img="class:joomlaextensionboilerplates-cat" alt="Joomlaextensionboilerplates/Categories">JCATEGORY</menu>
+			</submenu>
 		</submenu>
 		<files folder="administrator/components/com_joomlaextensionboilerplates">
 			<filename>access.xml</filename>
 			<filename>joomlaextensionboilerplates.xml</filename>
 			<filename>config.xml</filename>
-			<folder>Controller</folder>
-			<folder>Extension</folder>
-			<folder>Field</folder>
-			<folder>Helper</folder>
-			<folder>Model</folder>
-			<folder>Rule</folder>
-			<folder>Service</folder>
-			<folder>Table</folder>
-			<folder>View</folder>
 			<folder>forms</folder>
+			<folder>language</folder>
 			<folder>services</folder>
 			<folder>sql</folder>
+			<folder>src</folder>
 			<folder>tmpl</folder>
-			<folder>language</folder>
 		</files>
 	</administration>
 	<changelogurl>https://raw.githubusercontent.com/astridx/boilerplate/tutorial/changelog.xml</changelogurl>
