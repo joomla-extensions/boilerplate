@@ -12,32 +12,21 @@ namespace Joomla\Component\Joomlaextensionboilerplates\Administrator\Controller;
 defined('_JEXEC') or die;
 
 use Joomla\CMS\MVC\Controller\AdminController;
-use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
 
 /**
- * Contacts list controller class.
+ * Joomlaextensionboilerplates list controller class.
  *
- * @since  1.0
+ * @since  1.0.0
  */
 class JoomlaextensionboilerplatesController extends AdminController
 {
 	/**
-	 * Constructor.
+	 * The prefix to use with controller messages.
 	 *
-	 * @param   array                $config   An optional associative array of configuration settings.
-	 * Recognized key values include 'name', 'default_task', 'model_path', and
-	 * 'view_path' (this list is not meant to be comprehensive).
-	 * @param   MVCFactoryInterface  $factory  The factory.
-	 * @param   CMSApplication       $app      The JApplication for the dispatcher
-	 * @param   \JInput              $input    Input
-	 *
-	 * @since   1.0
+	 * @var    string
+	 * @since  1.0.0
 	 */
-	public function __construct($config = array(), MVCFactoryInterface $factory = null, $app = null, $input = null)
-	{
-		parent::__construct($config, $factory, $app, $input);
-
-	}
+	protected $text_prefix = 'COM_JOOMLAEXTENSIONBOILERPLATES_JOOMLAEXTENSIONBOILERPLATES';
 
 	/**
 	 * Proxy for getModel.
@@ -48,9 +37,9 @@ class JoomlaextensionboilerplatesController extends AdminController
 	 *
 	 * @return  \Joomla\CMS\MVC\Model\BaseDatabaseModel
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
-	public function getModel($name = 'Joomlaextensionboilerplate', $prefix = 'Administrator', $config = array('ignore_request' => true))
+	public function getModel($name = 'Joomlaextensionboilerplate', $prefix = 'Administrator', $config = ['ignore_request' => true])
 	{
 		return parent::getModel($name, $prefix, $config);
 	}

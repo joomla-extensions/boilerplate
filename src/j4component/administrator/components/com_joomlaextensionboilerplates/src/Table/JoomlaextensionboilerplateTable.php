@@ -11,23 +11,29 @@ namespace Joomla\Component\Joomlaextensionboilerplates\Administrator\Table;
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Application\ApplicationHelper;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Table\Table;
+use Joomla\CMS\Tag\TaggableTableInterface;
+use Joomla\CMS\Tag\TaggableTableTrait;
 use Joomla\Database\DatabaseDriver;
 use Joomla\Registry\Registry;
 
 /**
  * Joomlaextensionboilerplates Table class.
  *
- * @since  1.0
+ * @since  1.0.0
  */
-class JoomlaextensionboilerplateTable extends Table
+class JoomlaextensionboilerplateTable extends Table implements TaggableTableInterface
 {
+	use TaggableTableTrait;
+
 	/**
 	 * Indicates that columns fully support the NULL value in the database
 	 *
 	 * @var    boolean
-	 * @since  4.0.0
+	 * @since  1.0.0
 	 */
 	protected $_supportNullValue = true;
 
@@ -36,7 +42,7 @@ class JoomlaextensionboilerplateTable extends Table
 	 *
 	 * @param   DatabaseDriver  $db  Database connector object
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function __construct(DatabaseDriver $db)
 	{
@@ -52,7 +58,7 @@ class JoomlaextensionboilerplateTable extends Table
 	 *
 	 * @return  boolean  True on success, false on failure.
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public function store($updateNulls = false)
 	{
@@ -72,7 +78,7 @@ class JoomlaextensionboilerplateTable extends Table
 	 * @return  boolean
 	 *
 	 * @see     Table::check
-	 * @since   1.5
+	 * @since   1.0.0
 	 */
 	public function check()
 	{
@@ -85,6 +91,22 @@ class JoomlaextensionboilerplateTable extends Table
 			$this->setError($e->getMessage());
 
 			return false;
+		}
+
+		// Set name
+		$this->title = htmlspecialchars_decode($this->title, ENT_QUOTES);
+
+		// Set alias
+		if (trim($this->alias) == '')
+		{
+			$this->alias = $this->title;
+		}
+
+		$this->alias = ApplicationHelper::stringURLSafe($this->alias, $this->language);
+
+		if (trim(str_replace('-', '', $this->alias)) == '')
+		{
+			$this->alias = Factory::getDate()->format('Y-m-d-H-i-s');
 		}
 
 		// Check the publish down date is not earlier than publish up.
@@ -107,5 +129,17 @@ class JoomlaextensionboilerplateTable extends Table
 		}
 
 		return true;
+	}
+
+	/**
+	 * Get the type alias for the history table
+	 *
+	 * @return  string  The alias as described above
+	 *
+	 * @since   1.0.0
+	 */
+	public function getTypeAlias()
+	{
+		return $this->typeAlias;
 	}
 }

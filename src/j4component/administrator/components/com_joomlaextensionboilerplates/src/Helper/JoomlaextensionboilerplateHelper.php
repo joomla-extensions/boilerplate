@@ -18,7 +18,7 @@ use Joomla\CMS\Language\Text;
 /**
  * Joomlaextensionboilerplate component helper.
  *
- * @since  1.0
+ * @since  1.0.0
  */
 class JoomlaextensionboilerplateHelper extends ContentHelper
 {
@@ -29,7 +29,7 @@ class JoomlaextensionboilerplateHelper extends ContentHelper
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
 	 */
 	public static function addSubmenu($vName)
 	{

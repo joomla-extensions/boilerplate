@@ -11,7 +11,9 @@ namespace Joomla\Component\Joomlaextensionboilerplates\Administrator\Model;
 
 defined('_JEXEC') or die;
 
+use Exception;
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\Form;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Language\LanguageHelper;
 use Joomla\CMS\MVC\Model\AdminModel;
@@ -19,7 +21,7 @@ use Joomla\CMS\MVC\Model\AdminModel;
 /**
  * Item Model for a Joomlaextensionboilerplate.
  *
- * @since  1.0
+ * @since  1.0.0
  */
 class JoomlaextensionboilerplateModel extends AdminModel
 {
@@ -27,7 +29,7 @@ class JoomlaextensionboilerplateModel extends AdminModel
 	 * The type alias for this content type.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	public $typeAlias = 'com_joomlaextensionboilerplates.joomlaextensionboilerplate';
 
@@ -35,7 +37,7 @@ class JoomlaextensionboilerplateModel extends AdminModel
 	 * The context used for the associations table
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.0.0
 	 */
 	protected $associationsContext = 'com_joomlaextensionboilerplates.item';
 
@@ -51,10 +53,11 @@ class JoomlaextensionboilerplateModel extends AdminModel
 	 *
 	 * @var array
 	 */
-	protected $batch_commands = array(
-		'assetgroup_id' => 'batchAccess',
-		'language_id'   => 'batchLanguage',
-	);
+	protected $batch_commands
+		= [
+			'assetgroup_id' => 'batchAccess',
+			'language_id'   => 'batchLanguage',
+		];
 
 	/**
 	 * Method to get the row form.
@@ -62,14 +65,16 @@ class JoomlaextensionboilerplateModel extends AdminModel
 	 * @param   array    $data      Data for the form.
 	 * @param   boolean  $loadData  True if the form is to load its own data (default case), false if not.
 	 *
-	 * @return  \JForm|boolean  A \JForm object on success, false on failure
+	 * @return  Form|boolean  A \JForm object on success, false on failure
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
+	 * @throws  Exception
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
-		$form = $this->loadForm('com_joomlaextensionboilerplates.joomlaextensionboilerplate', 'joomlaextensionboilerplate', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_joomlaextensionboilerplates.joomlaextensionboilerplate',
+			'joomlaextensionboilerplate', ['control' => 'jform', 'load_data' => $loadData]);
 
 		if (empty($form))
 		{
@@ -78,12 +83,14 @@ class JoomlaextensionboilerplateModel extends AdminModel
 
 		return $form;
 	}
+
 	/**
 	 * Method to get the data that should be injected in the form.
 	 *
 	 * @return  mixed  The data for the form.
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
+	 * @throws  Exception
 	 */
 	protected function loadFormData()
 	{
@@ -103,7 +110,8 @@ class JoomlaextensionboilerplateModel extends AdminModel
 	 *
 	 * @return  mixed  Object on success, false on failure.
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
+	 * @throws  Exception
 	 */
 	public function getItem($pk = null)
 	{
@@ -114,11 +122,13 @@ class JoomlaextensionboilerplateModel extends AdminModel
 
 		if ($assoc)
 		{
-			$item->associations = array();
+			$item->associations = [];
 
 			if ($item->id != null)
 			{
-				$associations = Associations::getAssociations('com_joomlaextensionboilerplates', '#__joomlaextensionboilerplates_details', 'com_joomlaextensionboilerplates.item', $item->id, 'id', null);
+				$associations = Associations::getAssociations('com_joomlaextensionboilerplates',
+					'#__joomlaextensionboilerplates_details', 'com_joomlaextensionboilerplates.item', $item->id, 'id',
+					null);
 
 				foreach ($associations as $tag => $association)
 				{
@@ -133,17 +143,17 @@ class JoomlaextensionboilerplateModel extends AdminModel
 	/**
 	 * Preprocess the form.
 	 *
-	 * @param   \JForm  $form   Form object.
+	 * @param   Form    $form   Form object.
 	 * @param   object  $data   Data object.
 	 * @param   string  $group  Group name.
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0
+	 * @since   1.0.0
+	 * @throws  Exception
 	 */
 	protected function preprocessForm(\JForm $form, $data, $group = 'content')
 	{
-		// Association contact items
 		if (Associations::isEnabled())
 		{
 			$languages = LanguageHelper::getContentLanguages(false, true, null, 'ordering', 'asc');
@@ -151,7 +161,7 @@ class JoomlaextensionboilerplateModel extends AdminModel
 			if (count($languages) > 1)
 			{
 				$addform = new \SimpleXMLElement('<form />');
-				$fields = $addform->addChild('fields');
+				$fields  = $addform->addChild('fields');
 				$fields->addAttribute('name', 'associations');
 				$fieldset = $fields->addChild('fieldset');
 				$fieldset->addAttribute('name', 'item_associations');

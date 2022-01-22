@@ -22,6 +22,14 @@ use Joomla\CMS\Router\Route;
 class JoomlaextensionboilerplateController extends FormController
 {
 	/**
+	 * The prefix to use with controller messages.
+	 *
+	 * @var    string
+	 * @since  1.0.0
+	 */
+	protected $text_prefix = 'COM_JOOMLAEXTENSIONBOILERPLATES_JOOMLAEXTENSIONBOILERPLATE';
+
+	/**
 	 * Method to run batch operations.
 	 *
 	 * @param   object  $model  The model.

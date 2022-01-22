@@ -8,6 +8,7 @@
  */
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Language\Multilanguage;
@@ -19,15 +20,17 @@ use Joomla\Component\Joomlaextensionboilerplates\Administrator\View\Joomlaextens
 
 /** @var HtmlView $this */
 
-$canChange = true;
+$user      = Factory::getApplication()->getIdentity();
+$userId    = $user->get('id');
 $assoc     = Associations::isEnabled();
 $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn  = $this->escape($this->state->get('list.direction'));
-$saveOrder = $listOrder == 'a.ordering';
+$saveOrder = $listOrder === 'a.ordering';
 
 if ($saveOrder && !empty($this->items))
 {
 	$saveOrderingUrl = 'index.php?option=com_joomlaextensionboilerplates&task=joomlaextensionboilerplates.saveOrderAjax&tmpl=component&' . Session::getFormToken() . '=1';
+	HTMLHelper::_('draggablelist.draggable');
 }
 ?>
 <form action="<?php echo Route::_('index.php?option=com_joomlaextensionboilerplates'); ?>" method="post" name="adminForm" id="adminForm">
@@ -45,48 +48,56 @@ if ($saveOrder && !empty($this->items))
 						<?php echo Text::_('JGLOBAL_NO_MATCHING_RESULTS'); ?>
 					</div>
 				<?php else : ?>
-					<table class="table" id="joomlaextensionboilerplateList">
-						<caption id="captionTable" class="sr-only">
-							<?php echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_TABLE_CAPTION'); ?>, <?php echo Text::_('JGLOBAL_SORTED_BY'); ?>
+					<table class="table itemList" id="joomlaextensionboilerplateList">
+						<caption class="visually-hidden">
+							<?php echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_TABLE_CAPTION'); ?>,
+							<span id="orderedBy"><?php echo Text::_('JGLOBAL_SORTED_BY'); ?> </span>,
+							<span id="filteredBy"><?php echo Text::_('JGLOBAL_FILTERED_BY'); ?></span>
 						</caption>
 						<thead>
 							<tr>
-								<th scope="col" style="width:1%" class="text-center d-none d-md-table-cell">
-									<?php echo HTMLHelper::_('searchtools.sort', '', 'a.ordering', $listDirn, $listOrder, null, 'asc', 'JGRID_HEADING_ORDERING', 'icon-menu-2'); ?>
-								</th>
-								<td style="width:1%" class="text-center">
+								<td class="w-1 text-center">
 									<?php echo HTMLHelper::_('grid.checkall'); ?>
 								</td>
-								<th scope="col" style="width:1%" class="text-center d-none d-md-table-cell">
+								<th scope="col" class="w-1 text-center d-none d-md-table-cell">
+									<?php echo HTMLHelper::_('searchtools.sort', '', 'a.ordering', $listDirn, $listOrder, null, 'asc', 'JGRID_HEADING_ORDERING', 'icon-menu-2'); ?>
+								</th>
+								<th scope="col" class="w-1 text-center">
+									<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.published', $listDirn, $listOrder); ?>
+								</th>
+								<th scope="col" style="min-width:100px">
 									<?php echo HTMLHelper::_('searchtools.sort', 'COM_JOOMLAEXTENSIONBOILERPLATES_TABLE_TABLEHEAD_NAME', 'a.name', $listDirn, $listOrder); ?>
 								</th>
-								<th scope="col" style="width:10%" class="d-none d-md-table-cell">
+								<th scope="col" class="w-10 d-none d-md-table-cell">
 									<?php echo HTMLHelper::_('searchtools.sort', 'JGRID_HEADING_ACCESS', 'access_level', $listDirn, $listOrder); ?>
 								</th>
 								<?php if ($assoc) : ?>
-									<th scope="col" style="width:10%">
+									<th scope="col" class="w-5 d-none d-md-table-cell">
 										<?php echo HTMLHelper::_('searchtools.sort', 'COM_JOOMLAEXTENSIONBOILERPLATES_HEADING_ASSOCIATION', 'association', $listDirn, $listOrder); ?>
 									</th>
 								<?php endif; ?>
 								<?php if (Multilanguage::isEnabled()) : ?>
-									<th scope="col" style="width:10%" class="d-none d-md-table-cell">
+									<th scope="col" class="w-10 d-none d-md-table-cell">
 										<?php echo HTMLHelper::_('searchtools.sort', 'JGRID_HEADING_LANGUAGE', 'language_title', $listDirn, $listOrder); ?>
 									</th>
 								<?php endif; ?>
-								<th scope="col" style="width:1%; min-width:85px" class="text-center">
-									<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.published', $listDirn, $listOrder); ?>
-								</th>
-								<th scope="col">
+								<th scope="col" class="w-3 d-none d-lg-table-cell">
 									<?php echo HTMLHelper::_('searchtools.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
 								</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody<?php if ($saveOrder) : ?> class="js-draggable" data-url="<?php echo $saveOrderingUrl; ?>" data-direction="<?php echo strtolower($listDirn); ?>" data-nested="true"<?php endif; ?>>
 						<?php
-						$n = count($this->items);
 						foreach ($this->items as $i => $item) :
+							$canEdit          = $user->authorise('core.edit',       'com_joomlaextensionboilerplates.com_joomlaextensionboilerplate.' . $item->id);
+							$canCheckin       = $user->authorise('core.manage',     'com_checkin') || $item->checked_out == $userId || is_null($item->checked_out);
+							$canEditOwn       = $user->authorise('core.edit.own',   'com_joomlaextensionboilerplates.com_joomlaextensionboilerplate.' . $item->id) && $item->created_by == $userId;
+							$canChange        = $user->authorise('core.edit.state', 'com_joomlaextensionboilerplates.com_joomlaextensionboilerplate.' . $item->id) && $canCheckin;
 							?>
-							<tr class="row<?php echo $i % 2; ?>">
+							<tr class="row<?php echo $i % 2; ?>" data-draggable-group="<?php echo $item->catid; ?>"; ?>">
+								<td class="text-center">
+									<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
+								</td>
 								<td class="order text-center d-none d-md-table-cell">
 									<?php
 									$iconClass = '';
@@ -107,8 +118,10 @@ if ($saveOrder && !empty($this->items))
 											value="<?php echo $item->ordering; ?>" class="width-20 text-area-order">
 									<?php endif; ?>
 								</td>
-								<td class="text-center">
-									<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
+								<td class="text-center object-status">
+									<div class="btn-group">
+										<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'joomlaextensionboilerplates.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
+									</div>
 								</td>
 								<th scope="row" class="has-context">
 									<?php if ($item->checked_out) : ?>
@@ -142,11 +155,6 @@ if ($saveOrder && !empty($this->items))
 										<?php echo LayoutHelper::render('joomla.content.language', $item); ?>
 									</td>
 								<?php endif; ?>
-								<td class="text-center">
-									<div class="btn-group">
-										<?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'joomlaextensionboilerplates.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
-									</div>
-								</td>
 								<td class="d-none d-md-table-cell">
 									<?php echo $item->id; ?>
 								</td>
@@ -155,7 +163,7 @@ if ($saveOrder && !empty($this->items))
 						</tbody>
 					</table>
 
-					<?php echo $this->pagination->getListJoomlaextensionboilerplateter(); ?>
+					<?php echo $this->pagination->getListFooter(); ?>
 
 					<?php echo HTMLHelper::_(
 						'bootstrap.renderModal',

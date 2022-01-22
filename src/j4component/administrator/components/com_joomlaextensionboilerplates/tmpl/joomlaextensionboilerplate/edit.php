@@ -15,22 +15,28 @@ use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\WebAsset\WebAssetManager;
+use Joomla\Component\Joomlaextensionboilerplates\Administrator\View\Joomlaextensionboilerplate\HtmlView;
 
-HTMLHelper::_('behavior.formvalidator');
+/** @var HtmlView $this */
+
+/** @var WebAssetManager $wa */
+$wa = $this->document->getWebAssetManager();
+$wa->useScript('keepalive')
+	->useScript('form.validate');
+
 HTMLHelper::_('script', 'com_joomlaextensionboilerplates/admin-joomlaextensionboilerplates-letter.js', array('version' => 'auto', 'relative' => true));
 
-$app = Factory::getApplication();
-$input = $app->input;
-
-$assoc = Associations::isEnabled();
-
-$this->ignore_fieldsets = array('item_associations');
-$this->useCoreUI = true;
+$app                    = Factory::getApplication();
+$input                  = $app->input;
+$assoc                  = Associations::isEnabled();
+$this->ignore_fieldsets = ['item_associations'];
+$this->useCoreUI        = true;
 
 // In case of modal
 $isModal = $input->get('layout') == 'modal' ? true : false;
 $layout  = $isModal ? 'modal' : 'edit';
-$tmpl    = $isModal || $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
+$tmpl    = $isModal || $input->get('tmpl', '') === 'component' ? '&tmpl=component' : '';
 ?>
 
 <form action="<?php echo Route::_('index.php?option=com_joomlaextensionboilerplates&layout=' . $layout . $tmpl . '&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="joomlaextensionboilerplate-form" class="form-validate">

@@ -31,11 +31,11 @@ class JoomlaextensionboilerplatesModel extends ListModel
 	 * @see     \JControllerLegacy
 	 * @since   1.0
 	 */
-	public function __construct($config = array())
+	public function __construct($config = [])
 	{
 		if (empty($config['filter_fields']))
 		{
-			$config['filter_fields'] = array(
+			$config['filter_fields'] = [
 				'id', 'a.id',
 				'name', 'a.name',
 				'alias', 'a.alias',
@@ -48,7 +48,7 @@ class JoomlaextensionboilerplatesModel extends ListModel
 				'language', 'a.language', 'language_title',
 				'publish_up', 'a.publish_up',
 				'publish_down', 'a.publish_down',
-			);
+			];
 
 			$assoc = Associations::isEnabled();
 

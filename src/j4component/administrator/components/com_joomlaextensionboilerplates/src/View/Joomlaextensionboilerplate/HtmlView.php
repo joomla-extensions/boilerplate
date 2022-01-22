@@ -25,21 +25,23 @@ use Joomla\Component\Joomlaextensionboilerplates\Administrator\Model\Joomlaexten
 /**
  * View to edit a joomlaextensionboilerplate.
  *
- * @since  1.0
+ * @since  1.0.0
  */
 class HtmlView extends BaseHtmlView
 {
 	/**
 	 * The Form object
 	 *
-	 * @var  Form
+	 * @var    Form
+	 * @since  1.0.0
 	 */
 	protected $form;
 
 	/**
 	 * The active item
 	 *
-	 * @var  object
+	 * @var    object
+	 * @since  1.0.0
 	 */
 	protected $item;
 
@@ -61,7 +63,7 @@ class HtmlView extends BaseHtmlView
 
 		// If we are forcing a language in modal (used for associations).
 		if ($this->getLayout() === 'modal'
-			&& $forcedLanguage = Factory::getApplication()->input->get('forcedLanguage', '', 'cmd'))
+			&& $forcedLanguage = Factory::getApplication()->input->get('forcedLanguage', ''))
 		{
 			// Set the language field to the forcedLanguage and disable changing it.
 			$this->form->setValue('language', null, $forcedLanguage);
