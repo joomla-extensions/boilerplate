@@ -118,7 +118,6 @@ class HtmlView extends BaseHtmlView
 		// We don't need toolbar in the modal window.
 		if ($this->getLayout() !== 'modal')
 		{
-			JoomlaextensionboilerplateHelper::addSubmenu('joomlaextensionboilerplates');
 			$this->addToolbar();
 			$this->sidebar = \JHtmlSidebar::render();
 		}
