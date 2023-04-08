@@ -35,12 +35,7 @@ if ($saveOrder && !empty($this->items))
 ?>
 <form action="<?php echo Route::_('index.php?option=com_joomlaextensionboilerplates'); ?>" method="post" name="adminForm" id="adminForm">
 	<div class="row">
-		<?php if (!empty($this->sidebar)) : ?>
-			<div id="j-sidebar-container" class="col-md-2">
-				<?php echo $this->sidebar; ?>
-			</div>
-		<?php endif; ?>
-		<div class="<?php if (!empty($this->sidebar)) {echo 'col-md-10'; } else { echo 'col-md-12'; } ?>">
+		<div class="col-md-12">
 			<div id="j-main-container" class="j-main-container">
 				<?php echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
 				<?php if (empty($this->items)) : ?>
@@ -50,8 +45,8 @@ if ($saveOrder && !empty($this->items))
 				<?php else : ?>
 					<table class="table itemList" id="joomlaextensionboilerplateList">
 						<caption class="visually-hidden">
-							<?php echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_TABLE_CAPTION'); ?>,
-							<span id="orderedBy"><?php echo Text::_('JGLOBAL_SORTED_BY'); ?> </span>,
+							<?php echo Text::_('COM_JOOMLAEXTENSIONBOILERPLATES_TABLE_CAPTION'); ?>
+							<span id="orderedBy"><?php echo Text::_('JGLOBAL_SORTED_BY'); ?> </span>
 							<span id="filteredBy"><?php echo Text::_('JGLOBAL_FILTERED_BY'); ?></span>
 						</caption>
 						<thead>
@@ -94,7 +89,7 @@ if ($saveOrder && !empty($this->items))
 							$canEditOwn       = $user->authorise('core.edit.own',   'com_joomlaextensionboilerplates.com_joomlaextensionboilerplate.' . $item->id) && $item->created_by == $userId;
 							$canChange        = $user->authorise('core.edit.state', 'com_joomlaextensionboilerplates.com_joomlaextensionboilerplate.' . $item->id) && $canCheckin;
 							?>
-							<tr class="row<?php echo $i % 2; ?>" data-draggable-group="<?php echo $item->catid; ?>"; ?>">
+							<tr class="row<?php echo $i % 2; ?>" data-draggable-group="<?php echo $item->catid; ?>">
 								<td class="text-center">
 									<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
 								</td>

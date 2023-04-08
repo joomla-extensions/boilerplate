@@ -74,14 +74,6 @@ class HtmlView extends BaseHtmlView
 	public $activeFilters = [];
 
 	/**
-	 * The sidebar markup
-	 *
-	 * @var    string
-	 * @since  1.0.0
-	 */
-	protected $sidebar;
-
-	/**
 	 * Method to display the view.
 	 *
 	 * @param   string  $tpl  A template file to load. [optional]
@@ -119,7 +111,6 @@ class HtmlView extends BaseHtmlView
 		if ($this->getLayout() !== 'modal')
 		{
 			$this->addToolbar();
-			$this->sidebar = \JHtmlSidebar::render();
 		}
 		else
 		{
